@@ -1,0 +1,50 @@
+{
+  "sources": {
+    "name": "Wikipedia",
+    "url": "https://pt.wikipedia.org/wiki/Lista_de_presidentes_do_Brasil"
+  },
+  "series": [
+    {
+      "name": "José Sarney",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Foto_Oficial_Sarney_EBC.jpg/220px-Foto_Oficial_Sarney_EBC.jpg",
+      "start": "1985-03-15",
+      "end": "1990-03-15"
+    },
+    {
+      "name": "Fernando Collor",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Fernando_Collor_1992_B%26W.jpg/220px-Fernando_Collor_1992_B%26W.jpg",
+      "start": "1990-03-15",
+      "end": "1992-03-29"
+    },
+    {
+      "name": "Itamar Franco",
+      "start": "1992-12-29",
+      "end": "1995-01-01"
+    },
+    {
+      "name": "Fernando Henrique Cardoso",
+      "start": "1995-01-01",
+      "end": "2003-01-01"
+    },
+    {
+      "name": "Luiz Inácio Lula da Silva",
+      "start": "2003-01-01",
+      "end": "2011-01-01"
+    },
+    {
+      "name": "Dilma Rousseff",
+      "start": "2011-01-01",
+      "end": "2016-07-31"
+    },
+    {
+      "name": "Michel Temer",
+      "start": "2016-07-31",
+      "end": "2019-01-01"
+    },
+    {
+      "name": "Jair Bolsonaro",
+      "start": "2019-01-01",
+      "end": "2023-01-01"
+    }
+  ]
+}

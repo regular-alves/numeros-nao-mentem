@@ -1,0 +1,12 @@
+.HalfWidth {
+  width: 100%;
+  display: flex;
+}
+
+.HalfWidth .HalfWidth-content {
+  width: 80%;
+}
+
+.HalfWidth.HalfWidth--pullRight {
+  justify-content: flex-end;
+}

@@ -1,0 +1,95 @@
+.Header {
+  position: fixed;
+  background-color: #fff;
+  border-bottom: 1px solid #dfdfdf;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, .05);
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9000;
+}
+
+.Header.Header--isTransparent {
+  background-color: transparent;
+  border-bottom: none;
+  box-shadow: none;
+}
+
+.Header-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.Header-content {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 20% 80%;
+  align-items: center;
+  height: 88px;
+}
+
+.Header-logo > * {
+  max-width: 100%;
+  height: auto;
+}
+
+.Header.Header--isTransparent .Header-logo svg {
+  filter: brightness(100);
+}
+
+.Header-menu {
+  display: flex;
+  justify-items: end;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+.Header-menuItem {
+  position: relative;
+  padding: 0 0 0 32px;
+}
+
+.Header-menuItem a {
+  font-size: 17px;
+  text-decoration: none;
+  color: #333;
+  line-height: 2em;
+}
+
+.Header.Header--isTransparent .Header-content > .Header-menu > .Header-menuItem > a {
+  color: #fff;
+}
+
+.Header-menuItem a:hover {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.Header-menuItem > .Header-menu {
+  position: absolute;
+  flex-direction: column;
+  top: 100%;
+  left: 0;
+  min-width: 184px;
+  align-items: flex-start;
+  display: none;
+}
+
+.Header-hasSubmenu:hover > .Header-menu {
+  display: block;
+  padding: 16px 0;
+  background: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, .05);
+}
+
+.Header-menuItem > .Header-menu .Header-menuItem {
+  text-align: left;
+  border-bottom: 1px solid #dfdfdf;
+  padding: 0 16px;
+}
+
+.Header-menuItem > .Header-menu .Header-menuItem:last-child {
+  border-bottom: 0;
+}
