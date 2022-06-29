@@ -67,7 +67,7 @@ const getDateInterval = (f, t) => {
   return values;
 }
 
-const slashedDate = d => {
+const slashedFullDate = d => {
   try {
     const day = `${d.getDate()}`.padStart(2, 0);
     const month = `${d.getMonth() + 1}`.padStart(2, 0);
@@ -77,7 +77,17 @@ const slashedDate = d => {
   } catch (error) {
     console.log({error, type: typeof d});
   }
+}
 
+const slashedMonthYear = d => {
+  try {
+    const month = `${d.getMonth() + 1}`.padStart(2, 0);
+    const year = d.getFullYear();
+
+    return `${month}/${year}`;
+  } catch (error) {
+    console.log({error, type: typeof d});
+  }
 }
 
 const getMinDate = params => {
@@ -94,7 +104,8 @@ export {
   getAvg,
   handleDateParams,
   getDateInterval,
-  slashedDate,
+  slashedFullDate,
+  slashedMonthYear,
   getMinDate,
   getMaxDate
 };
