@@ -2,43 +2,82 @@ import React, { useState } from "react";
 import Header from "../Header";
 import Wrapper from "../../Components/Wrapper";
 
-import { invertByDate, getColors, getDateInterval, slashedDate } from '../../utils';
+import { 
+  invertByDate,
+  getDateInterval,
+  slashedDate,
+  getMinDate,
+  getMaxDate,
+  handleDateParams
+} from '../../utils';
 
 import Salary from "../../Dtos/Salary";
 import FoodBasket from "../../Dtos/FoodBasket";
 import Presidents from "../../Dtos/Presidents";
-import presidents from '../../Dtos/DataSets/presidents.json';
 import minimunSalary from '../../Dtos/DataSets/minimun-salary.json';
 import basicBasketAverage from '../../Dtos/DataSets/basic-basket-average.json';
 import Chart from "../../Components/Chart";
 import Sources from "../../Components/Sources";
 import IntervalPicker from "../../Components/IntervalPicker";
-import { dateFormat } from "highcharts";
 
 const BasicFoodBasket = () => {
-  const current = new Date();
-  const toDate = new Date(current.getFullYear(), current.getMonth(), 30, 23, 59, 59);
+  const salary = new Salary();
+  const foodBasket = new FoodBasket();
+  const presidents = new Presidents();
+
+  let toDate = new Date(
+    new Date().getFullYear(),
+    new Date().getMonth(),
+    30,
+    23,
+    59,
+    59
+  );
   
-  current.setFullYear( current.getFullYear() - 15 );
-  
-  const fromDate = new Date(current.getFullYear(), current.getMonth(), 1);
-  
+  let fromDate = new Date(
+    new Date().getFullYear() - 16,
+    new Date().getMonth(),
+    1
+  );
+
+  const startDate = getMaxDate([fromDate, foodBasket.getMinDataDate(), presidents.getMinDataDate()]);
+  const endDate = getMinDate([toDate, foodBasket.getMaxDataDate(), presidents.getMaxDataDate()]);
+
   const [to, setTo] = useState(toDate.toISOString());
   const [from, setFrom] = useState(fromDate.toISOString());
 
-  const salary = new Salary();
-  const foodBasket = new FoodBasket();
-  const president_ = new Presidents();
+  const chart = {
+    type: 'areaspline'
+  };
 
-  console.log(president_.toPlotBands(from, to));
+  const title = {
+    text: null
+  };
+  
+  const legend = {
+    layout: 'vertical',
+    align: 'left',
+    verticalAlign: 'top',
+    x: 150,
+    y: 100,
+    floating: true,
+    borderWidth: 1,
+  };
 
-  const colors = getColors();
-  const invertedDatePresidents = presidents.series
-    .sort(invertByDate)
-    .map(president => ({
-      ...president,
-      start: new Date(president.start),
-    }));
+  const tooltip = {
+    shared: true,
+    // valuePrefix: 'R$'
+  };
+
+  const credits = {
+      enabled: false
+  };
+
+  const plotOptions = {
+      areaspline: {
+        fillOpacity: 0.5
+      }
+  };
 
   const invertedDateSalaries = minimunSalary.data
     .sort(invertByDate)
@@ -46,6 +85,9 @@ const BasicFoodBasket = () => {
       ...salary,
       start: new Date(salary.start),
     }));
+
+  const categories = getDateInterval(from, to).map(d => slashedDate(d));
+  const plotBands = presidents.toPlotBands(from, to);
 
   const minimumSalaries = [];
   const presidentsPlotBands = {};
@@ -58,27 +100,6 @@ const BasicFoodBasket = () => {
 
       if(salary.start < dateObj) {
         minimumSalaries.push(salary.value);
-        break;
-      }
-    }
-
-    for(let j = 0; j < invertedDatePresidents.length; j++) {
-      const president = invertedDatePresidents[j];
-
-      if(president.start < dateObj) {
-        if(presidentsPlotBands[president.name] === undefined) {
-          presidentsPlotBands[president.name] = {
-            label: { 
-              text: president.name,
-              align: 'bottom',
-            },
-            from: index,
-            to: index,
-            color: `#${colors[j]}af`
-          }
-        }
-
-        presidentsPlotBands[president.name].to = index;
         break;
       }
     }
@@ -102,6 +123,8 @@ const BasicFoodBasket = () => {
         <IntervalPicker 
           to={new Date(to)}
           from={new Date(from)}
+          min={startDate}
+          max={endDate}
           setTo={(f) => setTo(f)}
           setFrom={(f) => setFrom(f)}
         />
@@ -109,45 +132,29 @@ const BasicFoodBasket = () => {
         <h2>Salário Mínimo vs. Cesta básica</h2>
         <Chart
           options={{
-            chart: { type: 'areaspline' },
-            title: { text: null },
-            legend: {
-              layout: 'vertical',
-              align: 'left',
-              verticalAlign: 'top',
-              x: 150,
-              y: 100,
-              floating: true,
-              borderWidth: 1,
-            },
+            chart,
+            title,
+            legend,
+            tooltip,
+            credits,
+            plotOptions,
             xAxis: {
-              categories: getDateInterval(from, to).map(d => slashedDate(d)),
-              plotBands: president_.toPlotBands(from, to)
+              categories,
+              plotBands
             },
             yAxis: {
               title: {
                 text: 'Valor (R$)'
               }
             },
-            tooltip: {
-              shared: true,
-            },
-            credits: {
-              enabled: false
-            },
-            plotOptions: {
-              areaspline: {
-                fillOpacity: 0.5
-              }
-            },
             series: [
               {
                 name: 'Salário mínimo',
-                data: minimumSalaries
+                data: salary.getPeriodSeries(from, to)
               },
               {
                 name: 'Valor médio - Cesta básica',
-                data: basicBasketAverage.series.values
+                data: foodBasket.getPeriodValues(from, to)
               }
             ]
           }}
@@ -157,41 +164,20 @@ const BasicFoodBasket = () => {
         <p>No gráfico a seguir é possível ver a evolução do percertual da Cesta básica sobre o salário mínimo.</p>
         <Chart
           options={{
-            chart: {
-              type: 'areaspline'
-            },
-            title: {
-              text: '% Salário mínimo vs. Cesta básica (valor médio)'
-            },
-            legend: {
-              layout: 'vertical',
-              align: 'left',
-              verticalAlign: 'top',
-              x: 150,
-              y: 100,
-              floating: true,
-              borderWidth: 1,
-            },
+            chart,
+            title,
+            legend,
+            tooltip,
+            credits,
+            plotOptions,
             xAxis: {
-              categories: basicBasketAverage.series.dates,
-              plotBands: Object.values(presidentsPlotBands)
+              categories,
+              plotBands
             },
             yAxis: {
               title: {
-                text: 'Porcentagem %'
+                text: 'Porcentagem (%)'
               }
-            },
-            tooltip: {
-              shared: true,
-              // valuePrefix: 'R$'
-            },
-            credits: {
-                enabled: false
-            },
-            plotOptions: {
-                areaspline: {
-                    fillOpacity: 0.5
-                }
             },
             series: [
               {

@@ -1,5 +1,11 @@
 import dataSet from './DataSets/presidents.json';
-import { getDateInterval, handleDateParams } from '../utils';
+import {
+  getDateInterval,
+  handleDateParams,
+  getColors,
+  getMinDate,
+  getMaxDate 
+} from '../utils';
 
 class Presidents {
   dataSet = [];
@@ -21,7 +27,7 @@ class Presidents {
   }
 
   getPeriod(f, t, s = 1) {
-    const [from, to] = handleDateParams(f, t);
+    const [from, to] = handleDateParams([f, t]);
 
     if ( f > t ) return [];
 
@@ -32,8 +38,9 @@ class Presidents {
 
   toPlotBands(f, t) {
     const dates = getDateInterval(f, t);
+    const colors = getColors();
 
-    return this.getPeriod(f, t).map(p => {
+    return this.getPeriod(f, t).map((p, i) => {
       let from = 0
       let to = dates.length;
 
@@ -51,8 +58,30 @@ class Presidents {
         }
       }
 
-      return { ...p, from, to };
+      return {
+        label: { 
+          text: p.name,
+          align: 'bottom',
+        },
+        from,
+        to,
+        color: `#${colors[i]}af`
+      };
     });
+  }
+
+  getMinDataDate() {
+    return getMinDate(
+      this.dataSet
+        .map(item => item.endMonth)
+    );
+  }
+
+  getMaxDataDate() {
+    return getMaxDate(
+      this.dataSet
+        .map(item => item.endMonth)
+    );
   }
 }
 

@@ -47,35 +47,46 @@ const getAvg = ( v ) => {
   return value;
 }
 
-const handleDateParams = (f, t) => {
-  return [
-    typeof f === Date ? f : new Date(`${f}`),
-    typeof t === Date ? t : new Date(`${t}`)
-  ]
+const handleDateParams = (dts) => {
+  if(!Array.isArray(dts)) dts = [dts];
+
+  return dts.map(d => typeof d === Date ? d : new Date(`${d}`));
 }
 
 const getDateInterval = (f, t) => {
-  const [from, to] = handleDateParams(f, t);
+  const [from, to] = handleDateParams([f, t]);
   
   const values = [];
   const current = from;
 
   while( current < to ) {
-    values.push(current.toString());
+    values.push(new Date(current.toString()));
     current.setMonth(current.getMonth() + 1);
   }
 
-  return values.map(d => new Date(d));
+  return values;
 }
 
-const slashedDate = date => {
-  const day = (date.toDate()).padStart(2, 0);
-  const month = (date.toMonth() + 1).padStart(2, 0);
-  const year = date.getFullYear();
+const slashedDate = d => {
+  try {
+    const day = `${d.getDate()}`.padStart(2, 0);
+    const month = `${d.getMonth() + 1}`.padStart(2, 0);
+    const year = d.getFullYear();
 
-  return `${day}/${month}/${year}`;
+    return `${day}/${month}/${year}`;
+  } catch (error) {
+    console.log({error, type: typeof d});
+  }
+
 }
 
+const getMinDate = params => {
+  return params.sort((a,b) => a - b)[0] || null;
+}
+
+const getMaxDate = params => {
+  return params.sort((a,b) => b - a)[0] || null;
+}
 export {
   strToColor,
   invertByDate,
@@ -83,5 +94,7 @@ export {
   getAvg,
   handleDateParams,
   getDateInterval,
-  slashedDate
+  slashedDate,
+  getMinDate,
+  getMaxDate
 };

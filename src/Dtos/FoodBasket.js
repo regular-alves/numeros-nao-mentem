@@ -1,5 +1,5 @@
 import dataSet from './DataSets/basic-basket.json';
-import { getAvg } from '../utils';
+import { getAvg, getMinDate, getMaxDate } from '../utils';
 
 class FoodBasket {
   dataSet = [];
@@ -55,6 +55,25 @@ class FoodBasket {
         value: getAvg(yd.values),
       }))
       .filter(v => !!v.value);
+  }
+
+  getPeriodValues(f, t) {
+    return this.getPeriod(f, t)
+      .map(v => v.value);
+  }
+
+  getMinDataDate() {
+    return getMinDate(
+      this.dataSet
+        .map(item => item.date)
+    );
+  }
+
+  getMaxDataDate() {
+    return getMaxDate(
+      this.dataSet
+        .map(item => item.date)
+    );
   }
 }
 
