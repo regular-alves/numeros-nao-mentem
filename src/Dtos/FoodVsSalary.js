@@ -18,8 +18,17 @@ class FoodVsSalary {
     const salary = this.salary.getPeriodSeries(f,t);
 
     for (let i = 0; i < dates.length; i++) {
+      if(isNaN(food[i]) || isNaN(salary[i])) {
+        continue;
+      }
+
+      if(!food[i] > 0 || !salary[i]) {
+        continue;
+      }
+
+      
       const percent = (food[i] / salary[i]) * 100;
-                  
+      
       values.push({
         date: dates[i],
         value: parseFloat(percent.toFixed(2))

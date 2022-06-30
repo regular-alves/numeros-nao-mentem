@@ -1,0 +1,30 @@
+.Card {
+  margin: 0 0 15px 0;
+  display: block;
+}
+
+.Card .Card-image {
+  width: 100%;
+  /* height: 140%;
+  background-size: cover;
+  background-position: top center;
+  display: block; */
+  border-radius: 5px;
+}
+
+.Card .Card-body {
+  /* text-align: center; */
+}
+
+.Card .Card-value {
+  font-size: 36px;
+  color: #b90000;
+}
+
+.Card.Card-hasGoodValue .Card-value {
+  color: #1b8900;
+}
+
+.Card .Card-date {
+  font-size: 12px;
+}

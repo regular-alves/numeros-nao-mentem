@@ -5,7 +5,8 @@ import {
   getDateInterval,
   slashedMonthYear,
   getMinDate,
-  getMaxDate
+  getMaxDate,
+  getAvg
 } from '../../utils';
 import Salary from "../../Dtos/Salary";
 import FoodBasket from "../../Dtos/FoodBasket";
@@ -16,6 +17,8 @@ import Sources from "../../Components/Sources";
 import IntervalPicker from "../../Components/IntervalPicker";
 import FoodVsSalary from "../../Dtos/FoodVsSalary";
 import { Col, Container, Row } from "react-bootstrap";
+import BestAndWorst from "../../Components/BestAndWorst";
+import Footer from "../../Components/Footer";
 
 const BasicFoodBasket = () => {
   const salary = new Salary();
@@ -79,6 +82,33 @@ const BasicFoodBasket = () => {
 
   const categories = getDateInterval(from, to).map(d => slashedMonthYear(d));
   const plotBands = presidents.toPlotBands(from, to);
+
+  const foodVsSalaryRegisters = foodVsSalary.getPeriod(from, to);
+  const percentValues = foodVsSalaryRegisters
+    .sort((a, b) => a.value - b.value);
+
+  const worstPercent = percentValues[percentValues.length - 1];
+  const bestPercent = percentValues[0];
+
+  const presidentsAvg = presidents
+    .getPeriod(from, to)
+    .map(p => ({
+      president: p,
+      value: {
+        value: getAvg(
+          foodVsSalary.getPeriodValues(
+            p.start < new Date(from) ? new Date(from) : p.start,
+            p.end > to ? to : p.end
+          )
+        ),
+        start: p.start < new Date(from) ? new Date(from) : p.start,
+        end: p.end > to ? to : p.end
+      }
+    }))
+    .sort((a, b) => a.value.value - b.value.value);
+
+  const worstAvg = presidentsAvg[presidentsAvg.length - 1];
+  const bestAvg = presidentsAvg[0];
 
   return (
     <>
@@ -175,7 +205,30 @@ const BasicFoodBasket = () => {
             />
           </Col>
         </Row>
+
+        <BestAndWorst
+          worstPercent={{
+            president: presidents.getPeriod(worstPercent.date, worstPercent.date)[0],
+            value: worstPercent
+          }}
+          bestPercent={{
+            president: presidents.getPeriod(bestPercent.date, bestPercent.date)[0],
+            value: bestPercent
+          }}
+          worstAvg={{
+            president: worstAvg.president,
+            value: worstAvg.value
+          }}
+          bestAvg={{
+            president: bestAvg.president,
+            value: bestAvg.value
+          }}
+          from={from}
+          to={to}
+        />
+        
       </Container>
+      <Footer />
     </>
   );
 }

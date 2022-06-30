@@ -80,9 +80,11 @@ const slashedFullDate = d => {
 }
 
 const slashedMonthYear = d => {
+  const [date] = handleDateParams(d);
+
   try {
-    const month = `${d.getMonth() + 1}`.padStart(2, 0);
-    const year = d.getFullYear();
+    const month = `${date.getMonth() + 1}`.padStart(2, 0);
+    const year = date.getFullYear();
 
     return `${month}/${year}`;
   } catch (error) {
