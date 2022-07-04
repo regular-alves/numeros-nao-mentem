@@ -1,9 +1,10 @@
 import React from "react";
 import DatePicker, { registerLocale } from "react-datepicker";
 import ptBr from 'date-fns/locale/pt-BR';
-
-import './style.css';
+import { Col, Row } from "react-bootstrap";
+import { AiOutlineCalendar } from 'react-icons/ai';
 import "react-datepicker/dist/react-datepicker.css";
+import './style.css';
 
 registerLocale('pt-BR', ptBr);
 
@@ -21,20 +22,27 @@ const IntervalPicker = props => {
   const maxValue = max || to;
 
   return (
-    <div className="IntervalPicker">
-      <DatePicker
-        selected={new Date(from)}
-        maxDate={maxValue}
-        onChange={f => setFrom(f.toISOString())}
-        {...common}
-      />
-      <DatePicker
-        selected={new Date(to)}
-        minDate={minValue}
-        onChange={t => setTo(t.toISOString())}
-        {...common}
-      />
-    </div>
+    <Row className="IntervalPicker">
+      <Col className="IntervalPicker-icon" xs={2}>
+        <AiOutlineCalendar />
+      </Col>
+      <Col xs={5}>
+        <DatePicker
+          selected={new Date(from)}
+          maxDate={maxValue}
+          onChange={f => setFrom(f.toISOString())}
+          {...common}
+        />
+      </Col>
+      <Col xs={5}>
+        <DatePicker
+          selected={new Date(to)}
+          minDate={minValue}
+          onChange={t => setTo(t.toISOString())}
+          {...common}
+        />
+      </Col>
+    </Row>
   )
 }
 

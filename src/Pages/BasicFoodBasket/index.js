@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Header from "../Header";
 import { 
-  invertByDate,
   getDateInterval,
   slashedMonthYear,
   getMinDate,
@@ -13,12 +12,11 @@ import FoodBasket from "../../Dtos/FoodBasket";
 import Presidents from "../../Dtos/Presidents";
 
 import Chart from "../../Components/Chart";
-import Sources from "../../Components/Sources";
 import IntervalPicker from "../../Components/IntervalPicker";
 import FoodVsSalary from "../../Dtos/FoodVsSalary";
 import { Col, Container, Row } from "react-bootstrap";
 import BestAndWorst from "../../Components/BestAndWorst";
-import Footer from "../../Components/Footer";
+import Footer from "../Footer";
 
 const BasicFoodBasket = () => {
   const salary = new Salary();
@@ -127,7 +125,7 @@ const BasicFoodBasket = () => {
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col md={{span: 6, offset: 6}}>
             <IntervalPicker 
               to={new Date(to)}
               from={new Date(from)}

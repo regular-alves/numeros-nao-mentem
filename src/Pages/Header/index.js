@@ -2,50 +2,49 @@ import React from "react";
 import { Link } from "react-router-dom";
 import './style.css';
 import { ReactComponent as Logo } from '../../assets/images/Logo.svg';
+import Presidents from '../../Dtos/Presidents';
+import { Col, Container, Row } from "react-bootstrap";
 
 const Header = props => {
 	const { transparent } = props;
+	const presidents = new Presidents();
+
+	const start = new Date();
+	
+	start.setFullYear( start.getFullYear() - 16 );
+
+	const list = presidents.getPeriod(start, new Date());
 
 	return (
 		<div className={`Header ${transparent ? 'Header--isTransparent' : ''}`}>
-			<div className="Header-wrapper">
-				<div className="Header-content">
-					<Link to="/" className="Header-logo">
-						<Logo alt="Não mentem"/>
-					</Link>
-					<ul className="Header-menu">
-						<li className="Header-menuItem">
-							<Link to="/cesta-basica">Cesta Básica</Link>
-						</li>
-						<li className="Header-menuItem">
-							<Link to="/divida-publica">Dívida pública</Link>
-						</li>
-						<li className="Header-menuItem">
-							<Link to="/educacao">Educação</Link>
-						</li>
-						<li className="Header-menuItem Header-hasSubmenu">
-							<Link to="/presidentes">Presidentes</Link>
-							<ul className="Header-menu">
-								<li className="Header-menuItem">
-									<Link to="/presidentes/jair-bolsonaro">Jair Bolsonaro</Link>
-								</li>
-								<li className="Header-menuItem">
-									<Link to="/presidentes/michel-temer">Michel Temer</Link>
-								</li>
-								<li className="Header-menuItem">
-									<Link to="/presidentes/dilma-rousseff">Dilma Rousseff</Link>
-								</li>
-								<li className="Header-menuItem">
-									<Link to="/presidentes/lula">Lula</Link>
-								</li>
-								<li className="Header-menuItem">
-									<Link to="/presidentes/fernando-henrique">Fernando Henrique</Link>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</div>
+			<Container className="Header-wrapper">
+				<Row>
+					<Col md={3} xs={5} className="Header-content">
+						<Link to="/" className="Header-logo">
+							<Logo alt="Não mentem"/>
+						</Link>
+					</Col>
+					<Col md={9} xs={7}>
+						<ul className="Header-menu">
+							<li className="Header-menuItem">
+								<Link to="/cesta-basica">Cesta Básica</Link>
+							</li>
+							<li className="Header-menuItem Header-hasSubmenu">
+								<Link to="/presidentes">Presidentes</Link>
+								<ul className="Header-menu">
+									{list.map(president => (
+										<li className="Header-menuItem">
+											<Link to={`/presidentes/${president.slug}`}>
+												{president.name.split(' ').slice(0, 2).join(' ')}
+											</Link>
+										</li>
+									))}
+								</ul>
+							</li>
+						</ul>
+					</Col>
+				</Row>
+			</Container>
 		</div>
 	);
 }

@@ -1,16 +1,10 @@
 .IntervalPicker {
-  display: flex;
-  width: 100%;
-  align-items: center;
   justify-content: flex-end;
-  flex-direction: row;
-  align-content: flex-start;
+  margin-bottom: 30px;
 }
 
-.IntervalPicker > * {
-  display: flex !important;
-  width: auto !important;
-  padding: 0 0 0 15px !important;
+.IntervalPicker-icon {
+  text-align: right;
 }
 
 .IntervalPicker .IntervalPicker-input {
@@ -19,4 +13,6 @@
   padding: 0 10px;
   border-radius: 4px;
   border: 1px solid #ddd;
+  width: 100%;
+  box-sizing: border-box;
 }

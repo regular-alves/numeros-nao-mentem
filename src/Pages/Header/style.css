@@ -10,20 +10,12 @@
 }
 
 .Header.Header--isTransparent {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, .6);
   border-bottom: none;
   box-shadow: none;
 }
 
-.Header-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.Header-content {
-  display: grid;
-  width: 100%;
-  grid-template-columns: 20% 80%;
+.Header-wrapper > .row {
   align-items: center;
   height: 88px;
 }
@@ -44,6 +36,7 @@
   flex-direction: row;
   justify-content: flex-end;
   list-style: none;
+  margin: 0 0 0 0;
 }
 
 .Header-menuItem {
@@ -58,7 +51,7 @@
   line-height: 2em;
 }
 
-.Header.Header--isTransparent .Header-content > .Header-menu > .Header-menuItem > a {
+.Header.Header--isTransparent .Header-wrapper > .row > div > .Header-menu > .Header-menuItem > a {
   color: #fff;
 }
 

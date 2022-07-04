@@ -8,7 +8,7 @@ const Card = (props) => {
   return (
     <div className={`Card ${isGood ? 'Card-hasGoodValue' : ''}`}>
       <Row>
-        <Col xs={5}>
+        <Col md={5}>
           <Image
             className="Card-image"
             src={president.image || ''}
@@ -16,7 +16,7 @@ const Card = (props) => {
             alt={president.name}
           />
         </Col>
-        <Col className="Card-body" xs={7}>
+        <Col className="Card-body" md={7}>
           <h5>{president.name}</h5>
           <div className="Card-value">{`${value.value.toFixed(2)}%`}</div>
           <div className="Card-date">

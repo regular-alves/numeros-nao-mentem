@@ -2,7 +2,7 @@ import React from "react";
 import { useParams, Navigate } from "react-router-dom";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import Header from "../Header";
-import Footer from "../../Components/Footer";
+import Footer from "../Footer";
 
 import Dto from '../../Dtos/Presidents';
 import './style.css';
@@ -63,12 +63,13 @@ const President = () => {
       <Header />
       <Container>
         <Row>
-          <Col sm={3}>
+          <Col className="President-imageWrapper" sm={3}>
             <Image
               className="President-image"
               src={president.image || ''}
               title={president.name}
               alt={president.name}
+              rounded
             />
           </Col>
           <Col sm={9}>
