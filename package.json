@@ -2,7 +2,7 @@
   "name": "numeros-nao-mentem",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://regular-alves.github.io/numeros-nao-mentem/",
+  "homepage": "https://numerosnaomentem.com/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
