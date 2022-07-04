@@ -16,9 +16,9 @@ class Presidents {
     this.dataSet = dataSet.series
       .map(z => ({
         ...z,
-        start: new Date(`${z.start} 00:00:00`),
+        start: new Date(z.start),
         startMonth: new Date(`${z.start.substring(0,7)}-01 00:00:00`),
-        end: new Date(`${z.end} 00:00:00`),
+        end: new Date(z.end),
         endMonth: new Date(`${z.end.substring(0,7)}-01 00:00:00`),
       }))
       .sort((a,b) => a.end - b.end);
@@ -32,7 +32,7 @@ class Presidents {
     if ( f > t ) return [];
 
     return this.dataSet
-      .filter(x => x.end >= from && x.start <= to)
+      .filter(x => x.end >= from && x.start < to)
       .sort((a, b) => (a.date - b.date) * s);
   }
 
@@ -82,6 +82,12 @@ class Presidents {
       this.dataSet
         .map(item => item.endMonth)
     );
+  }
+
+  getBySlug(slug) {
+    return this.dataSet
+      .filter(p => p.slug===slug)
+      .shift();
   }
 }
 

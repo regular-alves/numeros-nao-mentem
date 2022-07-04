@@ -10,7 +10,7 @@ class FoodBasket {
     this.dataSet = dataSet.series
       .map(z => ({
         ...z,
-        date: new Date(`${z.date} 00:00:00`)
+        date: new Date(z.date)
       }))
       .sort((a,b) => a.date - b.date);
 
@@ -24,7 +24,7 @@ class FoodBasket {
     if ( f > t ) return [];
 
     return this.dataSet
-      .filter(x => x.date >= from && x.date <= to)
+      .filter(x => x.date >= from && x.date < to)
       .sort((a, b) => (a.date - b.date) * s);
   }
 

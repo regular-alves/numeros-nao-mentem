@@ -11,7 +11,7 @@ class Salary {
     this.dataSet = dataSet.data
       .map(z => ({
         ...z,
-        start: new Date(`${z.start} 00:00:00`)
+        start: new Date(z.start)
       }))
       .sort((a,b) => a.start - b.start);
 
@@ -25,7 +25,7 @@ class Salary {
     if ( f > t ) return [];
 
     return this.dataSet
-      .filter(x => x.end >= from || x.start <= to)
+      .filter(x => x.end >= from || x.start < to)
       .sort((a, b) => (a.start - b.start) * s);
   }
 
