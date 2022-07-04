@@ -30,7 +30,7 @@ const Header = props => {
 								<Link to="/cesta-basica">Cesta Básica</Link>
 							</li>
 							<li className="Header-menuItem Header-hasSubmenu">
-								<Link to="/presidentes">Presidentes</Link>
+								<b>Presidentes</b>
 								<ul className="Header-menu">
 									{list.map(president => (
 										<li className="Header-menuItem">

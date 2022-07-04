@@ -9,6 +9,7 @@ import './style.css';
 import { getAvg, getDateInterval, slashedMonthYear } from "../../utils";
 import Chart from "../../Components/Chart";
 import FoodVsSalary from "../../Dtos/FoodVsSalary";
+import { Helmet } from "react-helmet";
 
 const President = () => {
   const presidentDto = new Dto();
@@ -59,69 +60,74 @@ const President = () => {
   const pastAverage = getAvg(pastValues);
 
   return (
-    <div className="President">
-      <Header />
-      <Container>
-        <Row>
-          <Col className="President-imageWrapper" sm={3}>
-            <Image
-              className="President-image"
-              src={president.image || ''}
-              title={president.name}
-              alt={president.name}
-              rounded
-            />
-          </Col>
-          <Col sm={9}>
-            <Row>
-              <Col>
-                <h1>{president.name}</h1>
-                <p>No cargo de {slashedMonthYear(president.start)} à {slashedMonthYear(president.end)}</p>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <h2>% de cesta básica sobre salário mínimo</h2>
-                <Chart
-                  options={{
-                    chart,
-                    title,
-                    tooltip,
-                    credits,
-                    plotOptions,
-                    xAxis: {
-                      categories,
-                    },
-                    yAxis: {
-                      title: {
-                        text: 'Porcentagem (%)'
+    <>
+      <Helmet>
+        <title>{president.name} - Presidentes | Números não mentem</title>
+      </Helmet>
+      <div className="President">
+        <Header />
+        <Container>
+          <Row>
+            <Col className="President-imageWrapper" sm={3}>
+              <Image
+                className="President-image"
+                src={president.image || ''}
+                title={president.name}
+                alt={president.name}
+                rounded
+              />
+            </Col>
+            <Col sm={9}>
+              <Row>
+                <Col>
+                  <h1>{president.name}</h1>
+                  <p>No cargo de {slashedMonthYear(president.start)} à {slashedMonthYear(president.end)}</p>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <h2>% de cesta básica sobre salário mínimo</h2>
+                  <Chart
+                    options={{
+                      chart,
+                      title,
+                      tooltip,
+                      credits,
+                      plotOptions,
+                      xAxis: {
+                        categories,
                       },
-                      plotBands: [
+                      yAxis: {
+                        title: {
+                          text: 'Porcentagem (%)'
+                        },
+                        plotBands: [
+                          {
+                            label: { 
+                              text: `Média de ${pastStart.getFullYear()} a ${president.start.getFullYear()}`,
+                              align: 'bottom',
+                            },
+                            from: 0,
+                            to: pastAverage
+                          }
+                        ]
+                      },
+                      series: [
                         {
-                          label: { 
-                            text: `Média de ${pastStart.getFullYear()} a ${president.start.getFullYear()}`,
-                            align: 'bottom',
-                          },
-                          from: 0,
-                          to: pastAverage
+                          name: '% Cesta sobre salário',
+                          data: foodVsSalary.getPeriodValues(president.start, president.end)
                         }
                       ]
-                    },
-                    series: [
-                      {
-                        name: '% Cesta sobre salário',
-                        data: foodVsSalary.getPeriodValues(president.start, president.end)
-                      }
-                    ]
-                }}
-                />
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </Container>
-      <Footer />
-    </div>
+                  }}
+                  />
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Container>
+        <Footer />
+      </div>
+    </>
   );
 }
 

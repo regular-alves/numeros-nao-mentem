@@ -17,6 +17,7 @@ import FoodVsSalary from "../../Dtos/FoodVsSalary";
 import { Col, Container, Row } from "react-bootstrap";
 import BestAndWorst from "../../Components/BestAndWorst";
 import Footer from "../Footer";
+import { Helmet } from "react-helmet";
 
 const BasicFoodBasket = () => {
   const salary = new Salary();
@@ -110,6 +111,9 @@ const BasicFoodBasket = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Cesta Básica vs. Salário Mínimo | Números não mentem</title>
+      </Helmet>
       <Header />
       <Container>
         <Row>
