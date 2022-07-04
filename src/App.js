@@ -7,7 +7,7 @@ import President from "./Pages/President";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/cesta-basica" element={<BasicFoodBasket />} />
         <Route path="/presidentes/:presidentSlug" element={<President />} />
