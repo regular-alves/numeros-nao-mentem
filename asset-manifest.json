@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/numeros-nao-mentem/static/css/main.c203d0f2.css",
+    "main.css": "/numeros-nao-mentem/static/css/main.0f5431f9.css",
     "main.js": "/numeros-nao-mentem/static/js/main.5af3aa5a.js",
     "static/js/787.16174cb1.chunk.js": "/numeros-nao-mentem/static/js/787.16174cb1.chunk.js",
     "static/media/Header.png": "/numeros-nao-mentem/static/media/Header.d6322df6ffadc4f86262.png",
     "static/media/Logo.svg": "/numeros-nao-mentem/static/media/Logo.fcfff38e3f0a384d07fe498c3a8748ba.svg",
     "index.html": "/numeros-nao-mentem/index.html",
-    "main.c203d0f2.css.map": "/numeros-nao-mentem/static/css/main.c203d0f2.css.map",
+    "main.0f5431f9.css.map": "/numeros-nao-mentem/static/css/main.0f5431f9.css.map",
     "main.5af3aa5a.js.map": "/numeros-nao-mentem/static/js/main.5af3aa5a.js.map",
     "787.16174cb1.chunk.js.map": "/numeros-nao-mentem/static/js/787.16174cb1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c203d0f2.css",
+    "static/css/main.0f5431f9.css",
     "static/js/main.5af3aa5a.js"
   ]
 }
