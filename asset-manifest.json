@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "./static/css/main.1df3fab0.css",
-    "main.js": "./static/js/main.b7326c38.js",
-    "static/js/787.16174cb1.chunk.js": "./static/js/787.16174cb1.chunk.js",
-    "static/media/Header.png": "./static/media/Header.d6322df6ffadc4f86262.png",
-    "static/media/Logo.svg": "./static/media/Logo.fcfff38e3f0a384d07fe498c3a8748ba.svg",
-    "index.html": "./index.html",
-    "main.1df3fab0.css.map": "./static/css/main.1df3fab0.css.map",
-    "main.b7326c38.js.map": "./static/js/main.b7326c38.js.map",
-    "787.16174cb1.chunk.js.map": "./static/js/787.16174cb1.chunk.js.map"
+    "main.css": "/numeros-nao-mentem/static/css/main.c203d0f2.css",
+    "main.js": "/numeros-nao-mentem/static/js/main.5af3aa5a.js",
+    "static/js/787.16174cb1.chunk.js": "/numeros-nao-mentem/static/js/787.16174cb1.chunk.js",
+    "static/media/Header.png": "/numeros-nao-mentem/static/media/Header.d6322df6ffadc4f86262.png",
+    "static/media/Logo.svg": "/numeros-nao-mentem/static/media/Logo.fcfff38e3f0a384d07fe498c3a8748ba.svg",
+    "index.html": "/numeros-nao-mentem/index.html",
+    "main.c203d0f2.css.map": "/numeros-nao-mentem/static/css/main.c203d0f2.css.map",
+    "main.5af3aa5a.js.map": "/numeros-nao-mentem/static/js/main.5af3aa5a.js.map",
+    "787.16174cb1.chunk.js.map": "/numeros-nao-mentem/static/js/787.16174cb1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1df3fab0.css",
-    "static/js/main.b7326c38.js"
+    "static/css/main.c203d0f2.css",
+    "static/js/main.5af3aa5a.js"
   ]
 }
