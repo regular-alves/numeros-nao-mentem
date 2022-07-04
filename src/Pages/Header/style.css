@@ -44,6 +44,7 @@
   padding: 0 0 0 32px;
 }
 
+.Header-menuItem,
 .Header-menuItem a {
   font-size: 17px;
   text-decoration: none;
@@ -51,6 +52,7 @@
   line-height: 2em;
 }
 
+.Header.Header--isTransparent .Header-wrapper > .row > div > .Header-menu > .Header-menuItem,
 .Header.Header--isTransparent .Header-wrapper > .row > div > .Header-menu > .Header-menuItem > a {
   color: #fff;
 }
