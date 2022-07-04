@@ -42,6 +42,10 @@ class FoodVsSalary {
     return this.getPeriod(f, t)
       .map(v => v.value);
   }
+
+  getSources() {
+    return [...this.foodBasket.getSources(), this.salary.getSources()];
+  }
 }
 
 export default FoodVsSalary;

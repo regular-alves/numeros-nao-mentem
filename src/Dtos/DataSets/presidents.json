@@ -1,8 +1,8 @@
 {
-  "sources": {
+  "sources": [{
     "name": "Wikipedia",
     "url": "https://pt.wikipedia.org/wiki/Lista_de_presidentes_do_Brasil"
-  },
+  }],
   "series": [
     {
       "name": "José Sarney",

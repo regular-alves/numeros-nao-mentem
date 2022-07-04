@@ -18,6 +18,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import BestAndWorst from "../../Components/BestAndWorst";
 import Footer from "../Footer";
 import { Helmet } from "react-helmet";
+import Sources from "../../Components/Sources";
 
 const BasicFoodBasket = () => {
   const salary = new Salary();
@@ -173,6 +174,13 @@ const BasicFoodBasket = () => {
                 ]
               }}
             />
+            <Sources sources={
+              [
+                ...foodBasket.getSources(), 
+                ...salary.getSources(), 
+                ...presidents.getSources()
+              ]
+            }/>
           </Col>
         </Row>
         
@@ -205,6 +213,13 @@ const BasicFoodBasket = () => {
                 ]
             }}
             />
+            <Sources sources={
+              [
+                ...foodBasket.getSources(), 
+                ...salary.getSources(), 
+                ...presidents.getSources()
+              ]
+            }/>
           </Col>
         </Row>
 

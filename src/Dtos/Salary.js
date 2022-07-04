@@ -65,6 +65,10 @@ class Salary {
 
     return values[0] || 0;
   }
+
+  getSources() {
+    return this.rawData.sources;
+  }
 }
 
 export default Salary;

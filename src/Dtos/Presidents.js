@@ -89,6 +89,10 @@ class Presidents {
       .filter(p => p.slug===slug)
       .shift();
   }
+
+  getSources() {
+    return this.rawData.sources;
+  }
 }
 
 export default Presidents;

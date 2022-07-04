@@ -75,6 +75,10 @@ class FoodBasket {
         .map(item => item.date)
     );
   }
+
+  getSources() {
+    return this.rawData.sources;
+  }
 }
 
 export default FoodBasket;
