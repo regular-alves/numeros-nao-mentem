@@ -66,7 +66,7 @@ const President = () => {
       </Helmet>
       <div className="President">
         <Header />
-        <Container>
+        <Container className="Content-wrapper">
           <Row>
             <Col className="President-imageWrapper" sm={3}>
               <Image

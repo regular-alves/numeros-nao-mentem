@@ -12,6 +12,6 @@ body, html {
 	/* background: linear-gradient(0deg, #ddd, #efefef); */
 }
 
-body {
-	padding-top: 100px;
+.Content-wrapper {
+	margin-top: 100px;
 }

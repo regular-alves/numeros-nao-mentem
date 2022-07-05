@@ -6,23 +6,26 @@ import { Col, Container, Row } from "react-bootstrap";
 
 const Home = () => {
   return (
-    <>
+    <div className="Home">
       <Header transparent />
       <div className="TopContent">
         <p>
-          <b>NOSSA MISSÃO É</b><br/>
-          TE AJUDAR NA SUA
+          <b>NOSSA MISSÃO É</b> TE AJUDAR NA SUA
         </p>
       </div>
-      <Container>
+      <Container className="Content-wrapper">
         <Row>
-          <Col md={7}>
+          <Col lg={7} md={10} sm={12}>
             <p>
               Muitas vezes, nós como leigos, acabamos não sabemos como avaliar um candidato. 
               São diversos fatores, dados e nem sempre sabemos onde procurar, ou como analisá-los.
               E no momento de tomar uma decisão, não basta ter opinião. A gente pode estar enviesado por um momento bom, ou ruim. 
               E já que estamos falando de um governo, podemos nos deixar influenciar com medidas em período de eleição:
             </p>
+          </Col>
+        </Row>
+        <Row>
+          <Col lg={10} md={12} sm={12}>
             <ul>
               <li>Aquela estação nova que foi inaugurada é ótima, <b><i>mas está atrasada a 10 anos</i></b></li>
               <li>Nossa, o dólar está abaixando, <b><i>mas o governo pode estar injetando para frear a consequencia de um escandalo</i></b></li>
@@ -34,10 +37,6 @@ const Home = () => {
               Por outro lado, um candido que já esteve a frente de um governo já nos mostrou seus interesses e o 
               quanto foi efetivo no cumprimento de seu dever.
             </p>
-          </Col>
-        </Row>
-        <Row>
-          <Col md={10}>
             <h2>Números não mentem</h2>
             <p>
               Os indicadores da economia são uma excelente indicador de qualidade de um governo.
@@ -60,7 +59,7 @@ const Home = () => {
         </Row>
       </Container>
       <Footer />
-    </>
+    </div>
   );
 }
 

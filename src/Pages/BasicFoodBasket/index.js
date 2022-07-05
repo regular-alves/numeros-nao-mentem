@@ -116,7 +116,7 @@ const BasicFoodBasket = () => {
         <title>Cesta Básica vs. Salário Mínimo | Números não mentem</title>
       </Helmet>
       <Header />
-      <Container>
+      <Container className="Content-wrapper">
         <Row>
           <Col>
             <h1>Cesta básica</h1>
