@@ -10,9 +10,9 @@ const Sources = props => {
       <ul className="Sources">
         <li className="Sources-title">Fontes</li>
         {sources.map( source => (
-          <li className="Source">
+          source.url && source.name && (<li className="Source">
             <a href={source.url}>{source.name} <FiExternalLink /></a>
-          </li>
+          </li>)
         ))}
       </ul>
     </>

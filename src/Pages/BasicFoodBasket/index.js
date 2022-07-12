@@ -75,9 +75,51 @@ const BasicFoodBasket = () => {
   };
 
   const plotOptions = {
-      areaspline: {
-        fillOpacity: 0.5
+    areaspline: {
+      fillOpacity: 0.5
+    },
+  };
+
+  const responsive = {
+    rules: [
+      {
+        condition: {
+          maxWidth: 900
+        },
+        chartOptions: {
+          legend: {
+            align: 'center',
+            verticalAlign: 'bottom',
+            layout: 'horizontal'
+          },
+          yAxis: {
+            labels: {
+              align: 'left',
+              x: 0,
+              y: 0
+            },
+            subtitle: {
+              text: null
+            },
+          },
+        }
+      },
+      {
+        condition: {
+          maxWidth: 768
+        },
+        chartOptions: {
+          yAxis: {
+            title: {
+              text: null
+            }
+          },
+          subtitle: {
+            text: null
+          }
+        }
       }
+    ]
   };
 
   const categories = getDateInterval(from, to).map(d => slashedMonthYear(d));
@@ -171,7 +213,8 @@ const BasicFoodBasket = () => {
                     name: 'Valor médio - Cesta básica',
                     data: foodBasket.getPeriodValues(from, to)
                   }
-                ]
+                ],
+                responsive
               }}
             />
             <Sources sources={
@@ -210,7 +253,8 @@ const BasicFoodBasket = () => {
                     name: 'Porcentagem',
                     data: foodVsSalary.getPeriodValues(from, to)
                   }
-                ]
+                ],
+                responsive
             }}
             />
             <Sources sources={

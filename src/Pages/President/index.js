@@ -10,6 +10,7 @@ import { getAvg, getDateInterval, slashedMonthYear } from "../../utils";
 import Chart from "../../Components/Chart";
 import FoodVsSalary from "../../Dtos/FoodVsSalary";
 import { Helmet } from "react-helmet";
+import Sources from "../../Components/Sources";
 
 const President = () => {
   const presidentDto = new Dto();
@@ -59,6 +60,48 @@ const President = () => {
 
   const pastAverage = getAvg(pastValues);
 
+  const responsive = {
+    rules: [
+      {
+        condition: {
+          maxWidth: 900
+        },
+        chartOptions: {
+          legend: {
+            align: 'center',
+            verticalAlign: 'bottom',
+            layout: 'horizontal'
+          },
+          yAxis: {
+            labels: {
+              align: 'left',
+              x: 0,
+              y: 0
+            },
+            subtitle: {
+              text: null
+            },
+          },
+        }
+      },
+      {
+        condition: {
+          maxWidth: 768
+        },
+        chartOptions: {
+          yAxis: {
+            title: {
+              text: null
+            }
+          },
+          subtitle: {
+            text: null
+          }
+        }
+      }
+    ]
+  };
+
   return (
     <>
       <Helmet>
@@ -98,17 +141,20 @@ const President = () => {
                         categories,
                       },
                       yAxis: {
+                        minRange: Math.round(pastAverage),
                         title: {
                           text: 'Porcentagem (%)'
                         },
-                        plotBands: [
+                        plotLines: [
                           {
                             label: { 
                               text: `Média de ${pastStart.getFullYear()} a ${president.start.getFullYear()}`,
                               align: 'bottom',
                             },
-                            from: 0,
-                            to: pastAverage
+                            color: 'red',
+                            dashStyle: 'dash',
+                            value: pastAverage,
+                            width: 2
                           }
                         ]
                       },
@@ -117,9 +163,11 @@ const President = () => {
                           name: '% Cesta sobre salário',
                           data: foodVsSalary.getPeriodValues(president.start, president.end)
                         }
-                      ]
+                      ],
+                      responsive
                   }}
                   />
+                  <Sources sources={[ ...foodVsSalary.getSources() ] }/>
                 </Col>
               </Row>
             </Col>

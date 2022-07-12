@@ -61,7 +61,10 @@ class Presidents {
       return {
         label: { 
           text: p.name,
-          align: 'bottom',
+          align: 'left',
+          y: 15,
+          x: 5,
+          rotation: 45,
         },
         from,
         to,

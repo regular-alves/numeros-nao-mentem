@@ -1,7 +1,6 @@
 .TopContent {
-  background-image: url(../../assets/images/Header.png);
+  background-image: url(../../assets/images/Header.jpeg);
   width: 100%;
-  min-height: 700px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -9,8 +8,7 @@
   font-size: 5rem;
   line-height: 1em;
   color: #fff;
-  margin: -88px 0 -150px 0;
-  padding: 80px 15px 0;
+  padding: calc(88px + 10vw) 15px 10vw;
   box-sizing: border-box;
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 40%);
   background-size: cover;
@@ -28,14 +26,13 @@
   display: block;
 }
 
+.Home .Content-wrapper {
+  margin-top: 40px;
+}
+
 @media screen and (max-width: 998px) {
   .TopContent {
     margin: 0 0;
-    padding: 110px 20px 50px;
-    min-height: auto;
-    background-position: top center;
-    background-size: auto;
-    text-align: center;
   }
 
   .TopContent b {

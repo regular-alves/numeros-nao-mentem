@@ -7,10 +7,12 @@
   justify-content: flex-end;
   align-items: center;
   text-align: right;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
 }
 
 .Sources-title {
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .Source {
@@ -26,4 +28,10 @@
   text-transform: uppercase;
   color: #333;
   text-decoration: none;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.Source a svg {
+  vertical-align: baseline;
 }
