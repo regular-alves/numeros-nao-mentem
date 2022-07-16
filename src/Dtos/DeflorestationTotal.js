@@ -1,6 +1,6 @@
 
 import dataSet from './DataSets/deplorestation.json';
-import { getAvg, getMaxDate, getMinDate } from '../utils';
+import { getAvg } from '../utils';
 
 class DeflorestationTotal {
   dataSet = [];
