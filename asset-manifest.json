@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.2a06beb6.css",
-    "main.js": "/static/js/main.f38b1854.js",
+    "main.css": "/static/css/main.60e73811.css",
+    "main.js": "/static/js/main.8453dffa.js",
     "static/js/787.16174cb1.chunk.js": "/static/js/787.16174cb1.chunk.js",
+    "static/media/rainforest.jpg": "/static/media/rainforest.0129d87068ea2c875331.jpg",
     "static/media/Header.jpeg": "/static/media/Header.dd64a1c52a1892482020.jpeg",
     "index.html": "/index.html",
     "static/media/Logo.svg": "/static/media/Logo.fcfff38e3f0a384d07fe498c3a8748ba.svg",
-    "main.2a06beb6.css.map": "/static/css/main.2a06beb6.css.map",
-    "main.f38b1854.js.map": "/static/js/main.f38b1854.js.map",
+    "main.60e73811.css.map": "/static/css/main.60e73811.css.map",
+    "main.8453dffa.js.map": "/static/js/main.8453dffa.js.map",
     "787.16174cb1.chunk.js.map": "/static/js/787.16174cb1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2a06beb6.css",
-    "static/js/main.f38b1854.js"
+    "static/css/main.60e73811.css",
+    "static/js/main.8453dffa.js"
   ]
 }
