@@ -129,8 +129,8 @@ const BasicFoodBasket = () => {
   const percentValues = foodVsSalaryRegisters
     .sort((a, b) => a.value - b.value);
 
-  const worstPercent = percentValues[percentValues.length - 1];
-  const bestPercent = percentValues[0];
+  const worstPercent = percentValues.pop();
+  const bestPercent = percentValues.shift();
 
   const presidentsAvg = presidents
     .getPeriod(from, to)
@@ -149,8 +149,8 @@ const BasicFoodBasket = () => {
     }))
     .sort((a, b) => a.value.value - b.value.value);
 
-  const worstAvg = presidentsAvg[presidentsAvg.length - 1];
-  const bestAvg = presidentsAvg[0];
+  const worstAvg = presidentsAvg.pop();
+  const bestAvg = presidentsAvg.shift();
 
   return (
     <>
@@ -268,21 +268,31 @@ const BasicFoodBasket = () => {
         </Row>
 
         <BestAndWorst
-          worstPercent={{
-            president: presidents.getPeriod(worstPercent.date, worstPercent.date)[0],
-            value: worstPercent
+          worst={{
+            average: {     
+              president: worstAvg.president,
+              start: slashedMonthYear(worstAvg.value.start),
+              end: slashedMonthYear(worstAvg.value.end),
+              value: `${worstAvg.value.value.toFixed(2)}%`         
+            },
+            absolute: {
+              president: presidents.getPeriod(worstPercent.date, worstPercent.date).shift(),
+              date: slashedMonthYear(worstPercent.date),
+              value: `${worstPercent.value.toFixed(2)}%`
+            },
           }}
-          bestPercent={{
-            president: presidents.getPeriod(bestPercent.date, bestPercent.date)[0],
-            value: bestPercent
-          }}
-          worstAvg={{
-            president: worstAvg.president,
-            value: worstAvg.value
-          }}
-          bestAvg={{
-            president: bestAvg.president,
-            value: bestAvg.value
+          best={{
+            average: {
+              president: bestAvg.president,
+              start: slashedMonthYear(bestAvg.value.start),
+              end: slashedMonthYear(bestAvg.value.end),
+              value: `${bestAvg.value.value.toFixed(2)}%`              
+            },
+            absolute: {
+              president: presidents.getPeriod(bestPercent.date, bestPercent.date)[0],
+              date: slashedMonthYear(bestPercent.date),
+              value: `${bestPercent.value.toFixed(2)}%`
+            },
           }}
           from={from}
           to={to}

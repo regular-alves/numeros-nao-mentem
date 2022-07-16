@@ -29,6 +29,9 @@ const Header = props => {
 							<li className="Header-menuItem">
 								<Link to="/cesta-basica">Cesta Básica</Link>
 							</li>
+							<li className="Header-menuItem">
+								<Link to="/desmatamento">Desmatamento</Link>
+							</li>
 							<li className="Header-menuItem Header-hasSubmenu">
 								<b>Presidentes</b>
 								<ul className="Header-menu">

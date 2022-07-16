@@ -29,6 +29,7 @@ const IntervalPicker = props => {
       <Col xs={5}>
         <DatePicker
           selected={new Date(from)}
+          minDate={minValue}
           maxDate={maxValue}
           onChange={f => setFrom(f.toISOString())}
           {...common}
@@ -38,6 +39,7 @@ const IntervalPicker = props => {
         <DatePicker
           selected={new Date(to)}
           minDate={minValue}
+          maxDate={maxValue}
           onChange={t => setTo(t.toISOString())}
           {...common}
         />

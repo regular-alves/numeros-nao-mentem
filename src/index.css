@@ -12,6 +12,19 @@ body, html {
 	/* background: linear-gradient(0deg, #ddd, #efefef); */
 }
 
+img {
+	max-width: 100%;
+}
+
+a {
+	text-decoration: none !important;
+	font-weight: 600;
+}
+
 .Content-wrapper {
 	margin-top: 100px;
+}
+
+.Content-wrapper a {
+	color: #333 !important;
 }

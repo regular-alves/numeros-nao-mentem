@@ -3,14 +3,7 @@ import { slashedMonthYear } from "../../utils";
 import Card from "../Card";
 
 const BestAndWorst = (props) => {
-  const {
-    from,
-    to,
-    worstPercent,
-    bestPercent,
-    worstAvg,
-    bestAvg
-  } = props;
+  const { from, to, best, worst } = props;
 
   return (
     <>
@@ -22,21 +15,19 @@ const BestAndWorst = (props) => {
           <Row>
             <Col>
               <h3>Números absolutos</h3>
-              <p>Média nacional dos valores observados em cada mês.</p>
+              <p>Valores registrados no período pesquisado.</p>
             </Col>
           </Row>
           <Row>
-            <Col>
+            <Col xs={12} sm={6} md={6} lg={12}>
               <Card 
-                president={bestPercent.president}
-                value={bestPercent.value}
+                {...best.absolute}
                 isGood
               />
             </Col>
-            <Col>
+            <Col xs={12} sm={6} md={6} lg={12}>
               <Card 
-                president={worstPercent.president}
-                value={worstPercent.value}
+                {...worst.absolute}
               />
             </Col>
           </Row>
@@ -44,23 +35,21 @@ const BestAndWorst = (props) => {
         <Col lg={6}>
           <Row>
             <Col>
-              <h3>Média</h3>
-              <p>Média nacional do período dos valores observados.</p>
+              <h3>Média do mandato</h3>
+              <p>Média dos valores do mandato do candidato no período pesquisado.</p>
             </Col>
           </Row>
           <Row>
-            <Col>
+            <Col xs={12} sm={6} md={6} lg={12}>
               <Card 
-                president={bestAvg.president}
-                value={bestAvg.value}
+                {...best.average}
                 showPeriod
                 isGood
               />
             </Col>
-            <Col>
+            <Col xs={12} sm={6} md={6} lg={12}>
               <Card 
-                president={worstAvg.president}
-                value={worstAvg.value}
+                {...worst.average}
                 showPeriod
               />
             </Col>

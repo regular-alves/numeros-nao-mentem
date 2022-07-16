@@ -11,7 +11,7 @@ const Sources = props => {
         <li className="Sources-title">Fontes</li>
         {sources.map( source => (
           source.url && source.name && (<li className="Source">
-            <a href={source.url}>{source.name} <FiExternalLink /></a>
+            <a href={source.url} nofollow="true">{source.name} <FiExternalLink /></a>
           </li>)
         ))}
       </ul>
