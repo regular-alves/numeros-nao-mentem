@@ -156,6 +156,9 @@ const Deflorestation = () => {
               Esse sistema tem demonstrado ser de grande importância para ações e planejamento de políticas públicas da Amazônia. 
               Resultados recentes, a partir de análises realizadas com especialistas independentes, indicam nível de precisão próximo a 95%.
             </p>
+            <p>
+              A PRODES apresenta os dados consolidados anualmente no primeiro semestre do ano seguinte.
+            </p>
           </Col>
           <Col lg={{order: 2}} md={6} sm={{ order: 1 }}>
             <Figure>

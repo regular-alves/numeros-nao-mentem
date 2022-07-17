@@ -54,7 +54,7 @@ class DeflorestationTotal {
 
     while (current <= to ) {
       current.setMonth( current.getMonth() + 1 );
-      series.push(this.getYearValue(current.getFullYear()));
+      series.push(this.getYearValue(current.getFullYear()) || 0);
     }
 
     return series;

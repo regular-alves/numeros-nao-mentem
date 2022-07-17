@@ -11,10 +11,12 @@ import Chart from "../../Components/Chart";
 import FoodVsSalary from "../../Dtos/FoodVsSalary";
 import { Helmet } from "react-helmet";
 import Sources from "../../Components/Sources";
+import DeflorestationTotal from "../../Dtos/DeflorestationTotal";
 
 const President = () => {
   const presidentDto = new Dto();
   const foodVsSalary = new FoodVsSalary();
+  const deflorestation = new DeflorestationTotal();
 
   const { presidentSlug } = useParams();
   const president = presidentDto.getBySlug( presidentSlug );
@@ -57,8 +59,8 @@ const President = () => {
 
   past.setFullYear(past.getFullYear() - 16);
 
-  const pastValues = foodVsSalary.getPeriodValues(past, new Date());
-  const pastAverage = getAvg(pastValues);
+  const foodPastAverage = getAvg(foodVsSalary.getPeriodValues(past, new Date()));
+  const deflorestationPastAverage = getAvg(deflorestation.getPeriodValues(past, new Date()));
 
   const responsive = {
     rules: [
@@ -101,6 +103,11 @@ const President = () => {
       }
     ]
   };
+
+  console.log({
+    deflorestationPastAverage,
+    values: deflorestation.getPeriodSeries(president.start, president.end)
+  })
 
   return (
     <>
@@ -148,7 +155,7 @@ const President = () => {
                         categories,
                       },
                       yAxis: {
-                        minRange: Math.round(pastAverage),
+                        minRange: Math.round(foodPastAverage),
                         title: {
                           text: 'Porcentagem (%)'
                         },
@@ -160,7 +167,7 @@ const President = () => {
                             },
                             color: 'red',
                             dashStyle: 'dash',
-                            value: pastAverage,
+                            value: foodPastAverage,
                             width: 2
                           }
                         ]
@@ -175,6 +182,53 @@ const President = () => {
                   }}
                   />
                   <Sources sources={[ ...foodVsSalary.getSources() ] }/>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <h2>Desmatamento - Floresta amazônica</h2>
+                  <p>
+                    A taxa de desmatamento é realizada pelo PRODES (Monitoramento do Desmatamento da Floresta Amazônica Brasileira por Satélite) 
+                    através de satélites por corte raso na Amazônia Legal e produz, desde 1988, as taxas anuais de desmatamento na região.
+                  </p>
+                  <Chart
+                    options={{
+                      chart,
+                      title,
+                      tooltip,
+                      credits,
+                      plotOptions,
+                      xAxis: {
+                        categories,
+                      },
+                      yAxis: {
+                        minRange: Math.round(deflorestationPastAverage),
+                        title: {
+                          text: 'Desmatamento (km²)'
+                        },
+                        plotLines: [
+                          {
+                            label: { 
+                              text: `Média de ${past.getFullYear()} a ${new Date().getFullYear()}`,
+                              align: 'bottom',
+                            },
+                            color: 'red',
+                            dashStyle: 'dash',
+                            value: deflorestationPastAverage,
+                            width: 2
+                          }
+                        ]
+                      },
+                      series: [
+                        {
+                          name: 'Desmatamento',
+                          data: deflorestation.getPeriodSeries(president.start, president.end)
+                        }
+                      ],
+                      responsive
+                  }}
+                  />
+                  <Sources sources={[ ...deflorestation.getSources() ] }/>
                 </Col>
               </Row>
             </Col>
