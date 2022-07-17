@@ -53,11 +53,11 @@ const President = () => {
 
   pastStart.setFullYear( pastStart.getFullYear() - 12 );
 
-  const pastValues = foodVsSalary.getPeriodValues(
-    pastStart,
-    president.start
-  );
+  const past = new Date();
 
+  past.setFullYear(past.getFullYear() - 16);
+
+  const pastValues = foodVsSalary.getPeriodValues(past, new Date());
   const pastAverage = getAvg(pastValues);
 
   const responsive = {
@@ -155,7 +155,7 @@ const President = () => {
                         plotLines: [
                           {
                             label: { 
-                              text: `Média de ${pastStart.getFullYear()} a ${president.start.getFullYear()}`,
+                              text: `Média de ${past.getFullYear()} a ${new Date().getFullYear()}`,
                               align: 'bottom',
                             },
                             color: 'red',
