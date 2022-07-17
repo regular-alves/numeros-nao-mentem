@@ -11,7 +11,7 @@ const BestAndWorst = (props) => {
         <h2>{`Os melhores e piores de ${slashedMonthYear(from)} à ${slashedMonthYear(to)}`}</h2>
       </Row>
       <Row>
-        <Col lg={6}>
+        <Col xl={6} lg={12}>
           <Row>
             <Col>
               <h3>Números absolutos</h3>
@@ -19,20 +19,20 @@ const BestAndWorst = (props) => {
             </Col>
           </Row>
           <Row>
-            <Col xs={12} sm={6} md={6} lg={12}>
+            <Col sm={6}>
               <Card 
                 {...best.absolute}
                 isGood
               />
             </Col>
-            <Col xs={12} sm={6} md={6} lg={12}>
+            <Col sm={6}>
               <Card 
                 {...worst.absolute}
               />
             </Col>
           </Row>
         </Col>
-        <Col lg={6}>
+        <Col xl={6} lg={12}>
           <Row>
             <Col>
               <h3>Média do mandato</h3>
@@ -40,14 +40,14 @@ const BestAndWorst = (props) => {
             </Col>
           </Row>
           <Row>
-            <Col xs={12} sm={6} md={6} lg={12}>
+            <Col sm={6}>
               <Card 
                 {...best.average}
                 showPeriod
                 isGood
               />
             </Col>
-            <Col xs={12} sm={6} md={6} lg={12}>
+            <Col sm={6}>
               <Card 
                 {...worst.average}
                 showPeriod

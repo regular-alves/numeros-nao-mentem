@@ -130,6 +130,13 @@ const President = () => {
               <Row>
                 <Col>
                   <h2>% de cesta básica sobre salário mínimo</h2>
+                  <p>
+                    A cesta básica de alimentos deve conter itens básicos para o sustento de uma família.<br/>
+                    Normalmente ela contem itens como Arroz, Feijão, Açúcar, Sal, Óleo de soja, Café, e etc.
+                  </p>
+                  <p>
+                    Estamos comparando este índice com o salário mínimo e também a média dos últimos 16 anos.
+                  </p>
                   <Chart
                     options={{
                       chart,

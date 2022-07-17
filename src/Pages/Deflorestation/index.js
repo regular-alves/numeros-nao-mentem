@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Col, Container, Figure, Image, Row } from "react-bootstrap";
+import { Col, Container, Figure, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import Header from "../Header";
+import Footer from "../Footer";
 
 import image from "../../assets/images/rainforest.jpg";
 import IntervalPicker from "../../Components/IntervalPicker";
@@ -145,7 +146,7 @@ const Deflorestation = () => {
           </Col>
         </Row>
         <Row>
-          <Col md={6}>
+          <Col md={6} sm={{ order: 2 }}>
             <p>
               A taxa de desmatamento é realizada pelo PRODES (Monitoramento do Desmatamento da Floresta Amazônica Brasileira por Satélite) 
               através de satélites por corte raso na Amazônia Legal e produz, desde 1988, as taxas anuais de desmatamento na região.
@@ -157,7 +158,7 @@ const Deflorestation = () => {
               Resultados recentes, a partir de análises realizadas com especialistas independentes, indicam nível de precisão próximo a 95%.
             </p>
           </Col>
-          <Col md={6}>
+          <Col md={6} sm={{ order: 1 }}>
             <Figure>
               <Figure.Image
                 src={image}
@@ -233,12 +234,12 @@ const Deflorestation = () => {
                 toDate :
                 worstAvg.value.end
               ),
-              value: `${worstAvg.value.value.toFixed(2)}km²`         
+              value: (<>{worstAvg.value.value.toFixed(2)}<small>km²</small></>)
             },
             absolute: {
               president: presidents.getPeriod(`${worstMoment.year}-01-01 00:00:00`, `${worstMoment.year}-12-31 00:00:00`).shift(),
               date: worstMoment.year,
-              value: `${worstMoment.amount}km²`
+              value: (<>{worstMoment.amount}<small>km²</small></>)
             },
           }}
           best={{
@@ -254,12 +255,12 @@ const Deflorestation = () => {
                 toDate :
                 bestAvg.value.end
               ),
-              value: `${bestAvg.value.value.toFixed(2)}km²`              
+              value: (<>{bestAvg.value.value.toFixed(2)}<small>km²</small></>)
             },
             absolute: {
               president: presidents.getPeriod(`${bestMoment.year}-01-01 00:00:00`, `${bestMoment.year}-12-31 00:00:00`).pop(),
               date: bestMoment.year,
-              value: `${bestMoment.amount}km²`
+              value: (<>{bestMoment.amount}<small>km²</small></>)
             },
           }}
           from={from}
@@ -267,6 +268,8 @@ const Deflorestation = () => {
         />
 
       </Container>
+
+      <Footer />
     </>
   );
 }
