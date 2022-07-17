@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import './style.css';
 import { ReactComponent as Logo } from '../../assets/images/Logo.svg';
 import Presidents from '../../Dtos/Presidents';
@@ -8,6 +8,8 @@ import { MdClose, MdMenu } from 'react-icons/md';
 
 const Header = props => {
 	const [menuOpened, setMenuOpened] = useState(false);
+	const location = useLocation();
+
 	const { transparent } = props;
 	const presidents = new Presidents();
 
@@ -24,17 +26,20 @@ const Header = props => {
 	}
 
 	useEffect(() => {}, [menuOpened]);
+	useEffect(() => {
+		setMenuOpened(false);
+	}, [location]);
 
 	return (
 		<div className={`Header ${transparent ? 'Header--isTransparent' : ''}`}>
 			<Container className="Header-wrapper">
 				<Row>
-					<Col md={3} sm={5} className="Header-content">
+					<Col md={3} sm={5} xs={10} className="Header-content">
 						<Link to="/" className="Header-logo">
 							<Logo alt="Não mentem"/>
 						</Link>
 					</Col>
-					<Col className="Menu-icon" sm={{span: 2, offset: 5}}>
+					<Col className="Menu-icon" sm={{span: 2, offset: 5}} xs={2}>
 						<button className="Menu-button" onClick={e => menuClickHandler(e)}>
 							{
 								menuOpened ? 
