@@ -11,6 +11,7 @@ import Presidents from "../../Dtos/Presidents";
 import { getAvg, getDateInterval, getMaxDate, getMinDate, slashedMonthYear } from "../../utils";
 import Chart from "../../Components/Chart";
 import BestAndWorst from "../../Components/BestAndWorst";
+import Sources from "../../Components/Sources";
 
 const Deflorestation = () => {
   const deflorestation = new DeflorestationTotal();
@@ -128,8 +129,6 @@ const Deflorestation = () => {
     }))
     .sort((a, b) => a.value.value - b.value.value);
 
-  console.log(presidentsAvg);
-
   const worstAvg = presidentsAvg.pop();
   const bestAvg = presidentsAvg.shift();
 
@@ -158,7 +157,7 @@ const Deflorestation = () => {
               Resultados recentes, a partir de análises realizadas com especialistas independentes, indicam nível de precisão próximo a 95%.
             </p>
           </Col>
-          <Col md={6} sm={{ order: 1 }}>
+          <Col lg={{order: 2}} md={6} sm={{ order: 1 }}>
             <Figure>
               <Figure.Image
                 src={image}
@@ -176,7 +175,7 @@ const Deflorestation = () => {
         </Row>
 
         <Row>
-          <Col md={{span: 6, offset: 6}}>
+          <Col lg={{order: 1}} md={{span: 6, offset: 6}}>
             <IntervalPicker 
               to={new Date(to)}
               from={new Date(from)}
@@ -217,6 +216,8 @@ const Deflorestation = () => {
                 responsive
               }}
             />
+
+            <Sources sources={[ ...deflorestation.getSources(), ...presidents.getSources() ]} />
           </Col>
         </Row>
 
