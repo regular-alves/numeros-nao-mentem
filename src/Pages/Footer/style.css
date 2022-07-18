@@ -1,4 +1,63 @@
 .Footer {
-  padding: 15px 0;
-  text-align: center;
+  padding: 40px 0;
+  margin: 40px 0 0 0;
+  background-color: #f7f7f7;
+  border-top: 1px solid #efefef;
+}
+
+.Footer .Footer-bottomContent {
+  margin: 15px 0 0 0;
+  padding: 15px 0 0 0;
+  border-top: 1px solid #efefef;
+}
+
+.Footer .Colaborare {
+  margin: 0 0 20px 0;
+}
+
+.Footer .Sitemap {
+  margin: 0 0 20px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.Footer .Sitemap .Sitemap-item {
+  padding: 10px 0 0 0;
+}
+
+.Footer .Sitemap .Sitemap-item a {
+  text-decoration: none;
+  color: #333;
+}
+
+.Footer .Social {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Footer .Social .Social-item {
+  padding: 0 0 0 15px;
+}
+
+.Footer .Social .Social-item a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+}
+
+@media all and (max-width: 768px) {
+  .Footer .Social {
+    justify-content: flex-start;
+    margin-top: 20px;
+  }
+
+  .Footer .Social .Social-item {
+    padding: 0 15px 0 0;
+  }
 }
