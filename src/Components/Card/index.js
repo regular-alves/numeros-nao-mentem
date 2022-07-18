@@ -2,7 +2,7 @@ import { Col, Image, Row } from "react-bootstrap";
 import './style.css';
 
 const Card = (props) => {
-  const {president, value, date, start, end, isGood, showPeriod} = props;
+  const {president, value, date, isGood} = props;
 
   return (
     <div 

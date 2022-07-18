@@ -9,6 +9,22 @@
   "series": {
     "total": [
       {
+        "year": 2000,
+        "amount": 54254.05
+      },
+      {
+        "year": 2001,
+        "amount": 25714.00627
+      },
+      {
+        "year": 2002,
+        "amount": 30378.5862
+      },
+      {
+        "year": 2003,
+        "amount": 27317.9062
+      },
+      {
         "year": 2004,
         "amount": 27772
       },
@@ -82,6 +98,181 @@
       }
     ],
     "byState": [
+      {
+        "state": "AC",
+        "year": 2003,
+        "amount": 1027.79
+      },
+      {
+        "state": "AM",
+        "year": 2003,
+        "amount": 1608.97
+      },
+      {
+        "state": "AP",
+        "year": 2003,
+        "amount": 423.92
+      },
+      {
+        "state": "MA",
+        "year": 2003,
+        "amount": 1251.13
+      },
+      {
+        "state": "MT",
+        "year": 2003,
+        "amount": 10804.92
+      },
+      {
+        "state": "PA",
+        "year": 2003,
+        "amount": 11270.47
+      },
+      {
+        "state": "RO",
+        "year": 2003,
+        "amount": 3290.14
+      },
+      {
+        "state": "RR",
+        "year": 2003,
+        "amount": 557.92
+      },
+      {
+        "state": "TO",
+        "year": 2003,
+        "amount": 143.31
+      },
+      {
+        "state": "AC",
+        "year": 2002,
+        "amount": 1027.79
+      },
+      {
+        "state": "AM",
+        "year": 2002,
+        "amount": 1608.97
+      },
+      {
+        "state": "AP",
+        "year": 2002,
+        "amount": 423.92
+      },
+      {
+        "state": "MA",
+        "year": 2002,
+        "amount": 1251.13
+      },
+      {
+        "state": "MT",
+        "year": 2002,
+        "amount": 10804.92
+      },
+      {
+        "state": "PA",
+        "year": 2002,
+        "amount": 11270.47
+      },
+      {
+        "state": "RO",
+        "year": 2002,
+        "amount": 3290.14
+      },
+      {
+        "state": "RR",
+        "year": 2002,
+        "amount": 557.92
+      },
+      {
+        "state": "TO",
+        "year": 2002,
+        "amount": 143.31
+      },
+      {
+        "state": "AC",
+        "year": 2001,
+        "amount": 959.41
+      },
+      {
+        "state": "AM",
+        "year": 2001,
+        "amount": 1025.03
+      },
+      {
+        "state": "AP",
+        "year": 2001,
+        "amount": 68.1300
+      },
+      {
+        "state": "MA",
+        "year": 2001,
+        "amount": 1598.880
+      },
+      {
+        "state": "MT",
+        "year": 2001,
+        "amount": 9906.368
+      },
+      {
+        "state": "PA",
+        "year": 2001,
+        "amount": 8662.63
+      },
+      {
+        "state": "RO",
+        "year": 2001,
+        "amount": 2979.60
+      },
+      {
+        "state": "RR",
+        "year": 2001,
+        "amount": 274.49
+      },
+      {
+        "state": "TO",
+        "year": 2001,
+        "amount": 239.46
+      },
+      {
+        "state": "AC",
+        "year": 2000,
+        "amount": 705.80
+      },
+      {
+        "state": "AM",
+        "year": 2000,
+        "amount": 1401.22
+      },
+      {
+        "state": "MA",
+        "year": 2000,
+        "amount": 24244.55
+      },
+      {
+        "state": "MT",
+        "year": 2000,
+        "amount": 7146.96
+      },
+      {
+        "state": "PA",
+        "year": 2000,
+        "amount": 16728.87
+      },
+      {
+        "state": "RO",
+        "year": 2000,
+        "amount": 2766.06
+      },
+      {
+        "state": "RR",
+        "year": 2000,
+        "amount": 980.96
+      },
+      {
+        "state": "TO",
+        "year": 2000,
+        "amount": 279.63
+      },
       {
         "year": 2004,
         "state": "AC",
