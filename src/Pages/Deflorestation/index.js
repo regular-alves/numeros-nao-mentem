@@ -10,7 +10,7 @@ import DeflorestationTotal from "../../Dtos/DeflorestationTotal";
 import Presidents from "../../Dtos/Presidents";
 import { getAvg, getDateInterval, getMaxDate, getMinDate, slashedMonthYear } from "../../utils";
 import Chart from "../../Components/Chart";
-import BestAndWorst from "../../Components/BestAndWorst";
+import Card from "../../Components/Card";
 import Sources from "../../Components/Sources";
 
 const Deflorestation = () => {
@@ -112,25 +112,22 @@ const Deflorestation = () => {
   const worstMoment = orderedDeflorestation.pop();
   const bestMoment = orderedDeflorestation.shift();
 
-  const presidentsAvg = presidents
+  const average = presidents
     .getPeriod(from, to)
     .map(p => ({
-      president: p,
-      value: {
-        value: getAvg(
-          deflorestation.getPeriodValues(
-            p.start < new Date(from) ? new Date(from) : p.start,
-            p.end > to ? to : p.end
-          )
-        ),
+      ...p,
+      average: getAvg(
+        deflorestation.getPeriodValues(
+          p.start < new Date(from) ? new Date(from) : p.start,
+          p.end > to ? to : p.end
+        )
+      ),
+      date: {
         start: p.start < new Date(from) ? new Date(from) : p.start,
         end: p.end > to ? to : p.end
       }
     }))
-    .sort((a, b) => a.value.value - b.value.value);
-
-  const worstAvg = presidentsAvg.pop();
-  const bestAvg = presidentsAvg.shift();
+    .sort((a, b) => a.average - b.average);
 
   return (
     <>
@@ -169,7 +166,12 @@ const Deflorestation = () => {
                 rounded
               />
               <Figure.Caption>
-                <a href="https://www.pexels.com/pt-br/foto/floresta-tropical-cercada-por-nevoeiro-975771/" alt="Kintish" title="Kintish" nofollow="true">
+                <a 
+                  href="https://www.pexels.com/pt-br/foto/floresta-tropical-cercada-por-nevoeiro-975771/" 
+                  alt="David Riaño Cortés" 
+                  title="David Riaño Cortés" 
+                  nofollow="true"
+                >
                   Foto de David Riaño Cortés
                 </a>
               </Figure.Caption>
@@ -214,7 +216,6 @@ const Deflorestation = () => {
                     name: 'Desmatamento',
                     data: deflorestation.getPeriodSeries(from, to)
                   },
-                  
                 ],
                 responsive
               }}
@@ -224,52 +225,31 @@ const Deflorestation = () => {
           </Col>
         </Row>
 
-        <BestAndWorst
-          worst={{
-            average: {     
-              president: worstAvg.president,
-              start: slashedMonthYear(
-                worstAvg.value.start.getFullYear() < fromDate ?
-                fromDate :
-                worstAvg.value.start
-              ),
-              end: slashedMonthYear(
-                worstAvg.value.end.getFullYear() > toDate ?
-                toDate :
-                worstAvg.value.end
-              ),
-              value: (<>{worstAvg.value.value.toFixed(2)}<small>km²</small></>)
-            },
-            absolute: {
-              president: presidents.getPeriod(`${worstMoment.year}-01-01 00:00:00`, `${worstMoment.year}-12-31 00:00:00`).shift(),
-              date: worstMoment.year,
-              value: (<>{worstMoment.amount}<small>km²</small></>)
-            },
-          }}
-          best={{
-            average: {
-              president: bestAvg.president,
-              start: slashedMonthYear(
-                bestAvg.value.start.getFullYear() < fromDate ?
-                fromDate :
-                bestAvg.value.start
-              ),
-              end: slashedMonthYear(
-                bestAvg.value.end.getFullYear() > toDate ?
-                toDate :
-                bestAvg.value.end
-              ),
-              value: (<>{bestAvg.value.value.toFixed(2)}<small>km²</small></>)
-            },
-            absolute: {
-              president: presidents.getPeriod(`${bestMoment.year}-01-01 00:00:00`, `${bestMoment.year}-12-31 00:00:00`).pop(),
-              date: bestMoment.year,
-              value: (<>{bestMoment.amount}<small>km²</small></>)
-            },
-          }}
-          from={from}
-          to={to}
-        />
+        <Row>
+          <Col>
+            <h2>Ranking dos mandatos</h2>
+            <p>
+              Baseado nos valores anteriores, temos a média dos valores do mandato do candidato no período pesquisado, 
+              ranqueados do melhor para o pior.
+            </p>
+          </Col>
+        </Row>
+
+        <Row>
+          {average.map(p => (
+            <Col md={3} sm={6}>
+              <Card 
+                president={p}
+                value={(<>{p.average.toFixed(2)}<small>km²</small></>)}
+                date={{
+                  start: slashedMonthYear(p.start),
+                  end: slashedMonthYear(p.end),
+                }}
+                values
+              />
+            </Col>
+          ))}
+        </Row>
 
       </Container>
 

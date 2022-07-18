@@ -12,17 +12,17 @@
   border-radius: 5px;
 }
 
-.Card .Card-body {
-  /* text-align: center; */
-}
-
 .Card .Card-value {
   font-size: 36px;
-  color: #b90000;
+  font-size: 2rem;
 }
 
 .Card.Card-hasGoodValue .Card-value {
   color: #1b8900;
+}
+
+.Card.Card-hasBadValue .Card-value {  
+  color: #b90000;
 }
 
 .Card .Card-date {
