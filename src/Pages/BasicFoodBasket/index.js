@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../Header";
 import { 
   getDateInterval,
@@ -47,6 +47,16 @@ const BasicFoodBasket = () => {
 
   const [to, setTo] = useState(toDate.toISOString());
   const [from, setFrom] = useState(fromDate.toISOString());
+
+  useEffect(() => {
+    const path = window.location.pathname.replace(/\/([\d-]+)/g, '');
+
+    window.history.replaceState(
+      null,
+      null,
+      `${path}/${from.toString().substring(0, 10)}/${to.toString().substring(0, 10)}`
+    );
+  }, [from, to])
 
   const chart = {
     type: 'areaspline'
@@ -125,13 +135,6 @@ const BasicFoodBasket = () => {
 
   const categories = getDateInterval(from, to).map(d => slashedMonthYear(d));
   const plotBands = presidents.toPlotBands(from, to);
-
-  const foodVsSalaryRegisters = foodVsSalary.getPeriod(from, to);
-  const percentValues = foodVsSalaryRegisters
-    .sort((a, b) => a.value - b.value);
-
-  const worstPercent = percentValues.pop();
-  const bestPercent = percentValues.shift();
 
   const average = presidents
     .getPeriod(from, to)
