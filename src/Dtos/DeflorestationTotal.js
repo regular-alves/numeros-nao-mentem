@@ -61,7 +61,7 @@ class DeflorestationTotal {
   }
 
   getPeriodAverage(f, t) {
-    const v = this.getPeriod(f, t);
+    const v = this.getPeriodValues(f, t);
     
     return getAvg(v);
   }

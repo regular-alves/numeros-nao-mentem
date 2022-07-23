@@ -96,6 +96,10 @@ class Presidents {
   getSources() {
     return this.rawData.sources;
   }
+
+  getRegisters() {
+    return this.dataSet;
+  }
 }
 
 export default Presidents;

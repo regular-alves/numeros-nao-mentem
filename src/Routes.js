@@ -6,6 +6,7 @@ import BasicFoodBasket from "./Pages/BasicFoodBasket";
 import President from "./Pages/President";
 import Deflorestation from "./Pages/Deflorestation";
 import NotFound from "./Pages/NotFound";
+import Compare from "./Pages/Compare";
 
 const AppRoutes = () => {
   return (
@@ -19,6 +20,10 @@ const AppRoutes = () => {
         <Route path="/desmatamento/:from" element={<Deflorestation />} />
         <Route path="/desmatamento/:from/:to" element={<Deflorestation />} />
 
+        <Route path="/comparacao/" element={<Compare />} />
+        <Route path="/comparacao/:slug1" element={<Compare />} />
+        <Route path="/comparacao/:slug1/:slug2" element={<Compare />} />
+        <Route path="/comparacao/:slug1/:slug2/:slug3" element={<Compare />} />
 
         <Route path="/presidentes/:presidentSlug" element={<President />} />
         <Route path="/" element={<Home />} />

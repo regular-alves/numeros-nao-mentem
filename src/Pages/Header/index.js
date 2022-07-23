@@ -72,6 +72,9 @@ const Header = props => {
 									))}
 								</ul>
 							</li>
+							<li className="Header-menuItem">
+								<Link to="/comparacao">Comparar</Link>
+							</li>
 						</ul>
 					</Col>
 				</Row>

@@ -1,0 +1,11 @@
+.Select {
+  padding: 0 15px;
+  line-height: 2.5em;
+  height: 2.5em;
+  display: block;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 3px;
+  width: 100%;
+}
