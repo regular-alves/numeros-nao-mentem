@@ -5,7 +5,9 @@ import {
   slashedMonthYear,
   getMinDate,
   getMaxDate,
-  getAvg
+  getAvg,
+  handleDateParams,
+  isValidDate
 } from '../../utils';
 import Salary from "../../Dtos/Salary";
 import FoodBasket from "../../Dtos/FoodBasket";
@@ -20,6 +22,7 @@ import Footer from "../Footer";
 import { Helmet } from "react-helmet";
 import Sources from "../../Components/Sources";
 import Card from "../../Components/Card";
+import { useParams } from "react-router-dom";
 
 const BasicFoodBasket = () => {
   const salary = new Salary();
@@ -27,20 +30,27 @@ const BasicFoodBasket = () => {
   const presidents = new Presidents();
   const foodVsSalary = new FoodVsSalary();
 
-  let toDate = new Date(
-    new Date().getFullYear(),
-    new Date().getMonth(),
-    30,
-    23,
-    59,
-    59
-  );
+  let {to: toDate, from: fromDate} = useParams();
+  [toDate, fromDate] = handleDateParams([toDate, fromDate]);
   
-  let fromDate = new Date(
-    new Date().getFullYear() - 16,
-    new Date().getMonth(),
-    1
-  );
+  if (!isValidDate(toDate)) {
+    toDate = new Date(
+      new Date().getFullYear(),
+      new Date().getMonth(),
+      30,
+      23,
+      59,
+      59
+    );
+  }
+  
+  if (!isValidDate(fromDate)) {
+    fromDate = new Date(
+      new Date().getFullYear() - 16,
+      new Date().getMonth(),
+      1
+    );
+  }
 
   const startDate = getMaxDate([fromDate, foodBasket.getMinDataDate(), presidents.getMinDataDate()]);
   const endDate = getMinDate([toDate, foodBasket.getMaxDataDate(), presidents.getMaxDataDate()]);
@@ -49,7 +59,11 @@ const BasicFoodBasket = () => {
   const [from, setFrom] = useState(fromDate.toISOString());
 
   useEffect(() => {
-    const path = window.location.pathname.replace(/\/([\d-]+)/g, '');
+    let path = window.location.pathname.replace(/\/([\d-]+)/g, '');
+
+    if(path.substring(path.length - 1) === '/') {
+      path = path.substring(0, path.length - 1);
+    }
 
     window.history.replaceState(
       null,

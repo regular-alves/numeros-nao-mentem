@@ -99,6 +99,11 @@ const getMinDate = params => {
 const getMaxDate = params => {
   return params.sort((a,b) => b - a)[0] || null;
 }
+
+const isValidDate = d => {
+  return d instanceof Date && !isNaN(d);
+}
+
 export {
   strToColor,
   invertByDate,
@@ -109,5 +114,6 @@ export {
   slashedFullDate,
   slashedMonthYear,
   getMinDate,
-  getMaxDate
+  getMaxDate,
+  isValidDate,
 };
