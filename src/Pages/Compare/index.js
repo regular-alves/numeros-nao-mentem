@@ -82,8 +82,8 @@ const Compare = () => {
           selected.length > 0 && 
           selected.map(p => (
             <Col md={3}>
-              <Row className='justify-content-md-center'>
-                <Col md='auto' className='d-sm-none'>
+              <Row className='justify-content-md-center d-none d-md-grid'>
+                <Col md='auto'>
                   <Figure>
                     <Figure.Image
                       src={p.image}
@@ -95,11 +95,11 @@ const Compare = () => {
                   </Figure>
                 </Col>
               </Row>
-              <Row className='mb-sm-2'>
-                <Col sm={8} className='d-sm-grid d-md-none'>
+              <Row className='mb-2'>
+                <Col xs={8} sm={8} className='d-sm-grid d-md-none'>
                   <b>{p.name}</b>
                 </Col>
-                <Col sm={4} md={12} className='d-grid'>
+                <Col xs={4} sm={4} md={12} className='d-grid'>
                   <Button size='sm' variant='danger' onClick={() => removeSelected(p.slug)}>Remover</Button>
                 </Col>
               </Row>
@@ -109,7 +109,7 @@ const Compare = () => {
         {selected.length < 3 && (
           <Col md={3}>
             <Row>
-              <Col sm={8}>
+              <Col xs={8} sm={8}>
                 <Select inputRef={selectPresident}>
                   {
                     available
@@ -120,7 +120,7 @@ const Compare = () => {
                   }
                 </Select>    
               </Col>
-              <Col sm={4} className='d-grid'>
+              <Col xs={4} sm={4} className='d-grid'>
                 <Button onClick={() => addPresident()}>Adicionar</Button>
               </Col>
             </Row>
