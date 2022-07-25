@@ -83,7 +83,7 @@ const Compare = () => {
           selected.map(p => (
             <Col md={3}>
               <Row className='justify-content-md-center'>
-                <Col md='auto'>
+                <Col md='auto' className='d-sm-none'>
                   <Figure>
                     <Figure.Image
                       src={p.image}
@@ -95,8 +95,11 @@ const Compare = () => {
                   </Figure>
                 </Col>
               </Row>
-              <Row>
-                <Col className='d-grid'>
+              <Row className='mb-sm-2'>
+                <Col sm={8} className='d-sm-grid d-md-none'>
+                  <b>{p.name}</b>
+                </Col>
+                <Col sm={4} md={12} className='d-grid'>
                   <Button size='sm' variant='danger' onClick={() => removeSelected(p.slug)}>Remover</Button>
                 </Col>
               </Row>
@@ -147,46 +150,48 @@ const Compare = () => {
       <Row>
         <Col md={3}>&nbsp;</Col>
         {selected.length > 0 && 
-          selected.map(p => (
-            <Col md={3}>
-              <Chart
-                options={{
-                  yAxis: {
-                    minRange: minFoodAxis,
-                    min: 0,
-                    title: {
-                      text: 'Porcentagem (%)'
-                    }
-                  },
-                  xAxis: {
-                    categories: getDateInterval(p.start, p.end).map(d => slashedMonthYear(d)),
-                  },
-                  series: [
-                    {
-                      name: 'Porcentagem',
-                      data: foodVsSalary.getPeriodValues(p.start, p.end),
-                      color: '#2176AE'
-                    }
-                  ],
-                  chart: {
-                    height: '300vw'
-                  }
-                }}
-              />
+          selected.map((p, i) => (
+            <Col md={3} className="mb-3">
+              <Row className="d-sm-grid d-md-none">
+                <Col>
+                  <h4>{p.name}</h4>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <Chart
+                    options={{
+                      yAxis: {
+                        minRange: minFoodAxis,
+                        min: 0,
+                        title: {
+                          text: 'Porcentagem (%)'
+                        }
+                      },
+                      xAxis: {
+                        categories: getDateInterval(p.start, p.end).map(d => slashedMonthYear(d)),
+                      },
+                      series: [
+                        {
+                          name: 'Porcentagem',
+                          data: foodVsSalary.getPeriodValues(p.start, p.end),
+                          color: '#2176AE'
+                        }
+                      ],
+                      chart: {
+                        height: '300vw'
+                      }
+                    }}
+                  />
+                </Col>
+              </Row>
+              <Row>
+                <Col className={`ComparisonValue ${minAvgsFood===avgsFood[i] ? 'ComparisonValue-best' : ''}`}>
+                  <Featured>{avgsFood[i].toFixed(2)}<small>%</small></Featured>
+                </Col>
+              </Row>
             </Col>
           ))}
-      </Row>
-
-      <Row>
-        <Col md={3}>&nbsp;</Col>
-        {
-          selected.length > 0 && 
-          avgsFood.map(val => (
-            <Col className={`ComparisonValue ${minAvgsFood===val ? 'ComparisonValue-best' : ''}`} md={3}>
-              <Featured>{val.toFixed(2)}<small>%</small></Featured>
-            </Col>
-          ))
-        }
       </Row>
 
       <Row>
@@ -217,44 +222,47 @@ const Compare = () => {
       <Row>
         <Col md={3}>&nbsp;</Col>
         {selected.length > 0 && 
-          selected.map(p => (
-            <Col md={3}>
-              <Chart
-                options={{
-                  yAxis: {
-                    minRange: minDeflorestationAxis,
-                    min: 0,
-                    title: {
-                      text: 'Porcentagem (%)'
-                    }
-                  },
-                  xAxis: {
-                    categories: getDateInterval(p.start, p.end).map(d => slashedMonthYear(d)),
-                  },
-                  series: [
-                    {
-                      name: 'Porcentagem',
-                      data: deflorestation.getPeriodSeries(p.start, p.end),
-                    }
-                  ],
-                  chart: {
-                    height: '300vw'
-                  }
-                }}
-              />
+          selected.map((p, i) => (
+            <Col md={3} className="mb-3">
+              <Row className="d-sm-grid d-md-none">
+                <Col>
+                  <h4>{p.name}</h4>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <Chart
+                    options={{
+                      yAxis: {
+                        minRange: minDeflorestationAxis,
+                        min: 0,
+                        title: {
+                          text: 'Porcentagem (%)'
+                        }
+                      },
+                      xAxis: {
+                        categories: getDateInterval(p.start, p.end).map(d => slashedMonthYear(d)),
+                      },
+                      series: [
+                        {
+                          name: 'Porcentagem',
+                          data: deflorestation.getPeriodSeries(p.start, p.end),
+                        }
+                      ],
+                      chart: {
+                        height: '300vw'
+                      }
+                    }}
+                  />
+                </Col>
+              </Row>
+              <Row>
+                <Col className={`ComparisonValue ${minAvgsDeflorestation===avgsDeflorestation[i] ? 'ComparisonValue-best' : ''}`}>
+                  <Featured>{avgsDeflorestation[i].toFixed(2)}<small>km²</small></Featured>
+                </Col>                
+              </Row>
             </Col>
           ))}
-      </Row>
-
-      <Row>
-        <Col md={3}>&nbsp;</Col>
-        {selected.length > 0 && 
-          avgsDeflorestation.map(val => (
-            <Col className={`ComparisonValue ${minAvgsDeflorestation===val ? 'ComparisonValue-best' : ''}`} md={3}>
-              <Featured>{val.toFixed(2)}<small>km²</small></Featured>
-            </Col>
-          ))
-        }
       </Row>
 
       <Row>
