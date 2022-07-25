@@ -1,7 +1,7 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Alert, Button, Col, Container, Figure, Row } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import Chart from '../../Components/Chart';
 import Featured from '../../Components/Featured';
 import Select from '../../Components/Select';
@@ -17,7 +17,7 @@ import Header from '../Header';
 import './style.css';
 
 const Compare = () => {
-  const [selected, setSelected] = useState([]);
+  const routeSeleted = Object.values(useParams());
   const selectPresident = useRef();
 
   const presidents = new Presidents();
@@ -40,17 +40,32 @@ const Compare = () => {
     deflorestation.getMaxDataDate(),
   ];
 
-  console.log({
-    minDates,
-    maxDates
-  });
-
   const available = presidents
     .getPeriod(
       minDates.sort((a,b) => b - a).shift(),
       maxDates.sort((a,b) => b - a).pop(),
     )
     .sort((a, b) => b.start - a.start);
+
+  
+  const [selected, setSelected] = useState(available.filter(a => routeSeleted.includes(a.slug)));
+  let { pathname: location} = useLocation();
+
+  location = location.replace(routeSeleted.join('/'), '');
+
+  useEffect(() => {
+    let path = location;
+
+    if(path.substring(path.length - 1) === '/') {
+      path = path.substring(0, path.length - 1);
+    }
+
+    window.history.replaceState(
+      null,
+      null,
+      `${path}/${selected.map(p => p.slug).join('/')}`
+    );
+  }, [selected, location]);
 
   const removeSelected = (slug) => {
     setSelected(selected.filter(s => s.slug !== slug));
