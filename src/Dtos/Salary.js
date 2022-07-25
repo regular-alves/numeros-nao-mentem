@@ -1,6 +1,6 @@
 
 import dataSet from './DataSets/minimun-salary.json';
-import { getAvg } from '../utils';
+import { getAvg, getMaxDate, getMinDate } from '../utils';
 
 class Salary {
   dataSet = [];
@@ -64,6 +64,20 @@ class Salary {
     if(!values) return null;
 
     return values[0] || 0;
+  }
+
+  getMinDataDate() {
+    return getMinDate(
+      this.dataSet
+        .map(item => item.start)
+    );
+  }
+
+  getMaxDataDate() {
+    return getMaxDate(
+      this.dataSet
+        .map(item => item.start)
+    );
   }
 
   getSources() {

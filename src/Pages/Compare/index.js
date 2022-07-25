@@ -9,6 +9,8 @@ import Sources from '../../Components/Sources';
 import FoodVsSalary from '../../Dtos/FoodVsSalary';
 import Deflorestation from '../../Dtos/DeflorestationTotal';
 import Presidents from '../../Dtos/Presidents';
+import FoodBasket from '../../Dtos/FoodBasket';
+import Salary from '../../Dtos/Salary';
 import { getAvg, getDateInterval, slashedMonthYear } from '../../utils';
 import Footer from '../Footer';
 import Header from '../Header';
@@ -20,9 +22,35 @@ const Compare = () => {
 
   const presidents = new Presidents();
   const foodVsSalary = new FoodVsSalary();
+  const foodBasket = new FoodBasket();
+  const salary = new Salary();
   const deflorestation = new Deflorestation();
 
-  const available = presidents.dataSet.sort((a, b) => b.start - a.start);
+  const minDates = [
+    salary.getMinDataDate(),
+    presidents.getMinDataDate(),
+    foodBasket.getMinDataDate(),
+    deflorestation.getMinDataDate(),
+  ];
+
+  const maxDates = [
+    salary.getMaxDataDate(),
+    presidents.getMaxDataDate(),
+    foodBasket.getMaxDataDate(),
+    deflorestation.getMaxDataDate(),
+  ];
+
+  console.log({
+    minDates,
+    maxDates
+  });
+
+  const available = presidents
+    .getPeriod(
+      minDates.sort((a,b) => b - a).shift(),
+      maxDates.sort((a,b) => b - a).pop(),
+    )
+    .sort((a, b) => b.start - a.start);
 
   const removeSelected = (slug) => {
     setSelected(selected.filter(s => s.slug !== slug));
@@ -186,8 +214,10 @@ const Compare = () => {
                 </Col>
               </Row>
               <Row>
-                <Col className={`ComparisonValue ${minAvgsFood===avgsFood[i] ? 'ComparisonValue-best' : ''}`}>
-                  <Featured>{avgsFood[i].toFixed(2)}<small>%</small></Featured>
+                <Col>
+                  <div className={`ComparisonValue ${minAvgsFood===avgsFood[i] ? 'ComparisonValue-best' : ''}`}>
+                    <Featured>{avgsFood[i].toFixed(2)}<small>%</small></Featured>
+                  </div>
                 </Col>
               </Row>
             </Col>
