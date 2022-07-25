@@ -8,29 +8,36 @@ import image from "../../assets/images/rainforest.jpg";
 import IntervalPicker from "../../Components/IntervalPicker";
 import DeflorestationTotal from "../../Dtos/DeflorestationTotal";
 import Presidents from "../../Dtos/Presidents";
-import { getAvg, getDateInterval, getMaxDate, getMinDate, slashedMonthYear } from "../../utils";
+import { getAvg, getDateInterval, getMaxDate, getMinDate, handleDateParams, isValidDate, slashedMonthYear } from "../../utils";
 import Chart from "../../Components/Chart";
 import Card from "../../Components/Card";
 import Sources from "../../Components/Sources";
+import { useParams } from "react-router-dom";
 
 const Deflorestation = () => {
   const deflorestation = new DeflorestationTotal();
   const presidents = new Presidents();
-
-  let toDate = new Date(
-    new Date().getFullYear(),
-    new Date().getMonth(),
-    30,
-    23,
-    59,
-    59
-  );
+  let {to: toDate, from: fromDate} = useParams();
+  [toDate, fromDate] = handleDateParams([toDate, fromDate]);
   
-  let fromDate = new Date(
-    new Date().getFullYear() - 16,
-    new Date().getMonth(),
-    1
-  );
+  if (!isValidDate(toDate)) {
+    toDate = new Date(
+      new Date().getFullYear(),
+      new Date().getMonth(),
+      30,
+      23,
+      59,
+      59
+    );
+  }
+  
+  if (!isValidDate(fromDate)) {
+    fromDate = new Date(
+      new Date().getFullYear() - 16,
+      new Date().getMonth(),
+      1
+    );
+  }
 
   const startDate = getMaxDate([fromDate, presidents.getMinDataDate(), deflorestation.getMinDataDate()]);
   const endDate = getMinDate([toDate, presidents.getMaxDataDate(), deflorestation.getMaxDataDate()]);
