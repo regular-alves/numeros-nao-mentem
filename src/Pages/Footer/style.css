@@ -25,6 +25,7 @@
   padding: 10px 0 0 0;
 }
 
+.Footer a.Sitemap-item,
 .Footer .Sitemap .Sitemap-item a {
   text-decoration: none;
   color: #333;

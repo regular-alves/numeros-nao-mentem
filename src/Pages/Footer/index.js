@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Presidents from "../../Dtos/Presidents";
 import { BsGithub, BsTwitter } from "react-icons/bs";
 import "./style.css"
+import { GrCompare } from "react-icons/gr";
 
 const Footer = () => {
   const presidents = new Presidents();
@@ -28,7 +29,11 @@ const Footer = () => {
             </ul>
           </Col>
           <Col sm={3}>
-            <h4>Presidentes</h4>
+            <h5>
+              <Link to='/comparacao' className="Sitemap-item">
+                Presidentes <GrCompare />
+              </Link>
+            </h5>
             <ul className="Sitemap">
               {list.map(president => (
                 <li className="Sitemap-item">
