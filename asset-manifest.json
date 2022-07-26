@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.49376b33.css",
-    "main.js": "/static/js/main.a2f50258.js",
+    "main.css": "/static/css/main.4b2f9b87.css",
+    "main.js": "/static/js/main.d1eaafb0.js",
     "static/js/787.16174cb1.chunk.js": "/static/js/787.16174cb1.chunk.js",
     "static/media/Header.jpeg": "/static/media/Header.dd64a1c52a1892482020.jpeg",
     "static/media/rainforest.jpg": "/static/media/rainforest.2fa1af7b3b890e3a776b.jpg",
     "static/media/food.jpg": "/static/media/food.4393a3b881cbbeab0619.jpg",
+    "static/media/food-insecurity.jpg": "/static/media/food-insecurity.8549b07e5349dd115d9b.jpg",
     "index.html": "/index.html",
     "static/media/Logo.svg": "/static/media/Logo.fcfff38e3f0a384d07fe498c3a8748ba.svg",
-    "main.49376b33.css.map": "/static/css/main.49376b33.css.map",
-    "main.a2f50258.js.map": "/static/js/main.a2f50258.js.map",
+    "main.4b2f9b87.css.map": "/static/css/main.4b2f9b87.css.map",
+    "main.d1eaafb0.js.map": "/static/js/main.d1eaafb0.js.map",
     "787.16174cb1.chunk.js.map": "/static/js/787.16174cb1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.49376b33.css",
-    "static/js/main.a2f50258.js"
+    "static/css/main.4b2f9b87.css",
+    "static/js/main.d1eaafb0.js"
   ]
 }
