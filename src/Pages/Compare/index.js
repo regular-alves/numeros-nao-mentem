@@ -3,7 +3,6 @@ import { Alert, Button, Col, Container, Figure, Row } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import Chart from '../../Components/Chart';
-import Featured from '../../Components/Featured';
 import Select from '../../Components/Select';
 import Sources from '../../Components/Sources';
 import FoodVsSalary from '../../Dtos/FoodVsSalary';
@@ -15,6 +14,7 @@ import { getAvg, getDateInterval, slashedMonthYear } from '../../utils';
 import Footer from '../Footer';
 import Header from '../Header';
 import './style.css';
+import FoodInsecurity from '../../Dtos/FoodInsecurity';
 
 const Compare = () => {
   const routeSeleted = Object.values(useParams());
@@ -25,6 +25,7 @@ const Compare = () => {
   const foodBasket = new FoodBasket();
   const salary = new Salary();
   const deflorestation = new Deflorestation();
+  const foodInsecurity = new FoodInsecurity();
 
   const minDates = [
     salary.getMinDataDate(),
@@ -82,9 +83,14 @@ const Compare = () => {
     setSelected(newValues);
   }
 
+  let minInsecurityAxis = [];
+
   const presidentList = selected.map(p => {
     let foodVsSalarySeries = foodVsSalary.getPeriodValues(p.start, p.end).filter(v => !!(v));
     let deflorestationSeries = deflorestation.getPeriodSeries(p.start, p.end).filter(v => !!(v));
+    let foodInsecuritySeries = foodInsecurity.getPeriodSeries(p.start, p.end).filter(v => !!(v));
+
+    minInsecurityAxis.push(...foodInsecuritySeries);
 
     return {
       ...p,
@@ -102,8 +108,17 @@ const Compare = () => {
         variation: ((deflorestationSeries[deflorestationSeries.length - 1] / deflorestationSeries[0]) - 1) * 100,
         average: getAvg(deflorestationSeries)
       },
+      foodInsecurity: {
+        series: foodInsecuritySeries,
+        start: foodInsecuritySeries[0],
+        end: foodInsecuritySeries[foodInsecuritySeries.length - 1],
+        variation: foodInsecuritySeries[foodInsecuritySeries.length - 1] - foodInsecuritySeries[0],
+        average: getAvg(foodInsecuritySeries)
+      },
     }
   });
+
+  minInsecurityAxis = minInsecurityAxis.sort((a, b) => b - a).shift();
 
   const minFoodAxis = selected
     .map(s => foodVsSalary.getPeriodValues(s.start, s.end).sort((a, b) => b - a).shift())
@@ -196,7 +211,13 @@ const Compare = () => {
 
       <Row>
         <Col>
-          <h3>Cesta básica</h3>
+          <h3>Alimentação</h3>
+        </Col>
+      </Row>
+
+      <Row>
+        <Col>
+          <h4>Cesta básica</h4>
           <p>
             A cesta básica de alimentos deve conter itens básicos para o sustento de uma família.<br/>
             Normalmente ela contem itens como Arroz, Feijão, Açúcar, Sal, Óleo de soja, Café, e etc.
@@ -253,9 +274,13 @@ const Compare = () => {
                   <Col>
                     <p>
                       No mandato de <b>{p.knownAs}</b>: <br/>
-                      A cesta básica teve custo médio de <b>{p.foodVsSalary.average.toFixed(2)}<small>%</small></b>.<br/>
-                      Se compararmos o começo e o final do mandato, o custo <b>{p.foodVsSalary.variation > 0 ? 'aumentou ' : 'diminuiu '} 
-                      {Math.abs(p.foodVsSalary.variation).toFixed(2)}<small>%</small></b>.                      
+                      A cesta básica teve custo médio de <b>{p.foodVsSalary.average.toFixed(2)}<small>%</small></b> do salário mínimo.<br/>
+                      Se compararmos o começo e o final do mandato, o custo 
+                      <b>
+                        { !p.foodVsSalary.variation && ' se manteve igual' }
+                        { p.foodVsSalary.variation!==0 && p.foodVsSalary.variation > 0 ? ' aumentou ' : ' diminuiu ' }
+                        { p.foodVsSalary.variation!==0 && (<> {Math.abs(p.foodVsSalary.variation).toFixed(2)}<small>%</small></>) }
+                      </b>.
                     </p>
                   </Col> 
               </Row>
@@ -267,6 +292,88 @@ const Compare = () => {
       <Row>
         <Col>
           <Sources sources={[...foodVsSalary.getSources()]}/>
+        </Col>
+      </Row>
+
+      <Row>
+        <Col>
+          <h4>Insegurança Alimentar</h4>
+          <p>
+            A insegurança alimentar é definida quando um indivíduo não possui acesso a alimentos suficientes para satisfazer as suas necessidades, 
+            conforme a definição da Organização das Nações Unidas para Alimentação e Agricultura (FAO).
+          </p>
+          <Link to='/inseguranca-alimentar'>
+            <Button variant='light'>Ver relatório completo</Button>
+          </Link>
+        </Col>
+      </Row>
+
+      <Row>
+        <Col md={3}>&nbsp;</Col>
+        {presidentList.length > 0 && 
+          presidentList.map(p => {
+            const isBest = [...presidentList]
+              .sort((a,b) => a.foodVsSalary.average - b.foodVsSalary.average)[0].slug === p.slug;
+
+            console.log({name: p.name, start: p.start, end: p.end})
+
+            return (
+            <Col md={3} className="mb-3">
+              <Row className="d-sm-grid d-md-none">
+                <Col>
+                  <h4>{p.name}</h4>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <Chart
+                    options={{
+                      yAxis: {
+                        minRange: minInsecurityAxis,
+                        min: 0,
+                        title: {
+                          text: 'Total da população (%)'
+                        }
+                      },
+                      xAxis: {
+                        categories: getDateInterval(p.start, p.end).map(d => slashedMonthYear(d)),
+                      },
+                      series: [
+                        {
+                          name: 'Porcentagem',
+                          data: p.foodInsecurity.series,
+                          color: '#2176AE'
+                        }
+                      ],
+                      chart: {
+                        height: '300vw'
+                      }
+                    }}
+                  />
+                </Col>
+              </Row>
+              <Row>
+                  <Col>
+                    <p>
+                      No mandato de <b>{p.knownAs}</b>: <br/>
+                      O percentual médio da população em insegurança alimentar foi de <b>{p.foodInsecurity.average.toFixed(2)}<small>%</small></b>.<br/>
+                      Se compararmos o começo e o final do mandato, o percentual
+                      <b>
+                        { !p.foodInsecurity.variation && ' se manteve igual' }
+                        { p.foodInsecurity.variation!==0 && p.foodInsecurity.variation > 0 ? ' aumentou ' : ' diminuiu ' }
+                        { p.foodInsecurity.variation!==0 && (<> {Math.abs(p.foodInsecurity.variation).toFixed(2)}<small>%</small></>) }
+                      </b>.
+                    </p>
+                  </Col> 
+              </Row>
+            </Col>
+          )})
+        }
+      </Row>
+
+      <Row>
+        <Col>
+          <Sources sources={[...foodInsecurity.getSources()]}/>
         </Col>
       </Row>
 
@@ -335,8 +442,12 @@ const Compare = () => {
                     <p>
                       No mandato de <b>{p.knownAs}</b>: <br/>
                       A média de desmatamento foi de <b>{p.deflorestation.average.toFixed(2)}<small>km²</small></b>.<br/>
-                      Se compararmos o começo e o final do mandato, o custo <b>{p.deflorestation.variation > 0 ? 'aumentou ' : 'diminuiu '} 
-                      {Math.abs(p.deflorestation.variation).toFixed(2)}<small>%</small></b>.                      
+                      Se compararmos o começo e o final do mandato, o desmatamento
+                      <b>
+                        { !p.deflorestation.variation && ' se manteve igual' }
+                        { p.deflorestation.variation!==0 && p.deflorestation.variation > 0 ? ' aumentou ' : ' diminuiu ' }
+                        { p.deflorestation.variation!==0 && (<> {Math.abs(p.deflorestation.variation).toFixed(2)}<small>%</small></>) }
+                      </b>.                
                     </p>
                   </Col>                
                 </Row>

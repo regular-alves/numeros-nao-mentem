@@ -7,6 +7,7 @@ import President from "./Pages/President";
 import Deflorestation from "./Pages/Deflorestation";
 import NotFound from "./Pages/NotFound";
 import Compare from "./Pages/Compare";
+import FoodInsecurity from "./Pages/FoodInsecurity";
 
 const AppRoutes = () => {
   return (
@@ -24,6 +25,10 @@ const AppRoutes = () => {
         <Route path="/comparacao/:slug1" element={<Compare />} />
         <Route path="/comparacao/:slug1/:slug2" element={<Compare />} />
         <Route path="/comparacao/:slug1/:slug2/:slug3" element={<Compare />} />
+
+        <Route path="/inseguranca-alimentar" element={<FoodInsecurity />} />
+        <Route path="/inseguranca-alimentar/:from" element={<FoodInsecurity />} />
+        <Route path="/inseguranca-alimentar/:from/:to" element={<FoodInsecurity />} />
 
         <Route path="/presidentes/:presidentSlug" element={<President />} />
         <Route path="/" element={<Home />} />

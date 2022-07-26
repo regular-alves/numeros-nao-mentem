@@ -53,8 +53,8 @@ class DeflorestationTotal {
     const current = from;
 
     while (current <= to ) {
-      current.setMonth( current.getMonth() + 1 );
       series.push(this.getYearValue(current.getFullYear()) || 0);
+      current.setMonth( current.getMonth() + 1 );
     }
 
     return series;

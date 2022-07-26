@@ -54,8 +54,16 @@ const Header = props => {
 						sm={12}
 					>
 						<ul className="Header-menu">
-							<li className="Header-menuItem">
-								<Link to="/cesta-basica">Cesta Básica</Link>
+							<li className="Header-menuItem Header-hasSubmenu">
+								<b>Alimentação</b>
+								<ul className="Header-menu">
+									<li className="Header-menuItem">
+										<Link to="/cesta-basica">Cesta Básica</Link>
+									</li>
+									<li className="Header-menuItem">
+										<Link to="/inseguranca-alimentar">Insegurança Alimentar</Link>
+									</li>
+								</ul>
 							</li>
 							<li className="Header-menuItem">
 								<Link to="/desmatamento">Desmatamento</Link>

@@ -55,8 +55,8 @@ const BasicFoodBasket = () => {
   const startDate = getMaxDate([fromDate, foodBasket.getMinDataDate(), presidents.getMinDataDate()]);
   const endDate = getMinDate([toDate, foodBasket.getMaxDataDate(), presidents.getMaxDataDate()]);
 
-  const [to, setTo] = useState(toDate.toISOString());
-  const [from, setFrom] = useState(fromDate.toISOString());
+  const [to, setTo] = useState(startDate.toISOString());
+  const [from, setFrom] = useState(endDate.toISOString());
 
   useEffect(() => {
     let path = window.location.pathname.replace(/\/([\d-]+)/g, '');

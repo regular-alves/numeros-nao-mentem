@@ -1,8 +1,8 @@
 
-import dataSet from './DataSets/minimun-salary.json';
+import dataSet from './DataSets/food-insecurity.json';
 import { getAvg, getMaxDate, getMinDate } from '../utils';
 
-class Salary {
+class FoodInsecurity {
   dataSet = [];
   rawData = [];
 
@@ -11,7 +11,8 @@ class Salary {
     this.dataSet = dataSet.data
       .map(z => ({
         ...z,
-        start: new Date(z.start)
+        start: new Date(z.start),
+        end: new Date(z.end)
       }))
       .sort((a,b) => a.start - b.start);
 
@@ -25,7 +26,7 @@ class Salary {
     if ( f > t ) return [];
 
     return this.dataSet
-      .filter(x => x.end >= from || x.start < to)
+      .filter(x => x.end >= from && x.start <= to)
       .sort((a, b) => (a.start - b.start) * s);
   }
 
@@ -76,7 +77,7 @@ class Salary {
   getMaxDataDate() {
     return getMaxDate(
       this.dataSet
-        .map(item => item.start)
+        .map(item => item.end)
     );
   }
 
@@ -85,4 +86,4 @@ class Salary {
   }
 }
 
-export default Salary;
+export default FoodInsecurity;
