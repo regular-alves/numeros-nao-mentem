@@ -1,4 +1,4 @@
-const strToColor = str => {
+export function strToColor(str) {
   let hash = 0;
 
   for (let i = 0; i < str.length; i++) {
@@ -13,30 +13,32 @@ const strToColor = str => {
   }
 
   return color;
-}
+};
 
-const invertByDate = (a, b) => {
+export function invertByDate(a, b) {
   const dateA = new Date(a.start);
   const dateB = new Date(b.start);
   return dateB - dateA;
 };
 
-const getColors = () => [
-  '5F7161',
-  '6D8B74',
-  'EFEAD8',
-  'D0C9C0',
-  '354259',
-  'CDC2AE',
-  'ECE5C7',
-  'C2DED1',
-  'EEE4AB',
-  'E5CB9F',
-  '99C4C8',
-  '68A7AD'
-];
+export function getColors(){
+  return [
+    '5F7161',
+    '6D8B74',
+    'EFEAD8',
+    'D0C9C0',
+    '354259',
+    'CDC2AE',
+    'ECE5C7',
+    'C2DED1',
+    'EEE4AB',
+    'E5CB9F',
+    '99C4C8',
+    '68A7AD'
+  ];
+};
 
-const getAvg = ( v ) => {
+export function getAvg( v ) {
   let value = 0;
   const cleaned = v.filter( n => !!n );
 
@@ -45,15 +47,15 @@ const getAvg = ( v ) => {
   } catch (error) {}
 
   return value;
-}
+};
 
-const handleDateParams = (dts) => {
+export function handleDateParams(dts) {
   if(!Array.isArray(dts)) dts = [dts];
 
   return dts.map(d => typeof d === Date ? d : new Date(`${d}`));
-}
+};
 
-const getDateInterval = (f, t) => {
+export function getDateInterval(f, t) {
   const [from, to] = handleDateParams([f, t]);
   
   const values = [];
@@ -65,9 +67,9 @@ const getDateInterval = (f, t) => {
   }
 
   return values;
-}
+};
 
-const slashedFullDate = d => {
+export function slashedFullDate(d) {
   try {
     const day = `${d.getDate()}`.padStart(2, 0);
     const month = `${d.getMonth() + 1}`.padStart(2, 0);
@@ -77,9 +79,9 @@ const slashedFullDate = d => {
   } catch (error) {
     console.log({error, type: typeof d});
   }
-}
+};
 
-const slashedMonthYear = d => {
+export function slashedMonthYear(d) {
   const [date] = handleDateParams(d);
 
   try {
@@ -90,30 +92,16 @@ const slashedMonthYear = d => {
   } catch (error) {
     console.log({error, type: typeof d});
   }
-}
+};
 
-const getMinDate = params => {
+export function getMinDate(params) {
   return params.sort((a,b) => a - b)[0] || null;
-}
+};
 
-const getMaxDate = params => {
+export function getMaxDate(params) {
   return params.sort((a,b) => b - a)[0] || null;
-}
+};
 
-const isValidDate = d => {
+export function isValidDate(d) {
   return d instanceof Date && !isNaN(d);
-}
-
-export {
-  strToColor,
-  invertByDate,
-  getColors,
-  getAvg,
-  handleDateParams,
-  getDateInterval,
-  slashedFullDate,
-  slashedMonthYear,
-  getMinDate,
-  getMaxDate,
-  isValidDate,
 };

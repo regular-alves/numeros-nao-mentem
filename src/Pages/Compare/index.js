@@ -82,6 +82,29 @@ const Compare = () => {
     setSelected(newValues);
   }
 
+  const presidentList = selected.map(p => {
+    let foodVsSalarySeries = foodVsSalary.getPeriodValues(p.start, p.end).filter(v => !!(v));
+    let deflorestationSeries = deflorestation.getPeriodSeries(p.start, p.end).filter(v => !!(v));
+
+    return {
+      ...p,
+      foodVsSalary: {
+        series: foodVsSalarySeries,
+        start: foodVsSalarySeries[0],
+        end: foodVsSalarySeries[foodVsSalarySeries.length - 1],
+        variation: ((foodVsSalarySeries[foodVsSalarySeries.length - 1] / foodVsSalarySeries[0]) - 1) * 100,
+        average: getAvg(foodVsSalarySeries)
+      },
+      deflorestation: {
+        series: deflorestationSeries,
+        start: deflorestationSeries[0],
+        end: deflorestationSeries[deflorestationSeries.length - 1],
+        variation: ((deflorestationSeries[deflorestationSeries.length - 1] / deflorestationSeries[0]) - 1) * 100,
+        average: getAvg(deflorestationSeries)
+      },
+    }
+  });
+
   const minFoodAxis = selected
     .map(s => foodVsSalary.getPeriodValues(s.start, s.end).sort((a, b) => b - a).shift())
     .sort((a,b) => b - a)
@@ -91,12 +114,6 @@ const Compare = () => {
     .map(s => deflorestation.getPeriodValues(s.start, s.end).sort((a, b) => b - a).shift())
     .sort((a,b) => b - a)
     .shift();
-
-  const avgsFood = selected.map(p => getAvg(foodVsSalary.getPeriodValues(p.start, p.end)));
-  const minAvgsFood = [...avgsFood].sort((a, b) => b - a).pop();
-
-  const avgsDeflorestation = selected.map(p => deflorestation.getPeriodAverage(p.start, p.end));
-  const minAvgsDeflorestation = [...avgsDeflorestation].sort((a, b) => b - a).pop();
 
   return (
     <>
@@ -192,8 +209,12 @@ const Compare = () => {
 
       <Row>
         <Col md={3}>&nbsp;</Col>
-        {selected.length > 0 && 
-          selected.map((p, i) => (
+        {presidentList.length > 0 && 
+          presidentList.map(p => {
+            const isBest = [...presidentList]
+              .sort((a,b) => a.foodVsSalary.average - b.foodVsSalary.average)[0].slug === p.slug;
+
+            return (
             <Col md={3} className="mb-3">
               <Row className="d-sm-grid d-md-none">
                 <Col>
@@ -217,7 +238,7 @@ const Compare = () => {
                       series: [
                         {
                           name: 'Porcentagem',
-                          data: foodVsSalary.getPeriodValues(p.start, p.end),
+                          data: p.foodVsSalary.series,
                           color: '#2176AE'
                         }
                       ],
@@ -229,14 +250,18 @@ const Compare = () => {
                 </Col>
               </Row>
               <Row>
-                <Col>
-                  <div className={`ComparisonValue ${minAvgsFood===avgsFood[i] ? 'ComparisonValue-best' : ''}`}>
-                    <Featured>{avgsFood[i].toFixed(2)}<small>%</small></Featured>
-                  </div>
-                </Col>
+                  <Col>
+                    <p>
+                      No mandato de <b>{p.knownAs}</b>: <br/>
+                      A cesta básica teve custo médio de <b>{p.foodVsSalary.average.toFixed(2)}<small>%</small></b>.<br/>
+                      Se compararmos o começo e o final do mandato, o custo <b>{p.foodVsSalary.variation > 0 ? 'aumentou ' : 'diminuiu '} 
+                      {Math.abs(p.foodVsSalary.variation).toFixed(2)}<small>%</small></b>.                      
+                    </p>
+                  </Col> 
               </Row>
             </Col>
-          ))}
+          )})
+        }
       </Row>
 
       <Row>
@@ -266,48 +291,58 @@ const Compare = () => {
 
       <Row>
         <Col md={3}>&nbsp;</Col>
-        {selected.length > 0 && 
-          selected.map((p, i) => (
-            <Col md={3} className="mb-3">
-              <Row className="d-sm-grid d-md-none">
-                <Col>
-                  <h4>{p.name}</h4>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <Chart
-                    options={{
-                      yAxis: {
-                        minRange: minDeflorestationAxis,
-                        min: 0,
-                        title: {
-                          text: 'Porcentagem (%)'
+        {presidentList.length > 0 && 
+          presidentList.map((p, i) => {
+            const isBest = [...presidentList]
+              .sort((a,b) => a.deflorestation.average - b.deflorestation.average)[0].slug === p.slug;
+
+            return (
+              <Col md={3} className="mb-3">
+                <Row className="d-sm-grid d-md-none">
+                  <Col>
+                    <h4>{p.name}</h4>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <Chart
+                      options={{
+                        yAxis: {
+                          minRange: minDeflorestationAxis,
+                          min: 0,
+                          title: {
+                            text: 'Porcentagem (%)'
+                          }
+                        },
+                        xAxis: {
+                          categories: getDateInterval(p.start, p.end).map(d => slashedMonthYear(d)),
+                        },
+                        series: [
+                          {
+                            name: 'Porcentagem',
+                            data: p.deflorestation.series,
+                          }
+                        ],
+                        chart: {
+                          height: '300vw'
                         }
-                      },
-                      xAxis: {
-                        categories: getDateInterval(p.start, p.end).map(d => slashedMonthYear(d)),
-                      },
-                      series: [
-                        {
-                          name: 'Porcentagem',
-                          data: deflorestation.getPeriodSeries(p.start, p.end),
-                        }
-                      ],
-                      chart: {
-                        height: '300vw'
-                      }
-                    }}
-                  />
-                </Col>
-              </Row>
-              <Row>
-                <Col className={`ComparisonValue ${minAvgsDeflorestation===avgsDeflorestation[i] ? 'ComparisonValue-best' : ''}`}>
-                  <Featured>{avgsDeflorestation[i].toFixed(2)}<small>km²</small></Featured>
-                </Col>                
-              </Row>
-            </Col>
-          ))}
+                      }}
+                    />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <p>
+                      No mandato de <b>{p.knownAs}</b>: <br/>
+                      A média de desmatamento foi de <b>{p.deflorestation.average.toFixed(2)}<small>km²</small></b>.<br/>
+                      Se compararmos o começo e o final do mandato, o custo <b>{p.deflorestation.variation > 0 ? 'aumentou ' : 'diminuiu '} 
+                      {Math.abs(p.deflorestation.variation).toFixed(2)}<small>%</small></b>.                      
+                    </p>
+                  </Col>                
+                </Row>
+              </Col>
+            )})
+          }
       </Row>
 
       <Row>
