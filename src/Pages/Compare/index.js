@@ -16,7 +16,7 @@ import Header from '../Header';
 import './style.css';
 import FoodInsecurity from '../../Dtos/FoodInsecurity';
 
-const Compare = () => {
+function Compare() {
   const routeSeleted = Object.values(useParams());
   const selectPresident = useRef();
 
@@ -89,13 +89,13 @@ const Compare = () => {
   let minInsecurityAxis = [];
 
   const presidentList = selected.map((p) => {
-    let foodVsSalarySeries = foodVsSalary
+    const foodVsSalarySeries = foodVsSalary
       .getPeriodValues(p.start, p.end)
       .filter((v) => !!v);
-    let deflorestationSeries = deflorestation
+    const deflorestationSeries = deflorestation
       .getPeriodSeries(p.start, p.end)
       .filter((v) => !!v);
-    let foodInsecuritySeries = foodInsecurity
+    const foodInsecuritySeries = foodInsecurity
       .getPeriodSeries(p.start, p.end)
       .filter((v) => !!v);
 
@@ -164,7 +164,7 @@ const Compare = () => {
       <Helmet>
         <title>
           {selected.length > 1
-            ? selected.map((p) => p.name).join(' vs. ') + ' | '
+            ? `${selected.map((p) => p.name).join(' vs. ')} | `
             : ''}
           Comparador | Números não mentem
         </title>
@@ -187,7 +187,7 @@ const Compare = () => {
         </Row>
 
         <Row className="align-items-end">
-          <Col md={3}></Col>
+          <Col md={3} />
           {selected.length > 0 &&
             selected.map((p) => (
               <Col md={3}>
@@ -273,82 +273,75 @@ const Compare = () => {
         <Row>
           <Col md={3}>&nbsp;</Col>
           {presidentList.length > 0 &&
-            presidentList.map((p) => {
-              const isBest =
-                [...presidentList].sort(
-                  (a, b) => a.foodVsSalary.average - b.foodVsSalary.average,
-                )[0].slug === p.slug;
-
-              return (
-                <Col md={3} className="mb-3">
-                  <Row className="d-sm-grid d-md-none">
-                    <Col>
-                      <h4>{p.name}</h4>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col>
-                      <Chart
-                        options={{
-                          yAxis: {
-                            minRange: minFoodAxis,
-                            min: 0,
-                            title: {
-                              text: 'Porcentagem (%)',
-                            },
+            presidentList.map((p) => (
+              <Col md={3} className="mb-3">
+                <Row className="d-sm-grid d-md-none">
+                  <Col>
+                    <h4>{p.name}</h4>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <Chart
+                      options={{
+                        yAxis: {
+                          minRange: minFoodAxis,
+                          min: 0,
+                          title: {
+                            text: 'Porcentagem (%)',
                           },
-                          xAxis: {
-                            categories: getDateInterval(p.start, p.end).map(
-                              (d) => slashedMonthYear(d),
-                            ),
+                        },
+                        xAxis: {
+                          categories: getDateInterval(p.start, p.end).map((d) =>
+                            slashedMonthYear(d),
+                          ),
+                        },
+                        series: [
+                          {
+                            name: 'Porcentagem',
+                            data: p.foodVsSalary.series,
+                            color: '#2176AE',
                           },
-                          series: [
-                            {
-                              name: 'Porcentagem',
-                              data: p.foodVsSalary.series,
-                              color: '#2176AE',
-                            },
-                          ],
-                          chart: {
-                            height: '300vw',
-                          },
-                        }}
-                      />
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col>
-                      <p>
-                        No mandato de <b>{p.knownAs}</b>: <br />A cesta básica
-                        teve custo médio de{' '}
-                        <b>
-                          {p.foodVsSalary.average.toFixed(2)}
-                          <small>%</small>
-                        </b>{' '}
-                        do salário mínimo.
-                        <br />
-                        Se compararmos o começo e o final do mandato, o custo
-                        <b>
-                          {!p.foodVsSalary.variation && ' se manteve igual'}
-                          {p.foodVsSalary.variation !== 0 &&
-                          p.foodVsSalary.variation > 0
-                            ? ' aumentou '
-                            : ' diminuiu '}
-                          {p.foodVsSalary.variation !== 0 && (
-                            <>
-                              {' '}
-                              {Math.abs(p.foodVsSalary.variation).toFixed(2)}
-                              <small>%</small>
-                            </>
-                          )}
-                        </b>
-                        .
-                      </p>
-                    </Col>
-                  </Row>
-                </Col>
-              );
-            })}
+                        ],
+                        chart: {
+                          height: '300vw',
+                        },
+                      }}
+                    />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <p>
+                      No mandato de <b>{p.knownAs}</b>: <br />A cesta básica
+                      teve custo médio de{' '}
+                      <b>
+                        {p.foodVsSalary.average.toFixed(2)}
+                        <small>%</small>
+                      </b>{' '}
+                      do salário mínimo.
+                      <br />
+                      Se compararmos o começo e o final do mandato, o custo
+                      <b>
+                        {!p.foodVsSalary.variation && ' se manteve igual'}
+                        {p.foodVsSalary.variation !== 0 &&
+                        p.foodVsSalary.variation > 0
+                          ? ' aumentou '
+                          : ' diminuiu '}
+                        {p.foodVsSalary.variation !== 0 && (
+                          <>
+                            {' '}
+                            {Math.abs(p.foodVsSalary.variation).toFixed(2)}
+                            <small>%</small>
+                          </>
+                        )}
+                      </b>
+                      .
+                    </p>
+                  </Col>
+                </Row>
+              </Col>
+            ))}
         </Row>
 
         <Row>
@@ -375,84 +368,74 @@ const Compare = () => {
         <Row>
           <Col md={3}>&nbsp;</Col>
           {presidentList.length > 0 &&
-            presidentList.map((p) => {
-              const isBest =
-                [...presidentList].sort(
-                  (a, b) => a.foodVsSalary.average - b.foodVsSalary.average,
-                )[0].slug === p.slug;
-
-              console.log({ name: p.name, start: p.start, end: p.end });
-
-              return (
-                <Col md={3} className="mb-3">
-                  <Row className="d-sm-grid d-md-none">
-                    <Col>
-                      <h4>{p.name}</h4>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col>
-                      <Chart
-                        options={{
-                          yAxis: {
-                            minRange: minInsecurityAxis,
-                            min: 0,
-                            title: {
-                              text: 'Total da população (%)',
-                            },
+            presidentList.map((p) => (
+              <Col md={3} className="mb-3">
+                <Row className="d-sm-grid d-md-none">
+                  <Col>
+                    <h4>{p.name}</h4>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <Chart
+                      options={{
+                        yAxis: {
+                          minRange: minInsecurityAxis,
+                          min: 0,
+                          title: {
+                            text: 'Total da população (%)',
                           },
-                          xAxis: {
-                            categories: getDateInterval(p.start, p.end).map(
-                              (d) => slashedMonthYear(d),
-                            ),
+                        },
+                        xAxis: {
+                          categories: getDateInterval(p.start, p.end).map((d) =>
+                            slashedMonthYear(d),
+                          ),
+                        },
+                        series: [
+                          {
+                            name: 'Porcentagem',
+                            data: p.foodInsecurity.series,
+                            color: '#2176AE',
                           },
-                          series: [
-                            {
-                              name: 'Porcentagem',
-                              data: p.foodInsecurity.series,
-                              color: '#2176AE',
-                            },
-                          ],
-                          chart: {
-                            height: '300vw',
-                          },
-                        }}
-                      />
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col>
-                      <p>
-                        No mandato de <b>{p.knownAs}</b>: <br />O percentual
-                        médio da população em insegurança alimentar foi de{' '}
-                        <b>
-                          {p.foodInsecurity.average.toFixed(2)}
-                          <small>%</small>
-                        </b>
-                        .<br />
-                        Se compararmos o começo e o final do mandato, o
-                        percentual
-                        <b>
-                          {!p.foodInsecurity.variation && ' se manteve igual'}
-                          {p.foodInsecurity.variation !== 0 &&
-                          p.foodInsecurity.variation > 0
-                            ? ' aumentou '
-                            : ' diminuiu '}
-                          {p.foodInsecurity.variation !== 0 && (
-                            <>
-                              {' '}
-                              {Math.abs(p.foodInsecurity.variation).toFixed(2)}
-                              <small>%</small>
-                            </>
-                          )}
-                        </b>
-                        .
-                      </p>
-                    </Col>
-                  </Row>
-                </Col>
-              );
-            })}
+                        ],
+                        chart: {
+                          height: '300vw',
+                        },
+                      }}
+                    />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <p>
+                      No mandato de <b>{p.knownAs}</b>: <br />O percentual médio
+                      da população em insegurança alimentar foi de{' '}
+                      <b>
+                        {p.foodInsecurity.average.toFixed(2)}
+                        <small>%</small>
+                      </b>
+                      .<br />
+                      Se compararmos o começo e o final do mandato, o percentual
+                      <b>
+                        {!p.foodInsecurity.variation && ' se manteve igual'}
+                        {p.foodInsecurity.variation !== 0 &&
+                        p.foodInsecurity.variation > 0
+                          ? ' aumentou '
+                          : ' diminuiu '}
+                        {p.foodInsecurity.variation !== 0 && (
+                          <>
+                            {' '}
+                            {Math.abs(p.foodInsecurity.variation).toFixed(2)}
+                            <small>%</small>
+                          </>
+                        )}
+                      </b>
+                      .
+                    </p>
+                  </Col>
+                </Row>
+              </Col>
+            ))}
         </Row>
 
         <Row>
@@ -485,81 +468,74 @@ const Compare = () => {
         <Row>
           <Col md={3}>&nbsp;</Col>
           {presidentList.length > 0 &&
-            presidentList.map((p, i) => {
-              const isBest =
-                [...presidentList].sort(
-                  (a, b) => a.deflorestation.average - b.deflorestation.average,
-                )[0].slug === p.slug;
-
-              return (
-                <Col md={3} className="mb-3">
-                  <Row className="d-sm-grid d-md-none">
-                    <Col>
-                      <h4>{p.name}</h4>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col>
-                      <Chart
-                        options={{
-                          yAxis: {
-                            minRange: minDeflorestationAxis,
-                            min: 0,
-                            title: {
-                              text: 'Porcentagem (%)',
-                            },
+            presidentList.map((p) => (
+              <Col md={3} className="mb-3">
+                <Row className="d-sm-grid d-md-none">
+                  <Col>
+                    <h4>{p.name}</h4>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <Chart
+                      options={{
+                        yAxis: {
+                          minRange: minDeflorestationAxis,
+                          min: 0,
+                          title: {
+                            text: 'Porcentagem (%)',
                           },
-                          xAxis: {
-                            categories: getDateInterval(p.start, p.end).map(
-                              (d) => slashedMonthYear(d),
-                            ),
+                        },
+                        xAxis: {
+                          categories: getDateInterval(p.start, p.end).map((d) =>
+                            slashedMonthYear(d),
+                          ),
+                        },
+                        series: [
+                          {
+                            name: 'Porcentagem',
+                            data: p.deflorestation.series,
                           },
-                          series: [
-                            {
-                              name: 'Porcentagem',
-                              data: p.deflorestation.series,
-                            },
-                          ],
-                          chart: {
-                            height: '300vw',
-                          },
-                        }}
-                      />
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col>
-                      <p>
-                        No mandato de <b>{p.knownAs}</b>: <br />A média de
-                        desmatamento foi de{' '}
-                        <b>
-                          {p.deflorestation.average.toFixed(2)}
-                          <small>km²</small>
-                        </b>
-                        .<br />
-                        Se compararmos o começo e o final do mandato, o
-                        desmatamento
-                        <b>
-                          {!p.deflorestation.variation && ' se manteve igual'}
-                          {p.deflorestation.variation !== 0 &&
-                          p.deflorestation.variation > 0
-                            ? ' aumentou '
-                            : ' diminuiu '}
-                          {p.deflorestation.variation !== 0 && (
-                            <>
-                              {' '}
-                              {Math.abs(p.deflorestation.variation).toFixed(2)}
-                              <small>%</small>
-                            </>
-                          )}
-                        </b>
-                        .
-                      </p>
-                    </Col>
-                  </Row>
-                </Col>
-              );
-            })}
+                        ],
+                        chart: {
+                          height: '300vw',
+                        },
+                      }}
+                    />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <p>
+                      No mandato de <b>{p.knownAs}</b>: <br />A média de
+                      desmatamento foi de{' '}
+                      <b>
+                        {p.deflorestation.average.toFixed(2)}
+                        <small>km²</small>
+                      </b>
+                      .<br />
+                      Se compararmos o começo e o final do mandato, o
+                      desmatamento
+                      <b>
+                        {!p.deflorestation.variation && ' se manteve igual'}
+                        {p.deflorestation.variation !== 0 &&
+                        p.deflorestation.variation > 0
+                          ? ' aumentou '
+                          : ' diminuiu '}
+                        {p.deflorestation.variation !== 0 && (
+                          <>
+                            {' '}
+                            {Math.abs(p.deflorestation.variation).toFixed(2)}
+                            <small>%</small>
+                          </>
+                        )}
+                      </b>
+                      .
+                    </p>
+                  </Col>
+                </Row>
+              </Col>
+            ))}
         </Row>
 
         <Row>
@@ -571,6 +547,6 @@ const Compare = () => {
       <Footer />
     </>
   );
-};
+}
 
 export default Compare;

@@ -1,8 +1,9 @@
-import dataSet from './DataSets/basic-basket.json';
-import { getAvg, getMinDate, getMaxDate } from '../utils';
+import dataSet from './DataSets/basic-basket-average.json';
+import { getMinDate, getMaxDate, handleDateParams } from '../utils';
 
 class FoodBasket {
   dataSet = [];
+
   rawData = [];
 
   constructor() {
@@ -13,51 +14,22 @@ class FoodBasket {
         date: new Date(z.date),
       }))
       .sort((a, b) => a.date - b.date);
-
-    return this;
   }
 
-  getPeriodRegisters(f, t, s = 1) {
-    const from = typeof f === Date ? f : new Date(f);
-    const to = typeof t === Date ? t : new Date(t);
+  getPeriod(f, t, s = 1) {
+    const [from, to] = handleDateParams([f, t]);
 
     if (f > t) return [];
 
     return this.dataSet
-      .filter((x) => x.date >= from && x.date < to)
+      .filter((register) => register.date >= from && register.date <= to)
       .sort((a, b) => (a.date - b.date) * s);
   }
 
-  getPeriod(f, t, s = 1) {
-    const values = {};
-    const registers = this.getPeriodRegisters(f, t, s);
-
-    registers.map((v) => {
-      const index =
-        v.date.getFullYear() + '-' + v.date.getMonth() + '-' + v.date.getDate();
-
-      if (values[index] === undefined) {
-        values[index] = {
-          date: v.date,
-          values: [],
-        };
-      }
-
-      values[index].values.push(v.value);
-
-      return v;
-    });
-
-    return Object.values(values)
-      .map((yd) => ({
-        date: yd.date,
-        value: getAvg(yd.values),
-      }))
-      .filter((v) => !!v.value);
-  }
-
   getPeriodValues(f, t) {
-    return this.getPeriod(f, t).map((v) => v.value);
+    const [from, to] = handleDateParams([f, t]);
+
+    return this.getPeriod(from, to).map((v) => v.value);
   }
 
   getMinDataDate() {

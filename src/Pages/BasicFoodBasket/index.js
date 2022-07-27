@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../Header';
+import { Col, Container, Figure, Row } from 'react-bootstrap';
+import { Helmet } from 'react-helmet';
+import { useParams } from 'react-router-dom';
 import {
   getDateInterval,
   slashedMonthYear,
@@ -9,6 +11,7 @@ import {
   handleDateParams,
   isValidDate,
 } from '../../utils';
+
 import Salary from '../../Dtos/Salary';
 import FoodBasket from '../../Dtos/FoodBasket';
 import Presidents from '../../Dtos/Presidents';
@@ -17,14 +20,12 @@ import image from '../../assets/images/food.jpg';
 import Chart from '../../Components/Chart';
 import IntervalPicker from '../../Components/IntervalPicker';
 import FoodVsSalary from '../../Dtos/FoodVsSalary';
-import { Col, Container, Figure, Row } from 'react-bootstrap';
+import Header from '../Header';
 import Footer from '../Footer';
-import { Helmet } from 'react-helmet';
 import Sources from '../../Components/Sources';
 import Card from '../../Components/Card';
-import { useParams } from 'react-router-dom';
 
-const BasicFoodBasket = () => {
+function BasicFoodBasket() {
   const salary = new Salary();
   const foodBasket = new FoodBasket();
   const presidents = new Presidents();
@@ -57,14 +58,15 @@ const BasicFoodBasket = () => {
     foodBasket.getMinDataDate(),
     presidents.getMinDataDate(),
   ]);
+
   const endDate = getMinDate([
     toDate,
     foodBasket.getMaxDataDate(),
     presidents.getMaxDataDate(),
   ]);
 
-  const [to, setTo] = useState(startDate.toISOString());
-  const [from, setFrom] = useState(endDate.toISOString());
+  const [to, setTo] = useState(endDate.toISOString());
+  const [from, setFrom] = useState(startDate.toISOString());
 
   useEffect(() => {
     let path = window.location.pathname.replace(/\/([\d-]+)/g, '');
@@ -81,81 +83,6 @@ const BasicFoodBasket = () => {
         .substring(0, 10)}`,
     );
   }, [from, to]);
-
-  const chart = {
-    type: 'areaspline',
-  };
-
-  const title = {
-    text: null,
-  };
-
-  const legend = {
-    layout: 'vertical',
-    align: 'left',
-    verticalAlign: 'top',
-    x: 150,
-    y: 100,
-    floating: true,
-    borderWidth: 1,
-  };
-
-  const tooltip = {
-    shared: true,
-    // valuePrefix: 'R$'
-  };
-
-  const credits = {
-    enabled: false,
-  };
-
-  const plotOptions = {
-    areaspline: {
-      fillOpacity: 0.5,
-    },
-  };
-
-  const responsive = {
-    rules: [
-      {
-        condition: {
-          maxWidth: 900,
-        },
-        chartOptions: {
-          legend: {
-            align: 'center',
-            verticalAlign: 'bottom',
-            layout: 'horizontal',
-          },
-          yAxis: {
-            labels: {
-              align: 'left',
-              x: 0,
-              y: 0,
-            },
-            subtitle: {
-              text: null,
-            },
-          },
-        },
-      },
-      {
-        condition: {
-          maxWidth: 768,
-        },
-        chartOptions: {
-          yAxis: {
-            title: {
-              text: null,
-            },
-          },
-          subtitle: {
-            text: null,
-          },
-        },
-      },
-    ],
-  };
 
   const categories = getDateInterval(from, to).map((d) => slashedMonthYear(d));
   const plotBands = presidents.toPlotBands(from, to);
@@ -215,7 +142,10 @@ const BasicFoodBasket = () => {
               <Figure.Image src={image} alt="Mercado" title="Mercado" rounded />
               <Figure.Caption>
                 <a
-                  href="https://www.pexels.com/pt-br/foto/abundancia-fartura-riqueza-anonimo-7129141/"
+                  href={
+                    'https://www.pexels.com/pt-br/' +
+                    'foto/abundancia-fartura-riqueza-anonimo-7129141/'
+                  }
                   alt="Michael Burrows"
                   title="Michael Burrows"
                   nofollow="true"
@@ -250,12 +180,6 @@ const BasicFoodBasket = () => {
           <Col>
             <Chart
               options={{
-                chart,
-                title,
-                legend,
-                tooltip,
-                credits,
-                plotOptions,
                 xAxis: {
                   categories,
                   plotBands,
@@ -277,7 +201,6 @@ const BasicFoodBasket = () => {
                     color: '#33673B',
                   },
                 ],
-                responsive,
               }}
             />
             <Sources
@@ -300,12 +223,6 @@ const BasicFoodBasket = () => {
           <Col>
             <Chart
               options={{
-                chart,
-                title,
-                legend,
-                tooltip,
-                credits,
-                plotOptions,
                 xAxis: {
                   categories,
                   plotBands,
@@ -322,7 +239,6 @@ const BasicFoodBasket = () => {
                     color: '#2176AE',
                   },
                 ],
-                responsive,
               }}
             />
             <Sources
@@ -370,6 +286,6 @@ const BasicFoodBasket = () => {
       <Footer />
     </>
   );
-};
+}
 
 export default BasicFoodBasket;
