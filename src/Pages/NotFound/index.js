@@ -1,7 +1,7 @@
-import React from "react";
-import Header from "../Header";
-import Footer from "../Footer";
-import { Col, Container, Row } from "react-bootstrap";
+import React from 'react';
+import Header from '../Header';
+import Footer from '../Footer';
+import { Col, Container, Row } from 'react-bootstrap';
 
 const NotFound = () => {
   return (
@@ -12,7 +12,8 @@ const NotFound = () => {
           <Col>
             <h1>Página não encontrada</h1>
             <p>
-              A página procurada não está disponível ou não existe.<br/>
+              A página procurada não está disponível ou não existe.
+              <br />
               Certifique-se do endereço digitado, ou tente novamente mais tarde.
             </p>
           </Col>
@@ -21,6 +22,6 @@ const NotFound = () => {
       <Footer />
     </div>
   );
-}
+};
 
 export default NotFound;

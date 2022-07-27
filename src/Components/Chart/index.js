@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 import Highcharts from 'highcharts';
-import HighchartsReact from "highcharts-react-official";
+import HighchartsReact from 'highcharts-react-official';
 import './style.css';
 
-const Chart = props => {
+const Chart = (props) => {
   const defaultOptions = {
     title: {
-      text: null
+      text: null,
     },
     chart: {
       type: 'area',
@@ -25,7 +25,7 @@ const Chart = props => {
       // valuePrefix: 'R$'
     },
     credits: {
-      enabled: false
+      enabled: false,
     },
     plotOptions: {
       areaspline: {
@@ -36,62 +36,62 @@ const Chart = props => {
           marker: false,
         },
         connectNulls: true,
-        cursor: "pointer",
+        cursor: 'pointer',
         pointInterval: undefined,
-        pointStart: undefined
-      }
-    },  
+        pointStart: undefined,
+      },
+    },
     responsive: {
       rules: [
         {
           condition: {
-            maxWidth: 900
+            maxWidth: 900,
           },
           chartOptions: {
             legend: {
               align: 'center',
               verticalAlign: 'bottom',
-              layout: 'horizontal'
+              layout: 'horizontal',
             },
             yAxis: {
               labels: {
                 align: 'left',
                 x: 0,
-                y: 0
+                y: 0,
               },
               subtitle: {
-                text: null
+                text: null,
               },
             },
-          }
+          },
         },
         {
           condition: {
-            maxWidth: 768
+            maxWidth: 768,
           },
           chartOptions: {
             yAxis: {
               title: {
-                text: null
-              }
+                text: null,
+              },
             },
             subtitle: {
-              text: null
-            }
-          }
-        }
-      ]
-    }
+              text: null,
+            },
+          },
+        },
+      ],
+    },
   };
 
   return (
     <div className="Chart">
       <HighchartsReact
-        highcharts={ Highcharts }
+        highcharts={Highcharts}
         options={Object.assign(defaultOptions, props.options)}
       />
     </div>
   );
-}
+};
 
 export default Chart;

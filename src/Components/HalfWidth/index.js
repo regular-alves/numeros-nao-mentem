@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import './style.css';
 
 const HalfWidth = (props) => {
@@ -6,11 +6,9 @@ const HalfWidth = (props) => {
 
   return (
     <div className={`HalfWidth ${pullRight ? `HalfWidth--pullRight` : ''}`}>
-      <div className="HalfWidth-content">
-        { props.children }
-      </div>
+      <div className="HalfWidth-content">{props.children}</div>
     </div>
   );
-}
+};
 
 export default HalfWidth;

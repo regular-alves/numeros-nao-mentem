@@ -1,28 +1,28 @@
-import React, { useEffect, useState } from "react";
-import Header from "../Header";
-import { 
+import React, { useEffect, useState } from 'react';
+import Header from '../Header';
+import {
   getDateInterval,
   slashedMonthYear,
   getMinDate,
   getMaxDate,
   getAvg,
   handleDateParams,
-  isValidDate
+  isValidDate,
 } from '../../utils';
-import Salary from "../../Dtos/Salary";
-import FoodBasket from "../../Dtos/FoodBasket";
-import Presidents from "../../Dtos/Presidents";
+import Salary from '../../Dtos/Salary';
+import FoodBasket from '../../Dtos/FoodBasket';
+import Presidents from '../../Dtos/Presidents';
 
-import image from "../../assets/images/food.jpg";
-import Chart from "../../Components/Chart";
-import IntervalPicker from "../../Components/IntervalPicker";
-import FoodVsSalary from "../../Dtos/FoodVsSalary";
-import { Col, Container, Figure, Row } from "react-bootstrap";
-import Footer from "../Footer";
-import { Helmet } from "react-helmet";
-import Sources from "../../Components/Sources";
-import Card from "../../Components/Card";
-import { useParams } from "react-router-dom";
+import image from '../../assets/images/food.jpg';
+import Chart from '../../Components/Chart';
+import IntervalPicker from '../../Components/IntervalPicker';
+import FoodVsSalary from '../../Dtos/FoodVsSalary';
+import { Col, Container, Figure, Row } from 'react-bootstrap';
+import Footer from '../Footer';
+import { Helmet } from 'react-helmet';
+import Sources from '../../Components/Sources';
+import Card from '../../Components/Card';
+import { useParams } from 'react-router-dom';
 
 const BasicFoodBasket = () => {
   const salary = new Salary();
@@ -30,9 +30,9 @@ const BasicFoodBasket = () => {
   const presidents = new Presidents();
   const foodVsSalary = new FoodVsSalary();
 
-  let {to: toDate, from: fromDate} = useParams();
+  let { to: toDate, from: fromDate } = useParams();
   [toDate, fromDate] = handleDateParams([toDate, fromDate]);
-  
+
   if (!isValidDate(toDate)) {
     toDate = new Date(
       new Date().getFullYear(),
@@ -40,20 +40,28 @@ const BasicFoodBasket = () => {
       30,
       23,
       59,
-      59
+      59,
     );
   }
-  
+
   if (!isValidDate(fromDate)) {
     fromDate = new Date(
       new Date().getFullYear() - 16,
       new Date().getMonth(),
-      1
+      1,
     );
   }
 
-  const startDate = getMaxDate([fromDate, foodBasket.getMinDataDate(), presidents.getMinDataDate()]);
-  const endDate = getMinDate([toDate, foodBasket.getMaxDataDate(), presidents.getMaxDataDate()]);
+  const startDate = getMaxDate([
+    fromDate,
+    foodBasket.getMinDataDate(),
+    presidents.getMinDataDate(),
+  ]);
+  const endDate = getMinDate([
+    toDate,
+    foodBasket.getMaxDataDate(),
+    presidents.getMaxDataDate(),
+  ]);
 
   const [to, setTo] = useState(startDate.toISOString());
   const [from, setFrom] = useState(endDate.toISOString());
@@ -61,25 +69,27 @@ const BasicFoodBasket = () => {
   useEffect(() => {
     let path = window.location.pathname.replace(/\/([\d-]+)/g, '');
 
-    if(path.substring(path.length - 1) === '/') {
+    if (path.substring(path.length - 1) === '/') {
       path = path.substring(0, path.length - 1);
     }
 
     window.history.replaceState(
       null,
       null,
-      `${path}/${from.toString().substring(0, 10)}/${to.toString().substring(0, 10)}`
+      `${path}/${from.toString().substring(0, 10)}/${to
+        .toString()
+        .substring(0, 10)}`,
     );
-  }, [from, to])
+  }, [from, to]);
 
   const chart = {
-    type: 'areaspline'
+    type: 'areaspline',
   };
 
   const title = {
-    text: null
+    text: null,
   };
-  
+
   const legend = {
     layout: 'vertical',
     align: 'left',
@@ -96,12 +106,12 @@ const BasicFoodBasket = () => {
   };
 
   const credits = {
-      enabled: false
+    enabled: false,
   };
 
   const plotOptions = {
     areaspline: {
-      fillOpacity: 0.5
+      fillOpacity: 0.5,
     },
   };
 
@@ -109,57 +119,57 @@ const BasicFoodBasket = () => {
     rules: [
       {
         condition: {
-          maxWidth: 900
+          maxWidth: 900,
         },
         chartOptions: {
           legend: {
             align: 'center',
             verticalAlign: 'bottom',
-            layout: 'horizontal'
+            layout: 'horizontal',
           },
           yAxis: {
             labels: {
               align: 'left',
               x: 0,
-              y: 0
+              y: 0,
             },
             subtitle: {
-              text: null
+              text: null,
             },
           },
-        }
+        },
       },
       {
         condition: {
-          maxWidth: 768
+          maxWidth: 768,
         },
         chartOptions: {
           yAxis: {
             title: {
-              text: null
-            }
+              text: null,
+            },
           },
           subtitle: {
-            text: null
-          }
-        }
-      }
-    ]
+            text: null,
+          },
+        },
+      },
+    ],
   };
 
-  const categories = getDateInterval(from, to).map(d => slashedMonthYear(d));
+  const categories = getDateInterval(from, to).map((d) => slashedMonthYear(d));
   const plotBands = presidents.toPlotBands(from, to);
 
   const average = presidents
     .getPeriod(from, to)
-    .map(p => ({
+    .map((p) => ({
       ...p,
       average: getAvg(
         foodVsSalary.getPeriodValues(
           p.start < new Date(from) ? new Date(from) : p.start,
-          p.end > to ? to : p.end
-        )
-      )
+          p.end > to ? to : p.end,
+        ),
+      ),
     }))
     .sort((a, b) => a.average - b.average);
 
@@ -179,37 +189,35 @@ const BasicFoodBasket = () => {
         <Row>
           <Col md={6} sm={{ order: 2 }}>
             <p>
-              A cesta básica de alimentos deve conter itens básicos para o sustento de uma família.<br/>
-              Normalmente ela contem itens como Arroz, Feijão, Açúcar, Sal, Óleo de soja, Café, e etc.
+              A cesta básica de alimentos deve conter itens básicos para o
+              sustento de uma família.
+              <br />
+              Normalmente ela contem itens como Arroz, Feijão, Açúcar, Sal, Óleo
+              de soja, Café, e etc.
             </p>
             <p>
-              Utilizaremos como índice de comparação o Salário mínimo e o cálculo para esta análise é 
-              <b style={{color: '#33673B'}}> [Valor da cesta básica]</b> ÷
-              <b style={{color: '#CC3F0C'}}> [Valor do salário mínimo]</b> =
-              <b style={{color: '#2176AE'}}> [Percentual]</b>.
+              Utilizaremos como índice de comparação o Salário mínimo e o
+              cálculo para esta análise é
+              <b style={{ color: '#33673B' }}> [Valor da cesta básica]</b> ÷
+              <b style={{ color: '#CC3F0C' }}> [Valor do salário mínimo]</b> =
+              <b style={{ color: '#2176AE' }}> [Percentual]</b>.
             </p>
             <p>
-              Por exemplo: Se o <b style={{color: '#CC3F0C'}}>salário mínimo é de R$980,00</b> e a 
-              <b style={{color: '#33673B'}}> cesta básica custa R$470,00</b>, o percentual do valor é 
-              <b style={{color: '#2176AE'}}> 47,95%</b>
+              Por exemplo: Se o{' '}
+              <b style={{ color: '#CC3F0C' }}>salário mínimo é de R$980,00</b> e
+              a<b style={{ color: '#33673B' }}> cesta básica custa R$470,00</b>,
+              o percentual do valor é<b style={{ color: '#2176AE' }}> 47,95%</b>
             </p>
-            <pre>
-              470,00 ÷ 980,00 = 47,95%
-            </pre>
+            <pre>470,00 ÷ 980,00 = 47,95%</pre>
           </Col>
-          <Col lg={{order: 2}} md={6} sm={{ order: 1 }}>
+          <Col lg={{ order: 2 }} md={6} sm={{ order: 1 }}>
             <Figure>
-              <Figure.Image
-                src={image}
-                alt="Mercado"
-                title="Mercado"
-                rounded
-              />
+              <Figure.Image src={image} alt="Mercado" title="Mercado" rounded />
               <Figure.Caption>
-                <a 
-                  href="https://www.pexels.com/pt-br/foto/abundancia-fartura-riqueza-anonimo-7129141/" 
-                  alt="Michael Burrows" 
-                  title="Michael Burrows" 
+                <a
+                  href="https://www.pexels.com/pt-br/foto/abundancia-fartura-riqueza-anonimo-7129141/"
+                  alt="Michael Burrows"
+                  title="Michael Burrows"
                   nofollow="true"
                 >
                   Foto de Michael Burrows
@@ -218,10 +226,10 @@ const BasicFoodBasket = () => {
             </Figure>
           </Col>
         </Row>
-        
+
         <Row>
-          <Col md={{span: 6, offset: 6}}>
-            <IntervalPicker 
+          <Col md={{ span: 6, offset: 6 }}>
+            <IntervalPicker
               to={new Date(to)}
               from={new Date(from)}
               min={startDate}
@@ -250,12 +258,12 @@ const BasicFoodBasket = () => {
                 plotOptions,
                 xAxis: {
                   categories,
-                  plotBands
+                  plotBands,
                 },
                 yAxis: {
                   title: {
-                    text: 'Valor (R$)'
-                  }
+                    text: 'Valor (R$)',
+                  },
                 },
                 series: [
                   {
@@ -267,21 +275,21 @@ const BasicFoodBasket = () => {
                     name: 'Valor médio - Cesta básica',
                     data: foodBasket.getPeriodValues(from, to),
                     color: '#33673B',
-                  }
+                  },
                 ],
-                responsive
+                responsive,
               }}
             />
-            <Sources sources={
-              [
-                ...foodBasket.getSources(), 
-                ...salary.getSources(), 
-                ...presidents.getSources()
-              ]
-            }/>
+            <Sources
+              sources={[
+                ...foodBasket.getSources(),
+                ...salary.getSources(),
+                ...presidents.getSources(),
+              ]}
+            />
           </Col>
         </Row>
-        
+
         <Row>
           <Col>
             <h2>% Salário Mínimo vs. Cesta básica</h2>
@@ -300,30 +308,30 @@ const BasicFoodBasket = () => {
                 plotOptions,
                 xAxis: {
                   categories,
-                  plotBands
+                  plotBands,
                 },
                 yAxis: {
                   title: {
-                    text: 'Porcentagem (%)'
-                  }
+                    text: 'Porcentagem (%)',
+                  },
                 },
                 series: [
                   {
                     name: 'Porcentagem',
                     data: foodVsSalary.getPeriodValues(from, to),
-                    color: '#2176AE'
-                  }
+                    color: '#2176AE',
+                  },
                 ],
-                responsive
-            }}
+                responsive,
+              }}
             />
-            <Sources sources={
-              [
-                ...foodBasket.getSources(), 
-                ...salary.getSources(), 
-                ...presidents.getSources()
-              ]
-            }/>
+            <Sources
+              sources={[
+                ...foodBasket.getSources(),
+                ...salary.getSources(),
+                ...presidents.getSources(),
+              ]}
+            />
           </Col>
         </Row>
 
@@ -331,18 +339,24 @@ const BasicFoodBasket = () => {
           <Col>
             <h2>Ranking dos mandatos</h2>
             <p>
-              Baseado nos valores anteriores, temos a média dos valores do mandato do candidato no período pesquisado, 
-              ranqueados do melhor para o pior.
+              Baseado nos valores anteriores, temos a média dos valores do
+              mandato do candidato no período pesquisado, ranqueados do melhor
+              para o pior.
             </p>
           </Col>
         </Row>
 
         <Row>
-          {average.map(p => (
+          {average.map((p) => (
             <Col md={3} sm={6}>
-              <Card 
+              <Card
                 president={p}
-                value={(<>{p.average.toFixed(2)}<small>%</small></>)}
+                value={
+                  <>
+                    {p.average.toFixed(2)}
+                    <small>%</small>
+                  </>
+                }
                 date={{
                   start: slashedMonthYear(p.start),
                   end: slashedMonthYear(p.end),
@@ -352,11 +366,10 @@ const BasicFoodBasket = () => {
             </Col>
           ))}
         </Row>
-        
       </Container>
       <Footer />
     </>
   );
-}
+};
 
 export default BasicFoodBasket;

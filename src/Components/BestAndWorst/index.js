@@ -1,6 +1,6 @@
-import { Col, Row } from "react-bootstrap";
-import { slashedMonthYear } from "../../utils";
-import Card from "../Card";
+import { Col, Row } from 'react-bootstrap';
+import { slashedMonthYear } from '../../utils';
+import Card from '../Card';
 
 const BestAndWorst = (props) => {
   const { from, to, best, worst } = props;
@@ -8,7 +8,9 @@ const BestAndWorst = (props) => {
   return (
     <>
       <Row>
-        <h2>{`Os melhores e piores de ${slashedMonthYear(from)} à ${slashedMonthYear(to)}`}</h2>
+        <h2>{`Os melhores e piores de ${slashedMonthYear(
+          from,
+        )} à ${slashedMonthYear(to)}`}</h2>
       </Row>
       <Row>
         <Col xl={6} lg={12}>
@@ -20,15 +22,10 @@ const BestAndWorst = (props) => {
           </Row>
           <Row>
             <Col sm={6}>
-              <Card 
-                {...best.absolute}
-                isGood
-              />
+              <Card {...best.absolute} isGood />
             </Col>
             <Col sm={6}>
-              <Card 
-                {...worst.absolute}
-              />
+              <Card {...worst.absolute} />
             </Col>
           </Row>
         </Col>
@@ -36,28 +33,23 @@ const BestAndWorst = (props) => {
           <Row>
             <Col>
               <h3>Média do mandato</h3>
-              <p>Média dos valores do mandato do candidato no período pesquisado.</p>
+              <p>
+                Média dos valores do mandato do candidato no período pesquisado.
+              </p>
             </Col>
           </Row>
           <Row>
             <Col sm={6}>
-              <Card 
-                {...best.average}
-                showPeriod
-                isGood
-              />
+              <Card {...best.average} showPeriod isGood />
             </Col>
             <Col sm={6}>
-              <Card 
-                {...worst.average}
-                showPeriod
-              />
+              <Card {...worst.average} showPeriod />
             </Col>
           </Row>
         </Col>
       </Row>
     </>
   );
-}
+};
 
 export default BestAndWorst;

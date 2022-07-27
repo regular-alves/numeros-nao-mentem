@@ -4,24 +4,24 @@ export function strToColor(str) {
   for (let i = 0; i < str.length; i++) {
     hash = str.charCodeAt(i) + ((hash << 5) - hash);
   }
-  
+
   let color = '#';
 
   for (let j = 0; j < 3; j++) {
     let value = (hash >> (j * 8)) & 255;
-    color += (value.toString(16)).substr(-2);
+    color += value.toString(16).substr(-2);
   }
 
   return color;
-};
+}
 
 export function invertByDate(a, b) {
   const dateA = new Date(a.start);
   const dateB = new Date(b.start);
   return dateB - dateA;
-};
+}
 
-export function getColors(){
+export function getColors() {
   return [
     '5F7161',
     '6D8B74',
@@ -34,40 +34,40 @@ export function getColors(){
     'EEE4AB',
     'E5CB9F',
     '99C4C8',
-    '68A7AD'
+    '68A7AD',
   ];
-};
+}
 
-export function getAvg( v ) {
+export function getAvg(v) {
   let value = 0;
-  const cleaned = v.filter( n => !!n );
+  const cleaned = v.filter((n) => !!n);
 
   try {
     value = cleaned.reduce((a, b) => a + b) / cleaned.length;
   } catch (error) {}
 
   return value;
-};
+}
 
 export function handleDateParams(dts) {
-  if(!Array.isArray(dts)) dts = [dts];
+  if (!Array.isArray(dts)) dts = [dts];
 
-  return dts.map(d => typeof d === Date ? d : new Date(`${d}`));
-};
+  return dts.map((d) => (typeof d === Date ? d : new Date(`${d}`)));
+}
 
 export function getDateInterval(f, t) {
   const [from, to] = handleDateParams([f, t]);
-  
+
   const values = [];
   const current = from;
 
-  while( current < to ) {
+  while (current < to) {
     values.push(new Date(current.toString()));
     current.setMonth(current.getMonth() + 1);
   }
 
   return values;
-};
+}
 
 export function slashedFullDate(d) {
   try {
@@ -77,9 +77,9 @@ export function slashedFullDate(d) {
 
     return `${day}/${month}/${year}`;
   } catch (error) {
-    console.log({error, type: typeof d});
+    console.log({ error, type: typeof d });
   }
-};
+}
 
 export function slashedMonthYear(d) {
   const [date] = handleDateParams(d);
@@ -90,18 +90,18 @@ export function slashedMonthYear(d) {
 
     return `${month}/${year}`;
   } catch (error) {
-    console.log({error, type: typeof d});
+    console.log({ error, type: typeof d });
   }
-};
+}
 
 export function getMinDate(params) {
-  return params.sort((a,b) => a - b)[0] || null;
-};
+  return params.sort((a, b) => a - b)[0] || null;
+}
 
 export function getMaxDate(params) {
-  return params.sort((a,b) => b - a)[0] || null;
-};
+  return params.sort((a, b) => b - a)[0] || null;
+}
 
 export function isValidDate(d) {
   return d instanceof Date && !isNaN(d);
-};
+}

@@ -1,30 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-body, html {
-	height: 100%;
-	min-height: 100%;
-	margin: 0;
-	font-size: 16px;
-	font-family: 'Lato', sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	background-color: #fdfdfd;
-	/* background: linear-gradient(0deg, #ddd, #efefef); */
+body,
+html {
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fdfdfd;
+  /* background: linear-gradient(0deg, #ddd, #efefef); */
 }
 
 img {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 a {
-	text-decoration: none !important;
-	font-weight: 600;
+  text-decoration: none !important;
+  font-weight: 600;
 }
 
 .Content-wrapper {
-	margin-top: 100px;
+  margin-top: 100px;
 }
 
 .Content-wrapper a {
-	color: #333 !important;
+  color: #333 !important;
 }

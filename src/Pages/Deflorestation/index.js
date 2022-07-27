@@ -1,25 +1,33 @@
-import React, { useState } from "react";
-import { Col, Container, Figure, Row } from "react-bootstrap";
-import { Helmet } from "react-helmet";
-import Header from "../Header";
-import Footer from "../Footer";
+import React, { useState } from 'react';
+import { Col, Container, Figure, Row } from 'react-bootstrap';
+import { Helmet } from 'react-helmet';
+import Header from '../Header';
+import Footer from '../Footer';
 
-import image from "../../assets/images/rainforest.jpg";
-import IntervalPicker from "../../Components/IntervalPicker";
-import DeflorestationTotal from "../../Dtos/DeflorestationTotal";
-import Presidents from "../../Dtos/Presidents";
-import { getAvg, getDateInterval, getMaxDate, getMinDate, handleDateParams, isValidDate, slashedMonthYear } from "../../utils";
-import Chart from "../../Components/Chart";
-import Card from "../../Components/Card";
-import Sources from "../../Components/Sources";
-import { useParams } from "react-router-dom";
+import image from '../../assets/images/rainforest.jpg';
+import IntervalPicker from '../../Components/IntervalPicker';
+import DeflorestationTotal from '../../Dtos/DeflorestationTotal';
+import Presidents from '../../Dtos/Presidents';
+import {
+  getAvg,
+  getDateInterval,
+  getMaxDate,
+  getMinDate,
+  handleDateParams,
+  isValidDate,
+  slashedMonthYear,
+} from '../../utils';
+import Chart from '../../Components/Chart';
+import Card from '../../Components/Card';
+import Sources from '../../Components/Sources';
+import { useParams } from 'react-router-dom';
 
 const Deflorestation = () => {
   const deflorestation = new DeflorestationTotal();
   const presidents = new Presidents();
-  let {to: toDate, from: fromDate} = useParams();
+  let { to: toDate, from: fromDate } = useParams();
   [toDate, fromDate] = handleDateParams([toDate, fromDate]);
-  
+
   if (!isValidDate(toDate)) {
     toDate = new Date(
       new Date().getFullYear(),
@@ -27,33 +35,41 @@ const Deflorestation = () => {
       30,
       23,
       59,
-      59
+      59,
     );
   }
-  
+
   if (!isValidDate(fromDate)) {
     fromDate = new Date(
       new Date().getFullYear() - 16,
       new Date().getMonth(),
-      1
+      1,
     );
   }
 
-  const startDate = getMaxDate([fromDate, presidents.getMinDataDate(), deflorestation.getMinDataDate()]);
-  const endDate = getMinDate([toDate, presidents.getMaxDataDate(), deflorestation.getMaxDataDate()]);
+  const startDate = getMaxDate([
+    fromDate,
+    presidents.getMinDataDate(),
+    deflorestation.getMinDataDate(),
+  ]);
+  const endDate = getMinDate([
+    toDate,
+    presidents.getMaxDataDate(),
+    deflorestation.getMaxDataDate(),
+  ]);
 
   const [to, setTo] = useState(toDate.toISOString());
   const [from, setFrom] = useState(fromDate.toISOString());
 
-  const categories = getDateInterval(from, to).map(d => slashedMonthYear(d));
+  const categories = getDateInterval(from, to).map((d) => slashedMonthYear(d));
   const plotBands = presidents.toPlotBands(from, to);
 
   const chart = {
-    type: 'areaspline'
+    type: 'areaspline',
   };
 
   const title = {
-    text: null
+    text: null,
   };
 
   const tooltip = {
@@ -62,12 +78,12 @@ const Deflorestation = () => {
   };
 
   const credits = {
-      enabled: false
+    enabled: false,
   };
 
   const plotOptions = {
     areaspline: {
-      fillOpacity: 0.5
+      fillOpacity: 0.5,
     },
   };
 
@@ -75,45 +91,46 @@ const Deflorestation = () => {
     rules: [
       {
         condition: {
-          maxWidth: 900
+          maxWidth: 900,
         },
         chartOptions: {
           legend: {
             align: 'center',
             verticalAlign: 'bottom',
-            layout: 'horizontal'
+            layout: 'horizontal',
           },
           yAxis: {
             labels: {
               align: 'left',
               x: 0,
-              y: 0
+              y: 0,
             },
             subtitle: {
-              text: null
+              text: null,
             },
           },
-        }
+        },
       },
       {
         condition: {
-          maxWidth: 768
+          maxWidth: 768,
         },
         chartOptions: {
           yAxis: {
             title: {
-              text: null
-            }
+              text: null,
+            },
           },
           subtitle: {
-            text: null
-          }
-        }
-      }
-    ]
+            text: null,
+          },
+        },
+      },
+    ],
   };
 
-  const orderedDeflorestation = deflorestation.getPeriod(from, to)
+  const orderedDeflorestation = deflorestation
+    .getPeriod(from, to)
     .sort((a, b) => a.amount - b.amount);
 
   const worstMoment = orderedDeflorestation.pop();
@@ -121,18 +138,18 @@ const Deflorestation = () => {
 
   const average = presidents
     .getPeriod(from, to)
-    .map(p => ({
+    .map((p) => ({
       ...p,
       average: getAvg(
         deflorestation.getPeriodValues(
           p.start < new Date(from) ? new Date(from) : p.start,
-          p.end > to ? to : p.end
-        )
+          p.end > to ? to : p.end,
+        ),
       ),
       date: {
         start: p.start < new Date(from) ? new Date(from) : p.start,
-        end: p.end > to ? to : p.end
-      }
+        end: p.end > to ? to : p.end,
+      },
     }))
     .sort((a, b) => a.average - b.average);
 
@@ -151,20 +168,34 @@ const Deflorestation = () => {
         <Row>
           <Col md={6} sm={{ order: 2 }}>
             <p>
-              A taxa de desmatamento é realizada pelo PRODES (Monitoramento do Desmatamento da Floresta Amazônica Brasileira por Satélite) 
-              através de satélites por corte raso na Amazônia Legal e produz, desde 1988, as taxas anuais de desmatamento na região.
+              A taxa de desmatamento é realizada pelo PRODES (Monitoramento do
+              Desmatamento da Floresta Amazônica Brasileira por Satélite)
+              através de satélites por corte raso na Amazônia Legal e produz,
+              desde 1988, as taxas anuais de desmatamento na região.
             </p>
             <p>
-              Segundo o próprio PRODES, as estimativas do PRODES são consideradas confiáveis pelos cientistas nacionais e internacionais 
-              (<a href="http://www.obt.inpe.br/OBT/assuntos/programas/amazonia/prodes/pdfs/kintish_2007.pdf" alt="Kintish" title="Kintish" nofollow>Kintish, 2007</a>). 
-              Esse sistema tem demonstrado ser de grande importância para ações e planejamento de políticas públicas da Amazônia. 
-              Resultados recentes, a partir de análises realizadas com especialistas independentes, indicam nível de precisão próximo a 95%.
+              Segundo o próprio PRODES, as estimativas do PRODES são
+              consideradas confiáveis pelos cientistas nacionais e
+              internacionais (
+              <a
+                href="http://www.obt.inpe.br/OBT/assuntos/programas/amazonia/prodes/pdfs/kintish_2007.pdf"
+                alt="Kintish"
+                title="Kintish"
+                nofollow
+              >
+                Kintish, 2007
+              </a>
+              ). Esse sistema tem demonstrado ser de grande importância para
+              ações e planejamento de políticas públicas da Amazônia. Resultados
+              recentes, a partir de análises realizadas com especialistas
+              independentes, indicam nível de precisão próximo a 95%.
             </p>
             <p>
-              A PRODES apresenta os dados consolidados anualmente no primeiro semestre do ano seguinte.
+              A PRODES apresenta os dados consolidados anualmente no primeiro
+              semestre do ano seguinte.
             </p>
           </Col>
-          <Col lg={{order: 2}} md={6} sm={{ order: 1 }}>
+          <Col lg={{ order: 2 }} md={6} sm={{ order: 1 }}>
             <Figure>
               <Figure.Image
                 src={image}
@@ -173,10 +204,10 @@ const Deflorestation = () => {
                 rounded
               />
               <Figure.Caption>
-                <a 
-                  href="https://www.pexels.com/pt-br/foto/floresta-tropical-cercada-por-nevoeiro-975771/" 
-                  alt="David Riaño Cortés" 
-                  title="David Riaño Cortés" 
+                <a
+                  href="https://www.pexels.com/pt-br/foto/floresta-tropical-cercada-por-nevoeiro-975771/"
+                  alt="David Riaño Cortés"
+                  title="David Riaño Cortés"
                   nofollow="true"
                 >
                   Foto de David Riaño Cortés
@@ -187,8 +218,8 @@ const Deflorestation = () => {
         </Row>
 
         <Row>
-          <Col lg={{order: 1}} md={{span: 6, offset: 6}}>
-            <IntervalPicker 
+          <Col lg={{ order: 1 }} md={{ span: 6, offset: 6 }}>
+            <IntervalPicker
               to={new Date(to)}
               from={new Date(from)}
               min={startDate}
@@ -211,24 +242,29 @@ const Deflorestation = () => {
                 plotOptions,
                 xAxis: {
                   categories,
-                  plotBands
+                  plotBands,
                 },
                 yAxis: {
                   title: {
-                    text: 'Desmatamento (km²)'
-                  }
+                    text: 'Desmatamento (km²)',
+                  },
                 },
                 series: [
                   {
                     name: 'Desmatamento',
-                    data: deflorestation.getPeriodSeries(from, to)
+                    data: deflorestation.getPeriodSeries(from, to),
                   },
                 ],
-                responsive
+                responsive,
               }}
             />
 
-            <Sources sources={[ ...deflorestation.getSources(), ...presidents.getSources() ]} />
+            <Sources
+              sources={[
+                ...deflorestation.getSources(),
+                ...presidents.getSources(),
+              ]}
+            />
           </Col>
         </Row>
 
@@ -236,18 +272,24 @@ const Deflorestation = () => {
           <Col>
             <h2>Ranking dos mandatos</h2>
             <p>
-              Baseado nos valores anteriores, temos a média dos valores do mandato do candidato no período pesquisado, 
-              ranqueados do melhor para o pior.
+              Baseado nos valores anteriores, temos a média dos valores do
+              mandato do candidato no período pesquisado, ranqueados do melhor
+              para o pior.
             </p>
           </Col>
         </Row>
 
         <Row>
-          {average.map(p => (
+          {average.map((p) => (
             <Col md={3} sm={6}>
-              <Card 
+              <Card
                 president={p}
-                value={(<>{p.average.toFixed(2)}<small>km²</small></>)}
+                value={
+                  <>
+                    {p.average.toFixed(2)}
+                    <small>km²</small>
+                  </>
+                }
                 date={{
                   start: slashedMonthYear(p.start),
                   end: slashedMonthYear(p.end),
@@ -257,12 +299,11 @@ const Deflorestation = () => {
             </Col>
           ))}
         </Row>
-
       </Container>
 
       <Footer />
     </>
   );
-}
+};
 
 export default Deflorestation;

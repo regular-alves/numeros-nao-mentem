@@ -2,7 +2,7 @@
   position: fixed;
   background-color: #fff;
   border-bottom: 1px solid #dfdfdf;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, .05);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
   top: 0;
   left: 0;
   width: 100%;
@@ -10,7 +10,7 @@
 }
 
 .Header.Header--isTransparent {
-  background-color: rgba(0, 0, 0, .6);
+  background-color: rgba(0, 0, 0, 0.6);
   border-bottom: none;
   box-shadow: none;
 }
@@ -52,8 +52,19 @@
   line-height: 2em;
 }
 
-.Header.Header--isTransparent .Header-wrapper > .row > div > .Header-menu > .Header-menuItem,
-.Header.Header--isTransparent .Header-wrapper > .row > div > .Header-menu > .Header-menuItem > a {
+.Header.Header--isTransparent
+  .Header-wrapper
+  > .row
+  > div
+  > .Header-menu
+  > .Header-menuItem,
+.Header.Header--isTransparent
+  .Header-wrapper
+  > .row
+  > div
+  > .Header-menu
+  > .Header-menuItem
+  > a {
   color: #fff;
 }
 
@@ -99,7 +110,7 @@
     display: block;
     padding: 16px 0;
     background: #fff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, .05);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
   }
 
   .Header-menuItem > .Header-menu .Header-menuItem {
@@ -132,7 +143,7 @@
   }
 
   .Header.Header--isTransparent .Menu {
-    background-color: rgba(0, 0, 0, .8);
+    background-color: rgba(0, 0, 0, 0.8);
   }
 
   .Header .Menu.Menu--isOpened {
@@ -161,11 +172,11 @@
     width: 100%;
   }
 
-  .Header-menuItem > .Header-menu  a {
-    font-size: .9em;
+  .Header-menuItem > .Header-menu a {
+    font-size: 0.9em;
   }
-  
-  .Header.Header--isTransparent .Header-menuItem > .Header-menu  a {
+
+  .Header.Header--isTransparent .Header-menuItem > .Header-menu a {
     color: #fff;
   }
 }
