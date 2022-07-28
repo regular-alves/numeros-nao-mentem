@@ -1,0 +1,3841 @@
+{
+  "source": [
+    {
+      "url": "https://www.bcb.gov.br/controleinflacao/historicotaxasjuros",
+      "name": "Banco Central do Brasil",
+      "seenAt": "2022-07-28 17:47:00-03:00"
+    },
+    {
+      "url": "https://www.bcb.gov.br/controleinflacao/taxaselic",
+      "name": "Banco Central do Brasil",
+      "seenAt": "2022-07-28 17:49:00-03:00"
+    }
+  ],
+  "data": [
+    {
+      "bcMeet": {
+        "id": "247",
+        "date": "15/06/2022",
+        "bias": ""
+      },
+      "start": "17/06/2022",
+      "end": "",
+      "selicGoal": 13.25,
+      "tban": "",
+      "value": {
+        "monthly": "",
+        "yearly": ""
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "246",
+        "date": "04/05/2022",
+        "bias": ""
+      },
+      "start": "05/05/2022",
+      "end": "16/06/2022",
+      "selicGoal": 12.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.43,
+        "yearly": 12.65
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "245",
+        "date": "16/03/2022",
+        "bias": ""
+      },
+      "start": "17/03/2022",
+      "end": "04/05/2022",
+      "selicGoal": 11.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.45,
+        "yearly": 11.65
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "244",
+        "date": "02/02/2022",
+        "bias": ""
+      },
+      "start": "03/02/2022",
+      "end": "16/03/2022",
+      "selicGoal": 10.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.13,
+        "yearly": 10.65
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "243",
+        "date": "08/12/2021",
+        "bias": ""
+      },
+      "start": "09/12/2021",
+      "end": "02/02/2022",
+      "selicGoal": 9.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.4,
+        "yearly": 9.15
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "242",
+        "date": "27/10/2021",
+        "bias": ""
+      },
+      "start": "28/10/2021",
+      "end": "08/12/2021",
+      "selicGoal": 7.75,
+      "tban": "",
+      "value": {
+        "monthly": 0.82,
+        "yearly": 7.65
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "241",
+        "date": "22/09/2021",
+        "bias": ""
+      },
+      "start": "23/09/2021",
+      "end": "27/10/2021",
+      "selicGoal": 6.25,
+      "tban": "",
+      "value": {
+        "monthly": 0.57,
+        "yearly": 6.15
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "240",
+        "date": "04/08/2021",
+        "bias": ""
+      },
+      "start": "05/08/2021",
+      "end": "22/09/2021",
+      "selicGoal": 5.25,
+      "tban": "",
+      "value": {
+        "monthly": 0.68,
+        "yearly": 5.15
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "239",
+        "date": "16/06/2021",
+        "bias": ""
+      },
+      "start": "17/06/2021",
+      "end": "04/08/2021",
+      "selicGoal": 4.25,
+      "tban": "",
+      "value": {
+        "monthly": 0.57,
+        "yearly": 4.15
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "238",
+        "date": "05/05/2021",
+        "bias": ""
+      },
+      "start": "06/05/2021",
+      "end": "16/06/2021",
+      "selicGoal": 3.5,
+      "tban": "",
+      "value": {
+        "monthly": 0.39,
+        "yearly": 3.4
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "237",
+        "date": "17/03/2021",
+        "bias": ""
+      },
+      "start": "18/03/2021",
+      "end": "05/05/2021",
+      "selicGoal": 2.75,
+      "tban": "",
+      "value": {
+        "monthly": 0.34,
+        "yearly": 2.65
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "236",
+        "date": "20/01/2021",
+        "bias": ""
+      },
+      "start": "21/01/2021",
+      "end": "17/03/2021",
+      "selicGoal": 2,
+      "tban": "",
+      "value": {
+        "monthly": 0.28,
+        "yearly": 1.9
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "235",
+        "date": "09/12/2020",
+        "bias": ""
+      },
+      "start": "10/12/2020",
+      "end": "20/01/2021",
+      "selicGoal": 2,
+      "tban": "",
+      "value": {
+        "monthly": 0.21,
+        "yearly": 1.9
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "234",
+        "date": "28/10/2020",
+        "bias": ""
+      },
+      "start": "29/10/2020",
+      "end": "09/12/2020",
+      "selicGoal": 2,
+      "tban": "",
+      "value": {
+        "monthly": 0.22,
+        "yearly": 1.9
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "233",
+        "date": "16/09/2020",
+        "bias": ""
+      },
+      "start": "17/09/2020",
+      "end": "28/10/2020",
+      "selicGoal": 2,
+      "tban": "",
+      "value": {
+        "monthly": 0.22,
+        "yearly": 1.9
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "232",
+        "date": "05/08/2020",
+        "bias": ""
+      },
+      "start": "06/08/2020",
+      "end": "16/09/2020",
+      "selicGoal": 2,
+      "tban": "",
+      "value": {
+        "monthly": 0.22,
+        "yearly": 1.9
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "231",
+        "date": "17/06/2020",
+        "bias": ""
+      },
+      "start": "18/06/2020",
+      "end": "05/08/2020",
+      "selicGoal": 2.25,
+      "tban": "",
+      "value": {
+        "monthly": 0.3,
+        "yearly": 2.15
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "230",
+        "date": "06/05/2020",
+        "bias": ""
+      },
+      "start": "07/05/2020",
+      "end": "17/06/2020",
+      "selicGoal": 3,
+      "tban": "",
+      "value": {
+        "monthly": 0.32,
+        "yearly": 2.9
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "229",
+        "date": "18/03/2020",
+        "bias": ""
+      },
+      "start": "19/03/2020",
+      "end": "06/05/2020",
+      "selicGoal": 3.75,
+      "tban": "",
+      "value": {
+        "monthly": 0.46,
+        "yearly": 3.65
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "228",
+        "date": "05/02/2020",
+        "bias": ""
+      },
+      "start": "06/02/2020",
+      "end": "18/03/2020",
+      "selicGoal": 4.25,
+      "tban": "",
+      "value": {
+        "monthly": 0.45,
+        "yearly": 4.15
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "227",
+        "date": "11/12/2019",
+        "bias": ""
+      },
+      "start": "12/12/2019",
+      "end": "05/02/2020",
+      "selicGoal": 4.5,
+      "tban": "",
+      "value": {
+        "monthly": 0.65,
+        "yearly": 4.4
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "226",
+        "date": "30/10/2019",
+        "bias": ""
+      },
+      "start": "31/10/2019",
+      "end": "11/12/2019",
+      "selicGoal": 5,
+      "tban": "",
+      "value": {
+        "monthly": 0.55,
+        "yearly": 4.9
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "225",
+        "date": "18/09/2019",
+        "bias": ""
+      },
+      "start": "19/09/2019",
+      "end": "30/10/2019",
+      "selicGoal": 5.5,
+      "tban": "",
+      "value": {
+        "monthly": 0.63,
+        "yearly": 5.4
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "224",
+        "date": "31/07/2019",
+        "bias": ""
+      },
+      "start": "01/08/2019",
+      "end": "18/09/2019",
+      "selicGoal": 6,
+      "tban": "",
+      "value": {
+        "monthly": 0.8,
+        "yearly": 5.9
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "223",
+        "date": "19/06/2019",
+        "bias": ""
+      },
+      "start": "21/06/2019",
+      "end": "31/07/2019",
+      "selicGoal": 6.5,
+      "tban": "",
+      "value": {
+        "monthly": 0.72,
+        "yearly": 6.4
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "222",
+        "date": "08/05/2019",
+        "bias": ""
+      },
+      "start": "09/05/2019",
+      "end": "20/06/2019",
+      "selicGoal": 6.5,
+      "tban": "",
+      "value": {
+        "monthly": 0.74,
+        "yearly": 6.4
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "221",
+        "date": "20/03/2019",
+        "bias": ""
+      },
+      "start": "21/03/2019",
+      "end": "08/05/2019",
+      "selicGoal": 6.5,
+      "tban": "",
+      "value": {
+        "monthly": 0.82,
+        "yearly": 6.4
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "220",
+        "date": "06/02/2019",
+        "bias": ""
+      },
+      "start": "07/02/2019",
+      "end": "20/03/2019",
+      "selicGoal": 6.5,
+      "tban": "",
+      "value": {
+        "monthly": 0.69,
+        "yearly": 6.4
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "219",
+        "date": "12/12/2018",
+        "bias": ""
+      },
+      "start": "13/12/2018",
+      "end": "06/02/2019",
+      "selicGoal": 6.5,
+      "tban": "",
+      "value": {
+        "monthly": 0.94,
+        "yearly": 6.4
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "218",
+        "date": "31/10/2018",
+        "bias": ""
+      },
+      "start": "01/11/2018",
+      "end": "12/12/2018",
+      "selicGoal": 6.5,
+      "tban": "",
+      "value": {
+        "monthly": 0.69,
+        "yearly": 6.4
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "217",
+        "date": "19/09/2018",
+        "bias": ""
+      },
+      "start": "20/09/2018",
+      "end": "31/10/2018",
+      "selicGoal": 6.5,
+      "tban": "",
+      "value": {
+        "monthly": 0.72,
+        "yearly": 6.4
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "216",
+        "date": "01/08/2018",
+        "bias": ""
+      },
+      "start": "02/08/2018",
+      "end": "19/09/2018",
+      "selicGoal": 6.5,
+      "tban": "",
+      "value": {
+        "monthly": 0.84,
+        "yearly": 6.4
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "215",
+        "date": "20/06/2018",
+        "bias": ""
+      },
+      "start": "21/06/2018",
+      "end": "01/08/2018",
+      "selicGoal": 6.5,
+      "tban": "",
+      "value": {
+        "monthly": 0.74,
+        "yearly": 6.4
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "214",
+        "date": "16/05/2018",
+        "bias": ""
+      },
+      "start": "17/05/2018",
+      "end": "20/06/2018",
+      "selicGoal": 6.5,
+      "tban": "",
+      "value": {
+        "monthly": 0.59,
+        "yearly": 6.4
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "213",
+        "date": "21/03/2018",
+        "bias": ""
+      },
+      "start": "22/03/2018",
+      "end": "16/05/2018",
+      "selicGoal": 6.5,
+      "tban": "",
+      "value": {
+        "monthly": 0.94,
+        "yearly": 6.4
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "212",
+        "date": "07/02/2018",
+        "bias": ""
+      },
+      "start": "08/02/2018",
+      "end": "21/03/2018",
+      "selicGoal": 6.75,
+      "tban": "",
+      "value": {
+        "monthly": 0.72,
+        "yearly": 6.65
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "211",
+        "date": "06/12/2017",
+        "bias": ""
+      },
+      "start": "07/12/2017",
+      "end": "07/02/2018",
+      "selicGoal": 7,
+      "tban": "",
+      "value": {
+        "monthly": 1.15,
+        "yearly": 6.9
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "210",
+        "date": "25/10/2017",
+        "bias": ""
+      },
+      "start": "26/10/2017",
+      "end": "06/12/2017",
+      "selicGoal": 7.5,
+      "tban": "",
+      "value": {
+        "monthly": 0.8,
+        "yearly": 7.4
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "209",
+        "date": "06/09/2017",
+        "bias": ""
+      },
+      "start": "08/09/2017",
+      "end": "25/10/2017",
+      "selicGoal": 8.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.03,
+        "yearly": 8.15
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "208",
+        "date": "26/07/2017",
+        "bias": ""
+      },
+      "start": "27/07/2017",
+      "end": "06/09/2017",
+      "selicGoal": 9.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.05,
+        "yearly": 9.15
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "207",
+        "date": "31/05/2017",
+        "bias": ""
+      },
+      "start": "01/06/2017",
+      "end": "26/07/2017",
+      "selicGoal": 10.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.51,
+        "yearly": 10.15
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "206",
+        "date": "12/04/2017",
+        "bias": ""
+      },
+      "start": "13/04/2017",
+      "end": "31/05/2017",
+      "selicGoal": 11.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.35,
+        "yearly": 11.15
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "205",
+        "date": "22/02/2017",
+        "bias": ""
+      },
+      "start": "23/02/2017",
+      "end": "12/04/2017",
+      "selicGoal": 12.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.51,
+        "yearly": 12.15
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "204",
+        "date": "11/01/2017",
+        "bias": ""
+      },
+      "start": "12/01/2017",
+      "end": "22/02/2017",
+      "selicGoal": 13,
+      "tban": "",
+      "value": {
+        "monthly": 1.45,
+        "yearly": 12.9
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "203",
+        "date": "30/11/2016",
+        "bias": ""
+      },
+      "start": "01/12/2016",
+      "end": "11/01/2017",
+      "selicGoal": 13.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.53,
+        "yearly": 13.65
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "202",
+        "date": "19/10/2016",
+        "bias": ""
+      },
+      "start": "20/10/2016",
+      "end": "30/11/2016",
+      "selicGoal": 14,
+      "tban": "",
+      "value": {
+        "monthly": 1.46,
+        "yearly": 13.9
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "201",
+        "date": "31/08/2016",
+        "bias": ""
+      },
+      "start": "01/09/2016",
+      "end": "19/10/2016",
+      "selicGoal": 14.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.75,
+        "yearly": 14.15
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "200",
+        "date": "20/07/2016",
+        "bias": ""
+      },
+      "start": "21/07/2016",
+      "end": "31/08/2016",
+      "selicGoal": 14.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.59,
+        "yearly": 14.15
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "199",
+        "date": "08/06/2016",
+        "bias": ""
+      },
+      "start": "09/06/2016",
+      "end": "20/07/2016",
+      "selicGoal": 14.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.59,
+        "yearly": 14.15
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "198",
+        "date": "27/04/2016",
+        "bias": ""
+      },
+      "start": "28/04/2016",
+      "end": "08/06/2016",
+      "selicGoal": 14.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.53,
+        "yearly": 14.15
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "197",
+        "date": "02/03/2016",
+        "bias": ""
+      },
+      "start": "03/03/2016",
+      "end": "27/04/2016",
+      "selicGoal": 14.25,
+      "tban": "",
+      "value": {
+        "monthly": 2.02,
+        "yearly": 14.15
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "196",
+        "date": "20/01/2016",
+        "bias": ""
+      },
+      "start": "21/01/2016",
+      "end": "02/03/2016",
+      "selicGoal": 14.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.48,
+        "yearly": 14.15
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "195",
+        "date": "25/11/2015",
+        "bias": ""
+      },
+      "start": "26/11/2015",
+      "end": "20/01/2016",
+      "selicGoal": 14.25,
+      "tban": "",
+      "value": {
+        "monthly": 2.02,
+        "yearly": 14.15
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "194",
+        "date": "21/10/2015",
+        "bias": ""
+      },
+      "start": "22/10/2015",
+      "end": "25/11/2015",
+      "selicGoal": 14.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.27,
+        "yearly": 14.15
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "193",
+        "date": "02/09/2015",
+        "bias": ""
+      },
+      "start": "03/09/2015",
+      "end": "21/10/2015",
+      "selicGoal": 14.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.75,
+        "yearly": 14.15
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "192",
+        "date": "29/07/2015",
+        "bias": ""
+      },
+      "start": "30/07/2015",
+      "end": "02/09/2015",
+      "selicGoal": 14.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.32,
+        "yearly": 14.15
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "191",
+        "date": "03/06/2015",
+        "bias": ""
+      },
+      "start": "04/06/2015",
+      "end": "29/07/2015",
+      "selicGoal": 13.75,
+      "tban": "",
+      "value": {
+        "monthly": 2,
+        "yearly": 13.65
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "190",
+        "date": "29/04/2015",
+        "bias": ""
+      },
+      "start": "30/04/2015",
+      "end": "03/06/2015",
+      "selicGoal": 13.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.18,
+        "yearly": 13.15
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "189",
+        "date": "04/03/2015",
+        "bias": ""
+      },
+      "start": "05/03/2015",
+      "end": "29/04/2015",
+      "selicGoal": 12.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.81,
+        "yearly": 12.65
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "188",
+        "date": "21/01/2015",
+        "bias": ""
+      },
+      "start": "22/01/2015",
+      "end": "04/03/2015",
+      "selicGoal": 12.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.28,
+        "yearly": 12.15
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "187",
+        "date": "03/12/2014",
+        "bias": ""
+      },
+      "start": "04/12/2014",
+      "end": "21/01/2015",
+      "selicGoal": 11.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.45,
+        "yearly": 11.65
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "186",
+        "date": "29/10/2014",
+        "bias": ""
+      },
+      "start": "30/10/2014",
+      "end": "03/12/2014",
+      "selicGoal": 11.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.05,
+        "yearly": 11.15
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "185",
+        "date": "03/09/2014",
+        "bias": ""
+      },
+      "start": "04/09/2014",
+      "end": "29/10/2014",
+      "selicGoal": 11,
+      "tban": "",
+      "value": {
+        "monthly": 1.66,
+        "yearly": 10.9
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "184",
+        "date": "16/07/2014",
+        "bias": ""
+      },
+      "start": "17/07/2014",
+      "end": "03/09/2014",
+      "selicGoal": 11,
+      "tban": "",
+      "value": {
+        "monthly": 1.45,
+        "yearly": 10.9
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "183",
+        "date": "28/05/2014",
+        "bias": ""
+      },
+      "start": "29/05/2014",
+      "end": "16/07/2014",
+      "selicGoal": 11,
+      "tban": "",
+      "value": {
+        "monthly": 1.41,
+        "yearly": 10.9
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "182",
+        "date": "02/04/2014",
+        "bias": ""
+      },
+      "start": "03/04/2014",
+      "end": "28/05/2014",
+      "selicGoal": 11,
+      "tban": "",
+      "value": {
+        "monthly": 1.53,
+        "yearly": 10.9
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "181",
+        "date": "26/02/2014",
+        "bias": ""
+      },
+      "start": "27/02/2014",
+      "end": "02/04/2014",
+      "selicGoal": 10.75,
+      "tban": "",
+      "value": {
+        "monthly": 0.93,
+        "yearly": 10.65
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "180",
+        "date": "15/01/2014",
+        "bias": ""
+      },
+      "start": "16/01/2014",
+      "end": "26/02/2014",
+      "selicGoal": 10.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.18,
+        "yearly": 10.4
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "179",
+        "date": "27/11/2013",
+        "bias": ""
+      },
+      "start": "28/11/2013",
+      "end": "15/01/2014",
+      "selicGoal": 10,
+      "tban": "",
+      "value": {
+        "monthly": 1.24,
+        "yearly": 9.9
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "178",
+        "date": "09/10/2013",
+        "bias": ""
+      },
+      "start": "10/10/2013",
+      "end": "27/11/2013",
+      "selicGoal": 9.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.22,
+        "yearly": 9.4
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "177",
+        "date": "28/08/2013",
+        "bias": ""
+      },
+      "start": "29/08/2013",
+      "end": "09/10/2013",
+      "selicGoal": 9,
+      "tban": "",
+      "value": {
+        "monthly": 1.02,
+        "yearly": 8.9
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "176",
+        "date": "10/07/2013",
+        "bias": ""
+      },
+      "start": "11/07/2013",
+      "end": "28/08/2013",
+      "selicGoal": 8.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.13,
+        "yearly": 8.4
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "175",
+        "date": "29/05/2013",
+        "bias": ""
+      },
+      "start": "30/05/2013",
+      "end": "10/07/2013",
+      "selicGoal": 8,
+      "tban": "",
+      "value": {
+        "monthly": 0.88,
+        "yearly": 7.9
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "174",
+        "date": "17/04/2013",
+        "bias": ""
+      },
+      "start": "18/04/2013",
+      "end": "29/05/2013",
+      "selicGoal": 7.5,
+      "tban": "",
+      "value": {
+        "monthly": 0.82,
+        "yearly": 7.4
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "173",
+        "date": "06/03/2013",
+        "bias": ""
+      },
+      "start": "07/03/2013",
+      "end": "17/04/2013",
+      "selicGoal": 7.25,
+      "tban": "",
+      "value": {
+        "monthly": 0.8,
+        "yearly": 7.16
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "172",
+        "date": "16/01/2013",
+        "bias": ""
+      },
+      "start": "17/01/2013",
+      "end": "06/03/2013",
+      "selicGoal": 7.25,
+      "tban": "",
+      "value": {
+        "monthly": 0.9,
+        "yearly": 7.12
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "171",
+        "date": "28/11/2012",
+        "bias": ""
+      },
+      "start": "29/11/2012",
+      "end": "16/01/2013",
+      "selicGoal": 7.25,
+      "tban": "",
+      "value": {
+        "monthly": 0.91,
+        "yearly": 7.14
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "170",
+        "date": "10/10/2012",
+        "bias": ""
+      },
+      "start": "11/10/2012",
+      "end": "28/11/2012",
+      "selicGoal": 7.25,
+      "tban": "",
+      "value": {
+        "monthly": 0.88,
+        "yearly": 7.14
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "169",
+        "date": "29/08/2012",
+        "bias": ""
+      },
+      "start": "30/08/2012",
+      "end": "10/10/2012",
+      "selicGoal": 7.5,
+      "tban": "",
+      "value": {
+        "monthly": 0.82,
+        "yearly": 7.39
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "168",
+        "date": "11/07/2012",
+        "bias": ""
+      },
+      "start": "12/07/2012",
+      "end": "29/08/2012",
+      "selicGoal": 8,
+      "tban": "",
+      "value": {
+        "monthly": 1.06,
+        "yearly": 7.89
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "167",
+        "date": "30/05/2012",
+        "bias": ""
+      },
+      "start": "31/05/2012",
+      "end": "11/07/2012",
+      "selicGoal": 8.5,
+      "tban": "",
+      "value": {
+        "monthly": 0.93,
+        "yearly": 8.39
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "166",
+        "date": "18/04/2012",
+        "bias": ""
+      },
+      "start": "19/04/2012",
+      "end": "30/05/2012",
+      "selicGoal": 9,
+      "tban": "",
+      "value": {
+        "monthly": 0.99,
+        "yearly": 8.9
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "165",
+        "date": "07/03/2012",
+        "bias": ""
+      },
+      "start": "08/03/2012",
+      "end": "18/04/2012",
+      "selicGoal": 9.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.07,
+        "yearly": 9.65
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "164",
+        "date": "18/01/2012",
+        "bias": ""
+      },
+      "start": "19/01/2012",
+      "end": "07/03/2012",
+      "selicGoal": 10.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.3,
+        "yearly": 10.4
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "163",
+        "date": "30/11/2011",
+        "bias": ""
+      },
+      "start": "01/12/2011",
+      "end": "18/01/2012",
+      "selicGoal": 11,
+      "tban": "",
+      "value": {
+        "monthly": 1.45,
+        "yearly": 10.9
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "162",
+        "date": "19/10/2011",
+        "bias": ""
+      },
+      "start": "20/10/2011",
+      "end": "30/11/2011",
+      "selicGoal": 11.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.21,
+        "yearly": 11.4
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "161",
+        "date": "31/08/2011",
+        "bias": ""
+      },
+      "start": "01/09/2011",
+      "end": "19/10/2011",
+      "selicGoal": 12,
+      "tban": "",
+      "value": {
+        "monthly": 1.48,
+        "yearly": 11.9
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "160",
+        "date": "20/07/2011",
+        "bias": ""
+      },
+      "start": "21/07/2011",
+      "end": "31/08/2011",
+      "selicGoal": 12.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.4,
+        "yearly": 12.42
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "159",
+        "date": "08/06/2011",
+        "bias": ""
+      },
+      "start": "09/06/2011",
+      "end": "20/07/2011",
+      "selicGoal": 12.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.33,
+        "yearly": 12.17
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "158",
+        "date": "20/04/2011",
+        "bias": ""
+      },
+      "start": "21/04/2011",
+      "end": "08/06/2011",
+      "selicGoal": 12,
+      "tban": "",
+      "value": {
+        "monthly": 1.49,
+        "yearly": 11.92
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "157",
+        "date": "02/03/2011",
+        "bias": ""
+      },
+      "start": "03/03/2011",
+      "end": "20/04/2011",
+      "selicGoal": 11.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.46,
+        "yearly": 11.67
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "156",
+        "date": "19/01/2011",
+        "bias": ""
+      },
+      "start": "20/01/2011",
+      "end": "02/03/2011",
+      "selicGoal": 11.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.27,
+        "yearly": 11.17
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "155",
+        "date": "08/12/2010",
+        "bias": ""
+      },
+      "start": "09/12/2010",
+      "end": "19/01/2011",
+      "selicGoal": 10.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.21,
+        "yearly": 10.66
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "154",
+        "date": "20/10/2010",
+        "bias": ""
+      },
+      "start": "21/10/2010",
+      "end": "08/12/2010",
+      "selicGoal": 10.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.34,
+        "yearly": 10.66
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "153",
+        "date": "01/09/2010",
+        "bias": ""
+      },
+      "start": "02/09/2010",
+      "end": "20/10/2010",
+      "selicGoal": 10.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.34,
+        "yearly": 10.66
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "152",
+        "date": "21/07/2010",
+        "bias": ""
+      },
+      "start": "22/07/2010",
+      "end": "01/09/2010",
+      "selicGoal": 10.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.21,
+        "yearly": 10.66
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "151",
+        "date": "09/06/2010",
+        "bias": ""
+      },
+      "start": "10/06/2010",
+      "end": "21/07/2010",
+      "selicGoal": 10.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.16,
+        "yearly": 10.16
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "150",
+        "date": "28/04/2010",
+        "bias": ""
+      },
+      "start": "29/04/2010",
+      "end": "09/06/2010",
+      "selicGoal": 9.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.04,
+        "yearly": 9.4
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "149",
+        "date": "17/03/2010",
+        "bias": ""
+      },
+      "start": "18/03/2010",
+      "end": "28/04/2010",
+      "selicGoal": 8.75,
+      "tban": "",
+      "value": {
+        "monthly": 0.93,
+        "yearly": 8.65
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "148",
+        "date": "27/01/2010",
+        "bias": ""
+      },
+      "start": "28/01/2010",
+      "end": "17/03/2010",
+      "selicGoal": 8.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.09,
+        "yearly": 8.65
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "147",
+        "date": "09/12/2009",
+        "bias": ""
+      },
+      "start": "10/12/2009",
+      "end": "27/01/2010",
+      "selicGoal": 8.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.09,
+        "yearly": 8.65
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "146",
+        "date": "21/10/2009",
+        "bias": ""
+      },
+      "start": "22/10/2009",
+      "end": "09/12/2009",
+      "selicGoal": 8.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.13,
+        "yearly": 8.65
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "145",
+        "date": "02/09/2009",
+        "bias": ""
+      },
+      "start": "03/09/2009",
+      "end": "21/10/2009",
+      "selicGoal": 8.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.09,
+        "yearly": 8.65
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "144",
+        "date": "22/07/2009",
+        "bias": ""
+      },
+      "start": "23/07/2009",
+      "end": "02/09/2009",
+      "selicGoal": 8.75,
+      "tban": "",
+      "value": {
+        "monthly": 0.99,
+        "yearly": 8.65
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "143",
+        "date": "10/06/2009",
+        "bias": ""
+      },
+      "start": "11/06/2009",
+      "end": "22/07/2009",
+      "selicGoal": 9.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.01,
+        "yearly": 9.16
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "142",
+        "date": "29/04/2009",
+        "bias": ""
+      },
+      "start": "30/04/2009",
+      "end": "10/06/2009",
+      "selicGoal": 10.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.12,
+        "yearly": 10.16
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "141",
+        "date": "11/03/2009",
+        "bias": ""
+      },
+      "start": "12/03/2009",
+      "end": "29/04/2009",
+      "selicGoal": 11.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.4,
+        "yearly": 11.16
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "140",
+        "date": "21/01/2009",
+        "bias": ""
+      },
+      "start": "22/01/2009",
+      "end": "11/03/2009",
+      "selicGoal": 12.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.57,
+        "yearly": 12.66
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "139",
+        "date": "10/12/2008",
+        "bias": ""
+      },
+      "start": "11/12/2008",
+      "end": "21/01/2009",
+      "selicGoal": 13.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.43,
+        "yearly": 13.66
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "138",
+        "date": "29/10/2008",
+        "bias": ""
+      },
+      "start": "30/10/2008",
+      "end": "10/12/2008",
+      "selicGoal": 13.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.53,
+        "yearly": 13.65
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "137",
+        "date": "10/09/2008",
+        "bias": ""
+      },
+      "start": "11/09/2008",
+      "end": "29/10/2008",
+      "selicGoal": 13.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.79,
+        "yearly": 13.66
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "136",
+        "date": "23/07/2008",
+        "bias": ""
+      },
+      "start": "24/07/2008",
+      "end": "10/09/2008",
+      "selicGoal": 13,
+      "tban": "",
+      "value": {
+        "monthly": 1.7,
+        "yearly": 12.92
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "135",
+        "date": "04/06/2008",
+        "bias": ""
+      },
+      "start": "05/06/2008",
+      "end": "23/07/2008",
+      "selicGoal": 12.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.61,
+        "yearly": 12.17
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "134",
+        "date": "16/04/2008",
+        "bias": ""
+      },
+      "start": "17/04/2008",
+      "end": "04/06/2008",
+      "selicGoal": 11.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.41,
+        "yearly": 11.63
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "133",
+        "date": "05/03/2008",
+        "bias": ""
+      },
+      "start": "06/03/2008",
+      "end": "16/04/2008",
+      "selicGoal": 11.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.23,
+        "yearly": 11.18
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "132",
+        "date": "23/01/2008",
+        "bias": ""
+      },
+      "start": "24/01/2008",
+      "end": "05/03/2008",
+      "selicGoal": 11.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.18,
+        "yearly": 11.18
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "131",
+        "date": "05/12/2007",
+        "bias": ""
+      },
+      "start": "06/12/2007",
+      "end": "23/01/2008",
+      "selicGoal": 11.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.4,
+        "yearly": 11.18
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "130",
+        "date": "17/10/2007",
+        "bias": ""
+      },
+      "start": "18/10/2007",
+      "end": "05/12/2007",
+      "selicGoal": 11.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.4,
+        "yearly": 11.18
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "129",
+        "date": "05/09/2007",
+        "bias": ""
+      },
+      "start": "06/09/2007",
+      "end": "17/10/2007",
+      "selicGoal": 11.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.18,
+        "yearly": 11.18
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "128",
+        "date": "18/07/2007",
+        "bias": ""
+      },
+      "start": "19/07/2007",
+      "end": "05/09/2007",
+      "selicGoal": 11.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.51,
+        "yearly": 11.43
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "127",
+        "date": "06/06/2007",
+        "bias": ""
+      },
+      "start": "07/06/2007",
+      "end": "18/07/2007",
+      "selicGoal": 12,
+      "tban": "",
+      "value": {
+        "monthly": 1.31,
+        "yearly": 11.93
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "126",
+        "date": "18/04/2007",
+        "bias": ""
+      },
+      "start": "19/04/2007",
+      "end": "06/06/2007",
+      "selicGoal": 12.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.59,
+        "yearly": 12.43
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "125",
+        "date": "07/03/2007",
+        "bias": ""
+      },
+      "start": "08/03/2007",
+      "end": "18/04/2007",
+      "selicGoal": 12.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.38,
+        "yearly": 12.68
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "124",
+        "date": "24/01/2007",
+        "bias": ""
+      },
+      "start": "25/01/2007",
+      "end": "07/03/2007",
+      "selicGoal": 13,
+      "tban": "",
+      "value": {
+        "monthly": 1.36,
+        "yearly": 12.93
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "123",
+        "date": "29/11/2006",
+        "bias": ""
+      },
+      "start": "30/11/2006",
+      "end": "24/01/2007",
+      "selicGoal": 13.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.89,
+        "yearly": 13.19
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "122",
+        "date": "17/10/2006",
+        "bias": ""
+      },
+      "start": "18/10/2006",
+      "end": "29/11/2006",
+      "selicGoal": 13.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.43,
+        "yearly": 13.67
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "121",
+        "date": "30/08/2006",
+        "bias": ""
+      },
+      "start": "31/08/2006",
+      "end": "17/10/2006",
+      "selicGoal": 14.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.75,
+        "yearly": 14.17
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "120",
+        "date": "19/07/2006",
+        "bias": ""
+      },
+      "start": "20/07/2006",
+      "end": "30/08/2006",
+      "selicGoal": 14.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.64,
+        "yearly": 14.67
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "119",
+        "date": "31/05/2006",
+        "bias": ""
+      },
+      "start": "01/06/2006",
+      "end": "19/07/2006",
+      "selicGoal": 15.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.92,
+        "yearly": 15.18
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "118",
+        "date": "19/04/2006",
+        "bias": ""
+      },
+      "start": "20/04/2006",
+      "end": "31/05/2006",
+      "selicGoal": 15.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.63,
+        "yearly": 15.7
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "117",
+        "date": "08/03/2006",
+        "bias": ""
+      },
+      "start": "09/03/2006",
+      "end": "19/04/2006",
+      "selicGoal": 16.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.77,
+        "yearly": 16.5
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "116",
+        "date": "18/01/2006",
+        "bias": ""
+      },
+      "start": "19/01/2006",
+      "end": "08/03/2006",
+      "selicGoal": 17.25,
+      "tban": "",
+      "value": {
+        "monthly": 2.11,
+        "yearly": 17.26
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "115",
+        "date": "14/12/2005",
+        "bias": ""
+      },
+      "start": "15/12/2005",
+      "end": "18/01/2006",
+      "selicGoal": 18,
+      "tban": "",
+      "value": {
+        "monthly": 1.66,
+        "yearly": 18
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "114",
+        "date": "23/11/2005",
+        "bias": ""
+      },
+      "start": "24/11/2005",
+      "end": "14/12/2005",
+      "selicGoal": 18.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.01,
+        "yearly": 18.49
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "113",
+        "date": "19/10/2005",
+        "bias": ""
+      },
+      "start": "20/10/2005",
+      "end": "23/11/2005",
+      "selicGoal": 19,
+      "tban": "",
+      "value": {
+        "monthly": 1.6,
+        "yearly": 18.98
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "112",
+        "date": "14/09/2005",
+        "bias": ""
+      },
+      "start": "15/09/2005",
+      "end": "19/10/2005",
+      "selicGoal": 19.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.71,
+        "yearly": 19.48
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "111",
+        "date": "17/08/2005",
+        "bias": ""
+      },
+      "start": "18/08/2005",
+      "end": "14/09/2005",
+      "selicGoal": 19.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.37,
+        "yearly": 19.74
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "110",
+        "date": "20/07/2005",
+        "bias": ""
+      },
+      "start": "21/07/2005",
+      "end": "17/08/2005",
+      "selicGoal": 19.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.44,
+        "yearly": 19.75
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "109",
+        "date": "15/06/2005",
+        "bias": ""
+      },
+      "start": "16/06/2005",
+      "end": "20/07/2005",
+      "selicGoal": 19.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.8,
+        "yearly": 19.73
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "108",
+        "date": "18/05/2005",
+        "bias": ""
+      },
+      "start": "19/05/2005",
+      "end": "15/06/2005",
+      "selicGoal": 19.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.37,
+        "yearly": 19.75
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "107",
+        "date": "20/04/2005",
+        "bias": ""
+      },
+      "start": "22/04/2005",
+      "end": "18/05/2005",
+      "selicGoal": 19.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.35,
+        "yearly": 19.51
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "106",
+        "date": "16/03/2005",
+        "bias": ""
+      },
+      "start": "17/03/2005",
+      "end": "21/04/2005",
+      "selicGoal": 19.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.69,
+        "yearly": 19.24
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "105",
+        "date": "16/02/2005",
+        "bias": ""
+      },
+      "start": "17/02/2005",
+      "end": "16/03/2005",
+      "selicGoal": 18.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.37,
+        "yearly": 18.75
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "104",
+        "date": "19/01/2005",
+        "bias": ""
+      },
+      "start": "20/01/2005",
+      "end": "16/02/2005",
+      "selicGoal": 18.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.2,
+        "yearly": 18.25
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "103",
+        "date": "15/12/2004",
+        "bias": ""
+      },
+      "start": "16/12/2004",
+      "end": "19/01/2005",
+      "selicGoal": 17.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.63,
+        "yearly": 17.74
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "102",
+        "date": "17/11/2004",
+        "bias": ""
+      },
+      "start": "18/11/2004",
+      "end": "15/12/2004",
+      "selicGoal": 17.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.27,
+        "yearly": 17.23
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "101",
+        "date": "19/10/2004",
+        "bias": ""
+      },
+      "start": "20/10/2004",
+      "end": "17/11/2004",
+      "selicGoal": 16.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.11,
+        "yearly": 16.74
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "100",
+        "date": "15/09/2004",
+        "bias": ""
+      },
+      "start": "16/09/2004",
+      "end": "19/10/2004",
+      "selicGoal": 16.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.44,
+        "yearly": 16.23
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "99",
+        "date": "18/08/2004",
+        "bias": ""
+      },
+      "start": "19/08/2004",
+      "end": "15/09/2004",
+      "selicGoal": 16,
+      "tban": "",
+      "value": {
+        "monthly": 1.12,
+        "yearly": 15.9
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "98",
+        "date": "21/07/2004",
+        "bias": ""
+      },
+      "start": "22/07/2004",
+      "end": "18/08/2004",
+      "selicGoal": 16,
+      "tban": "",
+      "value": {
+        "monthly": 1.17,
+        "yearly": 15.83
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "97",
+        "date": "16/06/2004",
+        "bias": ""
+      },
+      "start": "17/06/2004",
+      "end": "21/07/2004",
+      "selicGoal": 16,
+      "tban": "",
+      "value": {
+        "monthly": 1.46,
+        "yearly": 15.79
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "96",
+        "date": "19/05/2004",
+        "bias": ""
+      },
+      "start": "20/05/2004",
+      "end": "16/06/2004",
+      "selicGoal": 16,
+      "tban": "",
+      "value": {
+        "monthly": 1.11,
+        "yearly": 15.79
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "95",
+        "date": "14/04/2004",
+        "bias": ""
+      },
+      "start": "15/04/2004",
+      "end": "19/05/2004",
+      "selicGoal": 16,
+      "tban": "",
+      "value": {
+        "monthly": 1.41,
+        "yearly": 15.8
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "94",
+        "date": "17/03/2004",
+        "bias": ""
+      },
+      "start": "18/03/2004",
+      "end": "14/04/2004",
+      "selicGoal": 16.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.13,
+        "yearly": 16.09
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "93",
+        "date": "18/02/2004",
+        "bias": ""
+      },
+      "start": "19/02/2004",
+      "end": "17/03/2004",
+      "selicGoal": 16.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.08,
+        "yearly": 16.28
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "92",
+        "date": "21/01/2004",
+        "bias": ""
+      },
+      "start": "22/01/2004",
+      "end": "18/02/2004",
+      "selicGoal": 16.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.21,
+        "yearly": 16.3
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "91",
+        "date": "17/12/2003",
+        "bias": ""
+      },
+      "start": "18/12/2003",
+      "end": "21/01/2004",
+      "selicGoal": 16.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.39,
+        "yearly": 16.32
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "90",
+        "date": "19/11/2003",
+        "bias": ""
+      },
+      "start": "20/11/2003",
+      "end": "17/12/2003",
+      "selicGoal": 17.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.28,
+        "yearly": 17.32
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "89",
+        "date": "22/10/2003",
+        "bias": ""
+      },
+      "start": "23/10/2003",
+      "end": "19/11/2003",
+      "selicGoal": 19,
+      "tban": "",
+      "value": {
+        "monthly": 1.38,
+        "yearly": 18.84
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "88",
+        "date": "17/09/2003",
+        "bias": ""
+      },
+      "start": "18/09/2003",
+      "end": "22/10/2003",
+      "selicGoal": 20,
+      "tban": "",
+      "value": {
+        "monthly": 1.81,
+        "yearly": 19.84
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "87",
+        "date": "20/08/2003",
+        "bias": ""
+      },
+      "start": "21/08/2003",
+      "end": "17/09/2003",
+      "selicGoal": 22,
+      "tban": "",
+      "value": {
+        "monthly": 1.58,
+        "yearly": 21.84
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "86",
+        "date": "23/07/2003",
+        "bias": ""
+      },
+      "start": "24/07/2003",
+      "end": "20/08/2003",
+      "selicGoal": 24.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.74,
+        "yearly": 24.32
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "85",
+        "date": "18/06/2003",
+        "bias": ""
+      },
+      "start": "19/06/2003",
+      "end": "23/07/2003",
+      "selicGoal": 26,
+      "tban": "",
+      "value": {
+        "monthly": 2.21,
+        "yearly": 25.74
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "84",
+        "date": "21/05/2003",
+        "bias": ""
+      },
+      "start": "22/05/2003",
+      "end": "18/06/2003",
+      "selicGoal": 26.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.87,
+        "yearly": 26.27
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "83",
+        "date": "23/04/2003",
+        "bias": ""
+      },
+      "start": "24/04/2003",
+      "end": "21/05/2003",
+      "selicGoal": 26.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.78,
+        "yearly": 26.32
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "82",
+        "date": "19/03/2003",
+        "bias": "alta"
+      },
+      "start": "20/03/2003",
+      "end": "23/04/2003",
+      "selicGoal": 26.5,
+      "tban": "",
+      "value": {
+        "monthly": 2.16,
+        "yearly": 26.32
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "81",
+        "date": "19/02/2003",
+        "bias": ""
+      },
+      "start": "20/02/2003",
+      "end": "19/03/2003",
+      "selicGoal": 26.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.68,
+        "yearly": 26.3
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "80",
+        "date": "22/01/2003",
+        "bias": ""
+      },
+      "start": "23/01/2003",
+      "end": "19/02/2003",
+      "selicGoal": 25.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.81,
+        "yearly": 25.36
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "79",
+        "date": "18/12/2002",
+        "bias": ""
+      },
+      "start": "19/12/2002",
+      "end": "22/01/2003",
+      "selicGoal": 25,
+      "tban": "",
+      "value": {
+        "monthly": 2.05,
+        "yearly": 24.9
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "78",
+        "date": "20/11/2002",
+        "bias": ""
+      },
+      "start": "21/11/2002",
+      "end": "18/12/2002",
+      "selicGoal": 22,
+      "tban": "",
+      "value": {
+        "monthly": 1.58,
+        "yearly": 21.9
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "77",
+        "date": "22/10/2002",
+        "bias": ""
+      },
+      "start": "23/10/2002",
+      "end": "20/11/2002",
+      "selicGoal": 21,
+      "tban": "",
+      "value": {
+        "monthly": 1.44,
+        "yearly": 20.9
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "76 ex.",
+        "date": "14/10/2002",
+        "bias": ""
+      },
+      "start": "15/10/2002",
+      "end": "22/10/2002",
+      "selicGoal": 21,
+      "tban": "",
+      "value": {
+        "monthly": 0.53,
+        "yearly": 20.9
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "75",
+        "date": "18/09/2002",
+        "bias": ""
+      },
+      "start": "19/09/2002",
+      "end": "14/10/2002",
+      "selicGoal": 18,
+      "tban": "",
+      "value": {
+        "monthly": 1.18,
+        "yearly": 17.9
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "74",
+        "date": "21/08/2002",
+        "bias": "baixa"
+      },
+      "start": "22/08/2002",
+      "end": "18/09/2002",
+      "selicGoal": 18,
+      "tban": "",
+      "value": {
+        "monthly": 1.31,
+        "yearly": 17.87
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "73",
+        "date": "17/07/2002",
+        "bias": ""
+      },
+      "start": "18/07/2002",
+      "end": "21/08/2002",
+      "selicGoal": 18,
+      "tban": "",
+      "value": {
+        "monthly": 1.64,
+        "yearly": 17.86
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "72",
+        "date": "19/06/2002",
+        "bias": "baixa"
+      },
+      "start": "20/06/2002",
+      "end": "17/07/2002",
+      "selicGoal": 18.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.35,
+        "yearly": 18.4
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "71",
+        "date": "22/05/2002",
+        "bias": ""
+      },
+      "start": "23/05/2002",
+      "end": "19/06/2002",
+      "selicGoal": 18.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.26,
+        "yearly": 18.07
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "70",
+        "date": "17/04/2002",
+        "bias": ""
+      },
+      "start": "18/04/2002",
+      "end": "22/05/2002",
+      "selicGoal": 18.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.62,
+        "yearly": 18.35
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "69",
+        "date": "20/03/2002",
+        "bias": ""
+      },
+      "start": "21/03/2002",
+      "end": "17/04/2002",
+      "selicGoal": 18.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.28,
+        "yearly": 18.45
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "68",
+        "date": "20/02/2002",
+        "bias": ""
+      },
+      "start": "21/02/2002",
+      "end": "20/03/2002",
+      "selicGoal": 18.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.38,
+        "yearly": 18.8
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "67",
+        "date": "23/01/2002",
+        "bias": ""
+      },
+      "start": "24/01/2002",
+      "end": "20/02/2002",
+      "selicGoal": 19,
+      "tban": "",
+      "value": {
+        "monthly": 1.25,
+        "yearly": 19.05
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "66",
+        "date": "19/12/2001",
+        "bias": ""
+      },
+      "start": "20/12/2001",
+      "end": "23/01/2002",
+      "selicGoal": 19,
+      "tban": "",
+      "value": {
+        "monthly": 1.6,
+        "yearly": 19.05
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "65",
+        "date": "21/11/2001",
+        "bias": ""
+      },
+      "start": "22/11/2001",
+      "end": "19/12/2001",
+      "selicGoal": 19,
+      "tban": "",
+      "value": {
+        "monthly": 1.39,
+        "yearly": 19.05
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "64",
+        "date": "17/10/2001",
+        "bias": ""
+      },
+      "start": "18/10/2001",
+      "end": "21/11/2001",
+      "selicGoal": 19,
+      "tban": "",
+      "value": {
+        "monthly": 1.6,
+        "yearly": 19.05
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "63",
+        "date": "19/09/2001",
+        "bias": ""
+      },
+      "start": "20/09/2001",
+      "end": "17/10/2001",
+      "selicGoal": 19,
+      "tban": "",
+      "value": {
+        "monthly": 1.32,
+        "yearly": 19.07
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "62",
+        "date": "22/08/2001",
+        "bias": ""
+      },
+      "start": "23/08/2001",
+      "end": "19/09/2001",
+      "selicGoal": 19,
+      "tban": "",
+      "value": {
+        "monthly": 1.32,
+        "yearly": 19.04
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "61",
+        "date": "18/07/2001",
+        "bias": ""
+      },
+      "start": "19/07/2001",
+      "end": "22/08/2001",
+      "selicGoal": 19,
+      "tban": "",
+      "value": {
+        "monthly": 1.74,
+        "yearly": 18.96
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "60",
+        "date": "20/06/2001",
+        "bias": "baixa"
+      },
+      "start": "21/06/2001",
+      "end": "18/07/2001",
+      "selicGoal": 18.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.34,
+        "yearly": 18.31
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "59",
+        "date": "23/05/2001",
+        "bias": ""
+      },
+      "start": "24/05/2001",
+      "end": "20/06/2001",
+      "selicGoal": 16.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.17,
+        "yearly": 16.76
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "58",
+        "date": "18/04/2001",
+        "bias": ""
+      },
+      "start": "19/04/2001",
+      "end": "23/05/2001",
+      "selicGoal": 16.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.45,
+        "yearly": 16.3
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "57",
+        "date": "21/03/2001",
+        "bias": ""
+      },
+      "start": "22/03/2001",
+      "end": "18/04/2001",
+      "selicGoal": 15.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.11,
+        "yearly": 15.84
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "56",
+        "date": "14/02/2001",
+        "bias": ""
+      },
+      "start": "15/02/2001",
+      "end": "21/03/2001",
+      "selicGoal": 15.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.3,
+        "yearly": 15.2
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "55",
+        "date": "17/01/2001",
+        "bias": ""
+      },
+      "start": "18/01/2001",
+      "end": "14/02/2001",
+      "selicGoal": 15.25,
+      "tban": "",
+      "value": {
+        "monthly": 1.13,
+        "yearly": 15.19
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "54",
+        "date": "20/12/2000",
+        "bias": ""
+      },
+      "start": "21/12/2000",
+      "end": "17/01/2001",
+      "selicGoal": 15.75,
+      "tban": "",
+      "value": {
+        "monthly": 1.05,
+        "yearly": 15.76
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "53",
+        "date": "22/11/2000",
+        "bias": ""
+      },
+      "start": "23/11/2000",
+      "end": "20/12/2000",
+      "selicGoal": 16.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.21,
+        "yearly": 16.38
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "52",
+        "date": "18/10/2000",
+        "bias": ""
+      },
+      "start": "19/10/2000",
+      "end": "22/11/2000",
+      "selicGoal": 16.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.41,
+        "yearly": 16.56
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "51",
+        "date": "20/09/2000",
+        "bias": ""
+      },
+      "start": "21/09/2000",
+      "end": "18/10/2000",
+      "selicGoal": 16.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.16,
+        "yearly": 16.6
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "50",
+        "date": "23/08/2000",
+        "bias": ""
+      },
+      "start": "24/08/2000",
+      "end": "20/09/2000",
+      "selicGoal": 16.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.16,
+        "yearly": 16.54
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "49",
+        "date": "19/07/2000",
+        "bias": ""
+      },
+      "start": "20/07/2000",
+      "end": "23/08/2000",
+      "selicGoal": 16.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.53,
+        "yearly": 16.51
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "48",
+        "date": "",
+        "bias": "baixa"
+      },
+      "start": "10/07/2000",
+      "end": "19/07/2000",
+      "selicGoal": 17,
+      "tban": "",
+      "value": {
+        "monthly": 0.5,
+        "yearly": 16.96
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "48",
+        "date": "20/06/2000",
+        "bias": "baixa"
+      },
+      "start": "21/06/2000",
+      "end": "07/07/2000",
+      "selicGoal": 17.5,
+      "tban": "",
+      "value": {
+        "monthly": 0.76,
+        "yearly": 17.35
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "47",
+        "date": "24/05/2000",
+        "bias": ""
+      },
+      "start": "25/05/2000",
+      "end": "20/06/2000",
+      "selicGoal": 18.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.28,
+        "yearly": 18.39
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "46",
+        "date": "19/04/2000",
+        "bias": ""
+      },
+      "start": "20/04/2000",
+      "end": "24/05/2000",
+      "selicGoal": 18.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.57,
+        "yearly": 18.55
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "45",
+        "date": "",
+        "bias": "baixa"
+      },
+      "start": "29/03/2000",
+      "end": "19/04/2000",
+      "selicGoal": 18.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.09,
+        "yearly": 18.6
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "45",
+        "date": "22/03/2000",
+        "bias": "baixa"
+      },
+      "start": "23/03/2000",
+      "end": "28/03/2000",
+      "selicGoal": 19,
+      "tban": "",
+      "value": {
+        "monthly": 0.28,
+        "yearly": 18.94
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "44",
+        "date": "16/02/2000",
+        "bias": ""
+      },
+      "start": "17/02/2000",
+      "end": "22/03/2000",
+      "selicGoal": 19,
+      "tban": "",
+      "value": {
+        "monthly": 1.59,
+        "yearly": 18.88
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "43",
+        "date": "19/01/2000",
+        "bias": ""
+      },
+      "start": "20/01/2000",
+      "end": "16/02/2000",
+      "selicGoal": 19,
+      "tban": "",
+      "value": {
+        "monthly": 1.38,
+        "yearly": 18.87
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "42",
+        "date": "15/12/1999",
+        "bias": ""
+      },
+      "start": "16/12/1999",
+      "end": "19/01/2000",
+      "selicGoal": 19,
+      "tban": "",
+      "value": {
+        "monthly": 1.74,
+        "yearly": 19
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "41",
+        "date": "10/11/1999",
+        "bias": ""
+      },
+      "start": "11/11/1999",
+      "end": "15/12/1999",
+      "selicGoal": 19,
+      "tban": "",
+      "value": {
+        "monthly": 1.67,
+        "yearly": 18.99
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "40",
+        "date": "06/10/1999",
+        "bias": "baixa"
+      },
+      "start": "07/10/1999",
+      "end": "10/11/1999",
+      "selicGoal": 19,
+      "tban": "",
+      "value": {
+        "monthly": 1.59,
+        "yearly": 18.87
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "39",
+        "date": "22/09/1999",
+        "bias": ""
+      },
+      "start": "23/09/1999",
+      "end": "06/10/1999",
+      "selicGoal": 19,
+      "tban": "",
+      "value": {
+        "monthly": 0.69,
+        "yearly": 19.01
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "38",
+        "date": "01/09/1999",
+        "bias": ""
+      },
+      "start": "02/09/1999",
+      "end": "22/09/1999",
+      "selicGoal": 19.5,
+      "tban": "",
+      "value": {
+        "monthly": 1,
+        "yearly": 19.52
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "37",
+        "date": "28/07/1999",
+        "bias": ""
+      },
+      "start": "29/07/1999",
+      "end": "01/09/1999",
+      "selicGoal": 19.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.78,
+        "yearly": 19.51
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "36",
+        "date": "23/06/1999",
+        "bias": "baixa"
+      },
+      "start": "24/06/1999",
+      "end": "28/07/1999",
+      "selicGoal": 21,
+      "tban": "",
+      "value": {
+        "monthly": 1.9,
+        "yearly": 20.88
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "35",
+        "date": "",
+        "bias": "baixa"
+      },
+      "start": "09/06/1999",
+      "end": "23/06/1999",
+      "selicGoal": 22,
+      "tban": "",
+      "value": {
+        "monthly": 0.87,
+        "yearly": 21.92
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "35",
+        "date": "19/05/1999",
+        "bias": "baixa"
+      },
+      "start": "20/05/1999",
+      "end": "08/06/1999",
+      "selicGoal": 23.5,
+      "tban": "",
+      "value": {
+        "monthly": 1.09,
+        "yearly": 23.36
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "34",
+        "date": "",
+        "bias": "baixa"
+      },
+      "start": "13/05/1999",
+      "end": "19/05/1999",
+      "selicGoal": 27,
+      "tban": "",
+      "value": {
+        "monthly": 0.47,
+        "yearly": 26.96
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "34",
+        "date": "",
+        "bias": "baixa"
+      },
+      "start": "10/05/1999",
+      "end": "12/05/1999",
+      "selicGoal": 29.5,
+      "tban": "",
+      "value": {
+        "monthly": 0.31,
+        "yearly": 29.53
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "34",
+        "date": "",
+        "bias": "baixa"
+      },
+      "start": "29/04/1999",
+      "end": "07/05/1999",
+      "selicGoal": 32,
+      "tban": "",
+      "value": {
+        "monthly": 0.77,
+        "yearly": 31.91
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "34",
+        "date": "14/04/1999",
+        "bias": "baixa"
+      },
+      "start": "15/04/1999",
+      "end": "28/04/1999",
+      "selicGoal": 34,
+      "tban": "",
+      "value": {
+        "monthly": 1.05,
+        "yearly": 33.92
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "33",
+        "date": "",
+        "bias": "baixa"
+      },
+      "start": "06/04/1999",
+      "end": "14/04/1999",
+      "selicGoal": 39.5,
+      "tban": "",
+      "value": {
+        "monthly": 0.93,
+        "yearly": 39.42
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "33",
+        "date": "",
+        "bias": "baixa"
+      },
+      "start": "25/03/1999",
+      "end": "05/04/1999",
+      "selicGoal": 42,
+      "tban": "",
+      "value": {
+        "monthly": 0.84,
+        "yearly": 41.96
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "33",
+        "date": "04/03/1999",
+        "bias": "baixa"
+      },
+      "start": "05/03/1999",
+      "end": "24/03/1999",
+      "selicGoal": 45,
+      "tban": "",
+      "value": {
+        "monthly": 2.08,
+        "yearly": 44.95
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "32",
+        "date": "18/01/1999",
+        "bias": ""
+      },
+      "start": "19/01/1999",
+      "end": "04/03/1999",
+      "selicGoal": 25,
+      "tban": 41,
+      "value": {
+        "monthly": 3.98,
+        "yearly": 37.34
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "31",
+        "date": "16/12/1998",
+        "bias": ""
+      },
+      "start": "17/12/1998",
+      "end": "18/01/1999",
+      "selicGoal": 29,
+      "tban": 36,
+      "value": {
+        "monthly": 2.16,
+        "yearly": 29.21
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "30",
+        "date": "11/11/1998",
+        "bias": ""
+      },
+      "start": "12/11/1998",
+      "end": "16/12/1998",
+      "selicGoal": 19,
+      "tban": 42.25,
+      "value": {
+        "monthly": 3.02,
+        "yearly": 34.93
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "29",
+        "date": "07/10/1998",
+        "bias": ""
+      },
+      "start": "08/10/1998",
+      "end": "11/11/1998",
+      "selicGoal": 19,
+      "tban": 49.75,
+      "value": {
+        "monthly": 3.26,
+        "yearly": 42.12
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "28 ex.",
+        "date": "10/09/1998",
+        "bias": ""
+      },
+      "start": "11/09/1998",
+      "end": "07/10/1998",
+      "selicGoal": 19,
+      "tban": 49.75,
+      "value": {
+        "monthly": 2.58,
+        "yearly": 40.18
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "27",
+        "date": "02/09/1998",
+        "bias": ""
+      },
+      "start": "03/09/1998",
+      "end": "10/09/1998",
+      "selicGoal": 19,
+      "tban": 29.75,
+      "value": {
+        "monthly": 0.45,
+        "yearly": 25.49
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "26",
+        "date": "29/07/1998",
+        "bias": ""
+      },
+      "start": "30/07/1998",
+      "end": "02/09/1998",
+      "selicGoal": 19.75,
+      "tban": 25.75,
+      "value": {
+        "monthly": 1.76,
+        "yearly": 19.25
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "25",
+        "date": "24/06/1998",
+        "bias": ""
+      },
+      "start": "25/06/1998",
+      "end": "29/07/1998",
+      "selicGoal": 21,
+      "tban": 28,
+      "value": {
+        "monthly": 1.86,
+        "yearly": 20.45
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "24",
+        "date": "20/05/1998",
+        "bias": ""
+      },
+      "start": "21/05/1998",
+      "end": "24/06/1998",
+      "selicGoal": 21.75,
+      "tban": 29.75,
+      "value": {
+        "monthly": 1.85,
+        "yearly": 21.23
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "23",
+        "date": "15/04/1998",
+        "bias": ""
+      },
+      "start": "16/04/1998",
+      "end": "20/05/1998",
+      "selicGoal": 23.25,
+      "tban": 35.25,
+      "value": {
+        "monthly": 1.92,
+        "yearly": 23.16
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "22",
+        "date": "04/03/1998",
+        "bias": ""
+      },
+      "start": "05/03/1998",
+      "end": "15/04/1998",
+      "selicGoal": 28,
+      "tban": 38,
+      "value": {
+        "monthly": 2.74,
+        "yearly": 27.51
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "21",
+        "date": "28/01/1998",
+        "bias": ""
+      },
+      "start": "29/01/1998",
+      "end": "04/03/1998",
+      "selicGoal": 34.5,
+      "tban": 42,
+      "value": {
+        "monthly": 2.72,
+        "yearly": 34.2
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "20",
+        "date": "17/12/1997",
+        "bias": ""
+      },
+      "start": "02/01/1998",
+      "end": "28/01/1998",
+      "selicGoal": 38,
+      "tban": 43,
+      "value": {
+        "monthly": 2.43,
+        "yearly": 37.47
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "19",
+        "date": "19/11/1997",
+        "bias": ""
+      },
+      "start": "01/12/1997",
+      "end": "31/12/1997",
+      "selicGoal": 2.9,
+      "tban": 3.15,
+      "value": {
+        "monthly": 2.97,
+        "yearly": 39.87
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "18 ex.",
+        "date": "30/10/1997",
+        "bias": ""
+      },
+      "start": "31/10/1997",
+      "end": "30/11/1997",
+      "selicGoal": 3.05,
+      "tban": 3.23,
+      "value": {
+        "monthly": 3.18,
+        "yearly": 45.67
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "17",
+        "date": "22/10/1997",
+        "bias": ""
+      },
+      "start": "01/11/1997",
+      "end": "30/11/1997",
+      "selicGoal": 1,
+      "tban": 1,
+      "value": {
+        "monthly": 3.04,
+        "yearly": 45.9
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "16",
+        "date": "17/09/1997",
+        "bias": ""
+      },
+      "start": "01/10/1997",
+      "end": "30/10/1997",
+      "selicGoal": 1.58,
+      "tban": 1.78,
+      "value": {
+        "monthly": 1.53,
+        "yearly": 19.05
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "15",
+        "date": "20/08/1997",
+        "bias": ""
+      },
+      "start": "01/09/1997",
+      "end": "30/09/1997",
+      "selicGoal": 1.58,
+      "tban": 1.78,
+      "value": {
+        "monthly": 1.59,
+        "yearly": 19.81
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "14",
+        "date": "23/07/1997",
+        "bias": ""
+      },
+      "start": "01/08/1997",
+      "end": "31/08/1997",
+      "selicGoal": 1.58,
+      "tban": 1.78,
+      "value": {
+        "monthly": 1.59,
+        "yearly": 20.78
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "13",
+        "date": "18/06/1997",
+        "bias": ""
+      },
+      "start": "01/07/1997",
+      "end": "31/07/1997",
+      "selicGoal": 1.58,
+      "tban": 1.78,
+      "value": {
+        "monthly": 1.6,
+        "yearly": 19.04
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "12",
+        "date": "21/05/1997",
+        "bias": ""
+      },
+      "start": "01/06/1997",
+      "end": "30/06/1997",
+      "selicGoal": 1.58,
+      "tban": 1.78,
+      "value": {
+        "monthly": 1.61,
+        "yearly": 21.08
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "11",
+        "date": "16/04/1997",
+        "bias": ""
+      },
+      "start": "01/05/1997",
+      "end": "31/05/1997",
+      "selicGoal": 1.58,
+      "tban": 1.78,
+      "value": {
+        "monthly": 1.58,
+        "yearly": 21.91
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "10",
+        "date": "19/03/1997",
+        "bias": ""
+      },
+      "start": "01/04/1997",
+      "end": "30/04/1997",
+      "selicGoal": 1.58,
+      "tban": 1.78,
+      "value": {
+        "monthly": 1.66,
+        "yearly": 21.84
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "9",
+        "date": "19/02/1997",
+        "bias": ""
+      },
+      "start": "01/03/1997",
+      "end": "31/03/1997",
+      "selicGoal": 1.62,
+      "tban": 1.8,
+      "value": {
+        "monthly": 1.64,
+        "yearly": 24.11
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "8",
+        "date": "22/01/1997",
+        "bias": ""
+      },
+      "start": "01/02/1997",
+      "end": "28/02/1997",
+      "selicGoal": 1.66,
+      "tban": 1.84,
+      "value": {
+        "monthly": 1.67,
+        "yearly": 26.14
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "7",
+        "date": "18/12/1996",
+        "bias": ""
+      },
+      "start": "01/01/1997",
+      "end": "31/01/1997",
+      "selicGoal": 1.7,
+      "tban": 1.88,
+      "value": {
+        "monthly": 1.73,
+        "yearly": 21.73
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "6",
+        "date": "27/11/1996",
+        "bias": ""
+      },
+      "start": "01/12/1996",
+      "end": "31/12/1996",
+      "selicGoal": 1.74,
+      "tban": 1.9,
+      "value": {
+        "monthly": 1.8,
+        "yearly": 23.94
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "5",
+        "date": "23/10/1996",
+        "bias": ""
+      },
+      "start": "01/11/1996",
+      "end": "30/11/1996",
+      "selicGoal": 1.78,
+      "tban": 1.9,
+      "value": {
+        "monthly": 1.8,
+        "yearly": 25.27
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "4",
+        "date": "23/09/1996",
+        "bias": ""
+      },
+      "start": "01/10/1996",
+      "end": "31/10/1996",
+      "selicGoal": 1.82,
+      "tban": 1.93,
+      "value": {
+        "monthly": 1.86,
+        "yearly": 23.48
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "3",
+        "date": "21/08/1996",
+        "bias": ""
+      },
+      "start": "01/09/1996",
+      "end": "30/09/1996",
+      "selicGoal": 1.88,
+      "tban": "",
+      "value": {
+        "monthly": 1.9,
+        "yearly": 25.4
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "2",
+        "date": "30/07/1996",
+        "bias": ""
+      },
+      "start": "01/08/1996",
+      "end": "31/08/1996",
+      "selicGoal": 1.9,
+      "tban": "",
+      "value": {
+        "monthly": 1.97,
+        "yearly": 25.01
+      }
+    },
+    {
+      "bcMeet": {
+        "id": "1",
+        "date": "26/06/1996",
+        "bias": ""
+      },
+      "start": "01/07/1996",
+      "end": "31/07/1996",
+      "selicGoal": 1.9,
+      "tban": "",
+      "value": {
+        "monthly": 1.93,
+        "yearly": 23.28
+      }
+    }
+  ]
+}
