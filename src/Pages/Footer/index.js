@@ -1,11 +1,12 @@
+import React from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import Presidents from '../../Dtos/Presidents';
-import { BsGithub, BsTwitter } from 'react-icons/bs';
-import './style.css';
 import { GrCompare } from 'react-icons/gr';
+import { BsGithub, BsTwitter } from 'react-icons/bs';
+import Presidents from '../../Dtos/Presidents';
+import './style.css';
 
-const Footer = () => {
+function Footer() {
   const presidents = new Presidents();
   const start = new Date();
 
@@ -86,6 +87,6 @@ const Footer = () => {
       </Container>
     </footer>
   );
-};
+}
 
 export default Footer;

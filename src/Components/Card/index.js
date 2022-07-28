@@ -1,13 +1,14 @@
+import React from 'react';
 import { Col, Image, Row } from 'react-bootstrap';
 import './style.css';
 
-const Card = (props) => {
+function Card(props) {
   const { president, value, date, isGood } = props;
 
   return (
     <div
       className={`Card ${
-        isGood !== undefined && 'Card-has' + (isGood ? 'Good' : 'Bad') + 'Value'
+        isGood !== undefined && `Card-has${isGood ? 'Good' : 'Bad'}Value`
       }`}
     >
       <Row>
@@ -29,6 +30,6 @@ const Card = (props) => {
       </Row>
     </div>
   );
-};
+}
 
 export default Card;

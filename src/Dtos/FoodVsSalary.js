@@ -4,6 +4,7 @@ import { getDateInterval } from '../utils';
 
 class FoodVsSalary {
   foodBasket = null;
+
   salary = null;
 
   constructor() {
@@ -17,21 +18,20 @@ class FoodVsSalary {
     const food = this.foodBasket.getPeriodValues(f, t);
     const salary = this.salary.getPeriodSeries(f, t);
 
-    for (let i = 0; i < dates.length; i++) {
-      if (isNaN(food[i]) || isNaN(salary[i])) {
-        continue;
+    for (let i = 0; i < dates.length; i += 1) {
+      if (
+        !Number.isNaN(food[i]) &&
+        !Number.isNaN(salary[i]) &&
+        food[i] > 0 &&
+        salary[i] > 0
+      ) {
+        const percent = (food[i] / salary[i]) * 100;
+
+        values.push({
+          date: dates[i],
+          value: parseFloat(percent.toFixed(2)),
+        });
       }
-
-      if (!food[i] > 0 || !salary[i]) {
-        continue;
-      }
-
-      const percent = (food[i] / salary[i]) * 100;
-
-      values.push({
-        date: dates[i],
-        value: parseFloat(percent.toFixed(2)),
-      });
     }
 
     return values;

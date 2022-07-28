@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Figure, Row } from 'react-bootstrap';
+import { Helmet } from 'react-helmet';
+import { useParams } from 'react-router-dom';
 import FoodInsecurityDto from '../../Dtos/FoodInsecurity';
 import Presidents from '../../Dtos/Presidents';
-import { Helmet } from 'react-helmet';
 import Footer from '../Footer';
 import Header from '../Header';
 import image from '../../assets/images/food-insecurity.jpg';
 import IntervalPicker from '../../Components/IntervalPicker';
-import { useParams } from 'react-router-dom';
 import {
   getDateInterval,
   getMaxDate,

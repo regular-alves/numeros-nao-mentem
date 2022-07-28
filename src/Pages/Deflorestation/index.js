@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Col, Container, Figure, Row } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
+import { useParams } from 'react-router-dom';
 import Header from '../Header';
 import Footer from '../Footer';
 
@@ -20,9 +21,8 @@ import {
 import Chart from '../../Components/Chart';
 import Card from '../../Components/Card';
 import Sources from '../../Components/Sources';
-import { useParams } from 'react-router-dom';
 
-const Deflorestation = () => {
+function Deflorestation() {
   const deflorestation = new DeflorestationTotal();
   const presidents = new Presidents();
   let { to: toDate, from: fromDate } = useParams();
@@ -58,83 +58,27 @@ const Deflorestation = () => {
     deflorestation.getMaxDataDate(),
   ]);
 
-  const [to, setTo] = useState(toDate.toISOString());
-  const [from, setFrom] = useState(fromDate.toISOString());
+  const [to, setTo] = useState(endDate.toISOString());
+  const [from, setFrom] = useState(startDate.toISOString());
+
+  useEffect(() => {
+    let path = window.location.pathname.replace(/\/([\d-]+)/g, '');
+
+    if (path.substring(path.length - 1) === '/') {
+      path = path.substring(0, path.length - 1);
+    }
+
+    window.history.replaceState(
+      null,
+      null,
+      `${path}/${from.toString().substring(0, 10)}/${to
+        .toString()
+        .substring(0, 10)}`,
+    );
+  }, [from, to]);
 
   const categories = getDateInterval(from, to).map((d) => slashedMonthYear(d));
   const plotBands = presidents.toPlotBands(from, to);
-
-  const chart = {
-    type: 'areaspline',
-  };
-
-  const title = {
-    text: null,
-  };
-
-  const tooltip = {
-    shared: true,
-    // valuePrefix: 'R$'
-  };
-
-  const credits = {
-    enabled: false,
-  };
-
-  const plotOptions = {
-    areaspline: {
-      fillOpacity: 0.5,
-    },
-  };
-
-  const responsive = {
-    rules: [
-      {
-        condition: {
-          maxWidth: 900,
-        },
-        chartOptions: {
-          legend: {
-            align: 'center',
-            verticalAlign: 'bottom',
-            layout: 'horizontal',
-          },
-          yAxis: {
-            labels: {
-              align: 'left',
-              x: 0,
-              y: 0,
-            },
-            subtitle: {
-              text: null,
-            },
-          },
-        },
-      },
-      {
-        condition: {
-          maxWidth: 768,
-        },
-        chartOptions: {
-          yAxis: {
-            title: {
-              text: null,
-            },
-          },
-          subtitle: {
-            text: null,
-          },
-        },
-      },
-    ],
-  };
-
-  const orderedDeflorestation = deflorestation
-    .getPeriod(from, to)
-    .sort((a, b) => a.amount - b.amount);
-
-  const worstMoment = orderedDeflorestation.pop();
-  const bestMoment = orderedDeflorestation.shift();
 
   const average = presidents
     .getPeriod(from, to)
@@ -178,7 +122,10 @@ const Deflorestation = () => {
               consideradas confiáveis pelos cientistas nacionais e
               internacionais (
               <a
-                href="http://www.obt.inpe.br/OBT/assuntos/programas/amazonia/prodes/pdfs/kintish_2007.pdf"
+                href={
+                  'http://www.obt.inpe.br/' +
+                  'OBT/assuntos/programas/amazonia/prodes/pdfs/kintish_2007.pdf'
+                }
                 alt="Kintish"
                 title="Kintish"
                 nofollow
@@ -205,7 +152,10 @@ const Deflorestation = () => {
               />
               <Figure.Caption>
                 <a
-                  href="https://www.pexels.com/pt-br/foto/floresta-tropical-cercada-por-nevoeiro-975771/"
+                  href={
+                    'https://www.pexels.com/' +
+                    'pt-br/foto/floresta-tropical-cercada-por-nevoeiro-975771/'
+                  }
                   alt="David Riaño Cortés"
                   title="David Riaño Cortés"
                   nofollow="true"
@@ -235,11 +185,6 @@ const Deflorestation = () => {
             <h2>Desmatamento (km²)</h2>
             <Chart
               options={{
-                chart,
-                title,
-                tooltip,
-                credits,
-                plotOptions,
                 xAxis: {
                   categories,
                   plotBands,
@@ -255,7 +200,6 @@ const Deflorestation = () => {
                     data: deflorestation.getPeriodSeries(from, to),
                   },
                 ],
-                responsive,
               }}
             />
 
@@ -304,6 +248,6 @@ const Deflorestation = () => {
       <Footer />
     </>
   );
-};
+}
 
 export default Deflorestation;

@@ -9,6 +9,7 @@ import {
 
 class Presidents {
   dataSet = [];
+
   rawData = [];
 
   constructor() {
@@ -22,8 +23,6 @@ class Presidents {
         endMonth: new Date(`${z.end.substring(0, 7)}-01 00:00:00`),
       }))
       .sort((a, b) => a.end - b.end);
-
-    return this;
   }
 
   getPeriod(f, t, s = 1) {
@@ -44,19 +43,28 @@ class Presidents {
       let from = 0;
       let to = dates.length;
 
-      for (let i = 0; i < dates.length; i++) {
-        const currentDate = `${dates[i].getFullYear()}-${dates[
-          i
-        ].getMonth()}-${dates[i].getDate()}`;
-        const startDate = `${p.startMonth.getFullYear()}-${p.startMonth.getMonth()}-${p.startMonth.getDate()}`;
-        const endDate = `${p.endMonth.getFullYear()}-${p.endMonth.getMonth()}-${p.endMonth.getDate()}`;
+      for (let j = 0; j < dates.length; j += 1) {
+        const currentDate =
+          `${dates[j].getFullYear()}-` +
+          `${dates[j].getMonth() + 1}-` +
+          `${dates[j].getDate()}`;
+
+        const startDate =
+          `${p.startMonth.getFullYear()}-` +
+          `${p.startMonth.getMonth() + 1}-` +
+          `${p.startMonth.getDate()}`;
+
+        const endDate =
+          `${p.endMonth.getFullYear()}-` +
+          `${p.endMonth.getMonth() + 1}-` +
+          `${p.endMonth.getDate()}`;
 
         if (currentDate === startDate) {
-          from = i;
+          from = j;
         }
 
         if (currentDate === endDate) {
-          to = i;
+          to = j;
         }
       }
 

@@ -1,10 +1,10 @@
 import React from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 import Header from '../Header';
 import Footer from '../Footer';
 import './style.css';
-import { Col, Container, Row } from 'react-bootstrap';
 
-const Home = () => {
+function Home() {
   return (
     <div className="Home">
       <Header transparent />
@@ -63,7 +63,8 @@ const Home = () => {
             </p>
             <p>
               <b>
-                "Tá, mas e a Covid? E o estouro da bolha imobiliária americana?"
+                &quot;Tá, mas e a Covid? E o estouro da bolha imobiliária
+                americana?&quot;
               </b>
             </p>
             <p>
@@ -73,7 +74,7 @@ const Home = () => {
 
             <h2>Dados simples</h2>
             <p>
-              <b>"Bom, mas e aí? Como posso analisar os dados?"</b>
+              <b>&quot;Bom, mas e aí? Como posso analisar os dados?&quot;</b>
             </p>
             <p>
               Buscamos trazer indicadores comuns que afetam seu dia-a-dia e
@@ -86,6 +87,6 @@ const Home = () => {
       <Footer />
     </div>
   );
-};
+}
 
 export default Home;

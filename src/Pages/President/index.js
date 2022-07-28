@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import { Col, Container, Image, Row } from 'react-bootstrap';
+import { Helmet } from 'react-helmet';
 import Header from '../Header';
 import Footer from '../Footer';
 
@@ -9,11 +10,10 @@ import './style.css';
 import { getAvg, getDateInterval, slashedMonthYear } from '../../utils';
 import Chart from '../../Components/Chart';
 import FoodVsSalary from '../../Dtos/FoodVsSalary';
-import { Helmet } from 'react-helmet';
 import Sources from '../../Components/Sources';
 import DeflorestationTotal from '../../Dtos/DeflorestationTotal';
 
-const President = () => {
+function President() {
   const presidentDto = new Dto();
   const foodVsSalary = new FoodVsSalary();
   const deflorestation = new DeflorestationTotal();
@@ -109,11 +109,6 @@ const President = () => {
     ],
   };
 
-  console.log({
-    deflorestationPastAverage,
-    values: deflorestation.getPeriodSeries(president.start, president.end),
-  });
-
   return (
     <>
       <Helmet>
@@ -174,7 +169,9 @@ const President = () => {
                         plotLines: [
                           {
                             label: {
-                              text: `Média de ${past.getFullYear()} a ${new Date().getFullYear()}`,
+                              text:
+                                `Média de ${past.getFullYear()} a ` +
+                                `${new Date().getFullYear()}`,
                               align: 'bottom',
                             },
                             color: 'red',
@@ -227,7 +224,9 @@ const President = () => {
                         plotLines: [
                           {
                             label: {
-                              text: `Média de ${past.getFullYear()} a ${new Date().getFullYear()}`,
+                              text:
+                                `Média de ${past.getFullYear()} a ` +
+                                `${new Date().getFullYear()}`,
                               align: 'bottom',
                             },
                             color: 'red',
@@ -259,6 +258,6 @@ const President = () => {
       </div>
     </>
   );
-};
+}
 
 export default President;

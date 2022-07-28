@@ -1,20 +1,18 @@
 import dataSet from './DataSets/deplorestation.json';
-import { getAvg } from '../utils';
+import { getAvg, handleDateParams } from '../utils';
 
 class DeflorestationTotal {
   dataSet = [];
+
   rawData = [];
 
   constructor() {
     this.rawData = dataSet;
     this.dataSet = dataSet.series.total.sort((a, b) => a.year - b.year);
-
-    return this;
   }
 
   getPeriod(f, t, s = 1) {
-    const from = typeof f === Date ? f : new Date(f);
-    const to = typeof t === Date ? t : new Date(t);
+    const [from, to] = handleDateParams([f, t]);
 
     if (f > t) return [];
 
@@ -32,7 +30,8 @@ class DeflorestationTotal {
 
     if (!register) return;
 
-    return register.amount;
+    // eslint-disable-next-line consistent-return
+    return register.amount || 0;
   }
 
   getPeriodValues(f, t, s) {
@@ -40,10 +39,8 @@ class DeflorestationTotal {
   }
 
   getPeriodSeries(f, t) {
+    const [from, to] = handleDateParams([f, t]);
     const series = [];
-
-    const from = typeof f === Date ? f : new Date(f);
-    const to = typeof t === Date ? t : new Date(t);
 
     const current = from;
 

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import './style.css';
-import { ReactComponent as Logo } from '../../assets/images/Logo.svg';
-import Presidents from '../../Dtos/Presidents';
 import { Col, Container, Row } from 'react-bootstrap';
 import { MdClose, MdMenu } from 'react-icons/md';
+import { ReactComponent as Logo } from '../../assets/images/Logo.svg';
+import Presidents from '../../Dtos/Presidents';
+import './style.css';
 
-const Header = (props) => {
+function Header(props) {
   const [menuOpened, setMenuOpened] = useState(false);
   const location = useLocation();
 
@@ -41,6 +41,7 @@ const Header = (props) => {
           </Col>
           <Col className="Menu-icon" sm={{ span: 2, offset: 5 }} xs={2}>
             <button
+              type="button"
               className="Menu-button"
               onClick={(e) => menuClickHandler(e)}
             >
@@ -90,6 +91,6 @@ const Header = (props) => {
       </Container>
     </div>
   );
-};
+}
 
 export default Header;

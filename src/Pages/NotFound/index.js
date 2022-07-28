@@ -1,9 +1,9 @@
 import React from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 import Header from '../Header';
 import Footer from '../Footer';
-import { Col, Container, Row } from 'react-bootstrap';
 
-const NotFound = () => {
+function NotFound() {
   return (
     <div className="NotFound">
       <Header />
@@ -22,6 +22,6 @@ const NotFound = () => {
       <Footer />
     </div>
   );
-};
+}
 
 export default NotFound;

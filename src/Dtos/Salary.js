@@ -1,8 +1,9 @@
 import dataSet from './DataSets/minimun-salary.json';
-import { getAvg, getMaxDate, getMinDate } from '../utils';
+import { getAvg, getMaxDate, getMinDate, handleDateParams } from '../utils';
 
 class Salary {
   dataSet = [];
+
   rawData = [];
 
   constructor() {
@@ -13,13 +14,10 @@ class Salary {
         start: new Date(z.start),
       }))
       .sort((a, b) => a.start - b.start);
-
-    return this;
   }
 
   getPeriod(f, t, s = 1) {
-    const from = typeof f === Date ? f : new Date(f);
-    const to = typeof t === Date ? t : new Date(t);
+    const [from, to] = handleDateParams([f, t]);
 
     if (f > t) return [];
 
@@ -34,9 +32,7 @@ class Salary {
 
   getPeriodSeries(f, t) {
     const series = [];
-
-    const from = typeof f === Date ? f : new Date(f);
-    const to = typeof t === Date ? t : new Date(t);
+    const [from, to] = handleDateParams([f, t]);
 
     const current = from;
 

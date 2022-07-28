@@ -8,7 +8,7 @@ import './style.css';
 
 registerLocale('pt-BR', ptBr);
 
-const IntervalPicker = (props) => {
+function IntervalPicker(props) {
   const { min, max, from, to, setFrom, setTo } = props;
   const common = {
     dateFormat: 'MM/yyyy',
@@ -32,7 +32,11 @@ const IntervalPicker = (props) => {
           minDate={minValue}
           maxDate={maxValue}
           onChange={(f) => setFrom(f.toISOString())}
-          {...common}
+          dateFormat={common.dateFormat}
+          showMonthYearPicker={common.showMonthYearPicker}
+          showFullMonthYearPicker={common.showFullMonthYearPicker}
+          locale={common.locale}
+          className={common.className}
         />
       </Col>
       <Col xs={5}>
@@ -41,11 +45,15 @@ const IntervalPicker = (props) => {
           minDate={minValue}
           maxDate={maxValue}
           onChange={(t) => setTo(t.toISOString())}
-          {...common}
+          dateFormat={common.dateFormat}
+          showMonthYearPicker={common.showMonthYearPicker}
+          showFullMonthYearPicker={common.showFullMonthYearPicker}
+          locale={common.locale}
+          className={common.className}
         />
       </Col>
     </Row>
   );
-};
+}
 
 export default IntervalPicker;

@@ -9,7 +9,7 @@ import NotFound from './Pages/NotFound';
 import Compare from './Pages/Compare';
 import FoodInsecurity from './Pages/FoodInsecurity';
 
-const AppRoutes = () => {
+function AppRoutes() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
@@ -42,6 +42,6 @@ const AppRoutes = () => {
       </Routes>
     </BrowserRouter>
   );
-};
+}
 
 export default AppRoutes;

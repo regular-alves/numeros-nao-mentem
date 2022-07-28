@@ -1,8 +1,9 @@
 import dataSet from './DataSets/food-insecurity.json';
-import { getAvg, getMaxDate, getMinDate } from '../utils';
+import { getAvg, getMaxDate, getMinDate, handleDateParams } from '../utils';
 
 class FoodInsecurity {
   dataSet = [];
+
   rawData = [];
 
   constructor() {
@@ -14,13 +15,10 @@ class FoodInsecurity {
         end: new Date(z.end),
       }))
       .sort((a, b) => a.start - b.start);
-
-    return this;
   }
 
   getPeriod(f, t, s = 1) {
-    const from = typeof f === Date ? f : new Date(f);
-    const to = typeof t === Date ? t : new Date(t);
+    const [from, to] = handleDateParams([f, t]);
 
     if (f > t) return [];
 
@@ -35,9 +33,7 @@ class FoodInsecurity {
 
   getPeriodSeries(f, t) {
     const series = [];
-
-    const from = typeof f === Date ? f : new Date(f);
-    const to = typeof t === Date ? t : new Date(t);
+    const [from, to] = handleDateParams([f, t]);
 
     const current = from;
 
