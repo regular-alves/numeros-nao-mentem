@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { GrCompare } from 'react-icons/gr';
 import { BsGithub, BsTwitter } from 'react-icons/bs';
 import Presidents from '../../Dtos/Presidents';
 import './style.css';
@@ -18,42 +17,60 @@ function Footer() {
     <footer className="Footer">
       <Container>
         <Row>
-          <Col sm={3}>
-            <h4>Relatórios</h4>
-            <ul className="Sitemap">
-              <li className="Sitemap-item">
-                <Link to="/cesta-basica">Cesta Básica</Link>
-              </li>
-              <li className="Sitemap-item">
-                <Link to="/desmatamento">Desmatamento</Link>
-              </li>
-            </ul>
-          </Col>
-          <Col sm={3}>
-            <h5>
-              <Link to="/comparacao" className="Sitemap-item">
-                Presidentes <GrCompare />
-              </Link>
-            </h5>
-            <ul className="Sitemap">
-              {list.map((president) => (
-                <li className="Sitemap-item">
-                  <Link to={`/presidentes/${president.slug}`}>
-                    {president.name.split(' ').slice(0, 2).join(' ')}
+          <Col sm={9}>
+            <Row>
+              <Col sm={3}>
+                <h4>Alimentação</h4>
+                <ul className="Sitemap">
+                  <li className="Sitemap-item">
+                    <Link to="/cesta-basica">Cesta Básica</Link>
+                  </li>
+                  <li className="Sitemap-item">
+                    <Link to="/inseguranca-alimentar">
+                      Insegurança Alimentar
+                    </Link>
+                  </li>
+                </ul>
+              </Col>
+              <Col sm={3}>
+                <h4>Meio Ambiente</h4>
+                <ul className="Sitemap">
+                  <li className="Sitemap-item">
+                    <Link to="/desmatamento">Desmatamento</Link>
+                  </li>
+                </ul>
+              </Col>
+              <Col sm={3}>
+                <h4>Presidentes</h4>
+                <ul className="Sitemap">
+                  {list.map((president) => (
+                    <li className="Sitemap-item">
+                      <Link to={`/presidentes/${president.slug}`}>
+                        {president.name.split(' ').slice(0, 2).join(' ')}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                <h5>
+                  <Link to="/comparacao" className="Sitemap-item">
+                    Compare
                   </Link>
-                </li>
-              ))}
-            </ul>
+                </h5>
+              </Col>
+            </Row>
           </Col>
-          <Col className="Colaborare" sm={4}>
+          <Col sm={3}>
             <h4>Este é um site colaborativo</h4>
             <p>
               Queremos construir uma ferramenta para todos. Envie sugestões,
               correções e elogios
             </p>
-            <Button href="mailto:falecom@numerosnaomentem.com">Colabore</Button>
+            <Button type="button" href="mailto:falecom@numerosnaomentem.com">
+              Colabore
+            </Button>
           </Col>
         </Row>
+
         <Row className="Footer-bottomContent">
           <Col sm={9}>
             Todos os direitos reservados - Números não mentem &copy;{' '}
