@@ -39,8 +39,8 @@ class DeflorestationTotal {
   }
 
   getPeriodSeries(f, t) {
-    const [from, to] = handleDateParams([f, t]);
     const series = [];
+    const [from, to] = handleDateParams([f, t]);
 
     const current = from;
 

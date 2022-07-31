@@ -57,7 +57,7 @@ export function handleDateParams(dts) {
 
   return dates.map((date) => {
     if (date instanceof Date) {
-      return date;
+      return new Date(date.toString());
     }
 
     let stgDate = date;

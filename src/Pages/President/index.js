@@ -25,36 +25,9 @@ function President() {
     return <Navigate to="/" />;
   }
 
-  const chart = {
-    type: 'areaspline',
-  };
-
-  const title = {
-    text: null,
-  };
-
-  const tooltip = {
-    shared: true,
-    // valuePrefix: 'R$'
-  };
-
-  const credits = {
-    enabled: false,
-  };
-
-  const plotOptions = {
-    areaspline: {
-      fillOpacity: 0.5,
-    },
-  };
-
   const categories = getDateInterval(president.start, president.end).map((d) =>
     slashedMonthYear(d),
   );
-
-  const pastStart = new Date(president.start);
-
-  pastStart.setFullYear(pastStart.getFullYear() - 12);
 
   const past = new Date();
 
@@ -63,51 +36,10 @@ function President() {
   const foodPastAverage = getAvg(
     foodVsSalary.getPeriodValues(past, new Date()),
   );
+
   const deflorestationPastAverage = getAvg(
     deflorestation.getPeriodValues(past, new Date()),
   );
-
-  const responsive = {
-    rules: [
-      {
-        condition: {
-          maxWidth: 900,
-        },
-        chartOptions: {
-          legend: {
-            align: 'center',
-            verticalAlign: 'bottom',
-            layout: 'horizontal',
-          },
-          yAxis: {
-            labels: {
-              align: 'left',
-              x: 0,
-              y: 0,
-            },
-            subtitle: {
-              text: null,
-            },
-          },
-        },
-      },
-      {
-        condition: {
-          maxWidth: 768,
-        },
-        chartOptions: {
-          yAxis: {
-            title: {
-              text: null,
-            },
-          },
-          subtitle: {
-            text: null,
-          },
-        },
-      },
-    ],
-  };
 
   return (
     <>
@@ -153,11 +85,6 @@ function President() {
                   </p>
                   <Chart
                     options={{
-                      chart,
-                      title,
-                      tooltip,
-                      credits,
-                      plotOptions,
                       xAxis: {
                         categories,
                       },
@@ -190,7 +117,6 @@ function President() {
                           ),
                         },
                       ],
-                      responsive,
                     }}
                   />
                   <Sources sources={[...foodVsSalary.getSources()]} />
@@ -208,11 +134,6 @@ function President() {
                   </p>
                   <Chart
                     options={{
-                      chart,
-                      title,
-                      tooltip,
-                      credits,
-                      plotOptions,
                       xAxis: {
                         categories,
                       },
@@ -245,7 +166,6 @@ function President() {
                           ),
                         },
                       ],
-                      responsive,
                     }}
                   />
                   <Sources sources={[...deflorestation.getSources()]} />

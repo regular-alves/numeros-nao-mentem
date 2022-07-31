@@ -18,9 +18,9 @@ class Presidents {
       .map((z) => ({
         ...z,
         start: new Date(z.start),
-        startMonth: new Date(`${z.start.substring(0, 7)}-01 00:00:00`),
+        startMonth: new Date(`${z.start.substring(0, 7)}-01 00:00:00-03:00`),
         end: new Date(z.end),
-        endMonth: new Date(`${z.end.substring(0, 7)}-01 00:00:00`),
+        endMonth: new Date(`${z.end.substring(0, 7)}-01 00:00:00-03:00`),
       }))
       .sort((a, b) => a.end - b.end);
   }

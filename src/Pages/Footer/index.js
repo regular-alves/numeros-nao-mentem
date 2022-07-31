@@ -17,9 +17,9 @@ function Footer() {
     <footer className="Footer">
       <Container>
         <Row>
-          <Col sm={9}>
+          <Col md={9} className="mb-sm-3">
             <Row>
-              <Col sm={3}>
+              <Col md={3} className="mb-sm-3">
                 <h4>Alimentação</h4>
                 <ul className="Sitemap">
                   <li className="Sitemap-item">
@@ -32,7 +32,7 @@ function Footer() {
                   </li>
                 </ul>
               </Col>
-              <Col sm={3}>
+              <Col md={3} className="mb-sm-3">
                 <h4>Meio Ambiente</h4>
                 <ul className="Sitemap">
                   <li className="Sitemap-item">
@@ -40,7 +40,7 @@ function Footer() {
                   </li>
                 </ul>
               </Col>
-              <Col sm={3}>
+              <Col md={3} className="mb-sm-3">
                 <h4>Presidentes</h4>
                 <ul className="Sitemap">
                   {list.map((president) => (
@@ -59,7 +59,7 @@ function Footer() {
               </Col>
             </Row>
           </Col>
-          <Col sm={3}>
+          <Col md={3} className="mb-sm-3">
             <h4>Este é um site colaborativo</h4>
             <p>
               Queremos construir uma ferramenta para todos. Envie sugestões,

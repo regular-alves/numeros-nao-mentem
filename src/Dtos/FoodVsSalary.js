@@ -1,6 +1,6 @@
 import FoodBasket from './FoodBasket';
 import Salary from './Salary';
-import { getDateInterval } from '../utils';
+import { getDateInterval, handleDateParams } from '../utils';
 
 class FoodVsSalary {
   foodBasket = null;
@@ -13,10 +13,12 @@ class FoodVsSalary {
   }
 
   getPeriod(f, t) {
+    const [from, to] = handleDateParams([f, t]);
+
     const values = [];
-    const dates = getDateInterval(f, t);
-    const food = this.foodBasket.getPeriodValues(f, t);
-    const salary = this.salary.getPeriodSeries(f, t);
+    const dates = getDateInterval(from, to);
+    const food = this.foodBasket.getPeriodValues(from, to);
+    const salary = this.salary.getPeriodSeries(from, to);
 
     for (let i = 0; i < dates.length; i += 1) {
       if (
@@ -38,7 +40,9 @@ class FoodVsSalary {
   }
 
   getPeriodValues(f, t) {
-    return this.getPeriod(f, t).map((v) => v.value);
+    const [from, to] = handleDateParams([f, t]);
+
+    return this.getPeriod(from, to).map((v) => v.value);
   }
 
   getSources() {

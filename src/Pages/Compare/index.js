@@ -75,34 +75,39 @@ function Compare() {
 
   const addPresident = () => {
     const newValues = [...selected];
-    const equivalent = available
-      .filter((p) => p.slug === selectPresident.current.value)
+    const equivalent = [...available]
+      .filter((app) => app.slug === selectPresident.current.value)
       .pop();
 
     if (!equivalent) return;
 
     newValues.push(equivalent);
-
     setSelected(newValues);
   };
 
+  let minDeflorestationAxis = [];
   let minInsecurityAxis = [];
+  let minFoodAxis = [];
 
-  const presidentList = selected.map((p) => {
+  const presidentList = [...selected].map((ps) => {
     const foodVsSalarySeries = foodVsSalary
-      .getPeriodValues(p.start, p.end)
-      .filter((v) => !!v);
-    const deflorestationSeries = deflorestation
-      .getPeriodSeries(p.start, p.end)
-      .filter((v) => !!v);
-    const foodInsecuritySeries = foodInsecurity
-      .getPeriodSeries(p.start, p.end)
-      .filter((v) => !!v);
+      .getPeriodValues(ps.start, ps.end)
+      .filter((fsv) => !!fsv);
 
+    const deflorestationSeries = deflorestation
+      .getPeriodSeries(ps.start, ps.end)
+      .filter((dv) => !!dv);
+
+    const foodInsecuritySeries = foodInsecurity
+      .getPeriodSeries(ps.start, ps.end)
+      .filter((fiv) => !!fiv);
+
+    minDeflorestationAxis.push(...deflorestationSeries);
     minInsecurityAxis.push(...foodInsecuritySeries);
+    minFoodAxis.push(...foodVsSalarySeries);
 
     return {
-      ...p,
+      ...ps,
       foodVsSalary: {
         series: foodVsSalarySeries,
         start: foodVsSalarySeries[0],
@@ -137,27 +142,9 @@ function Compare() {
     };
   });
 
+  minDeflorestationAxis = minDeflorestationAxis.sort((a, b) => b - a).shift();
   minInsecurityAxis = minInsecurityAxis.sort((a, b) => b - a).shift();
-
-  const minFoodAxis = selected
-    .map((s) =>
-      foodVsSalary
-        .getPeriodValues(s.start, s.end)
-        .sort((a, b) => b - a)
-        .shift(),
-    )
-    .sort((a, b) => b - a)
-    .shift();
-
-  const minDeflorestationAxis = selected
-    .map((s) =>
-      deflorestation
-        .getPeriodValues(s.start, s.end)
-        .sort((a, b) => b - a)
-        .shift(),
-    )
-    .sort((a, b) => b - a)
-    .shift();
+  minFoodAxis = minFoodAxis.sort((a, b) => b - a).shift();
 
   return (
     <>
@@ -220,6 +207,7 @@ function Compare() {
                 </Row>
               </Col>
             ))}
+
           {selected.length < 3 && (
             <Col md={3}>
               <Row>

@@ -49,7 +49,11 @@
   font-size: 17px;
   text-decoration: none;
   color: #333;
-  line-height: 2em;
+  display: block;
+}
+
+.Header-menuItem a {
+  padding: 5px 0;
 }
 
 .Header.Header--isTransparent
@@ -148,6 +152,7 @@
 
   .Header .Menu.Menu--isOpened {
     height: calc(90vh - 1px);
+    overflow: scroll;
   }
 
   .Header-menu {
@@ -159,7 +164,18 @@
     border-bottom: 1px solid #efefef;
     width: 100%;
     text-align: center;
-    padding: 10px 0;
+    padding: 8px 0;
+  }
+
+  .Header-menuItem > .Header-menu .Header-menuItem:last-child {
+    padding-bottom: 0;
+  }
+
+  .Header .Menu > .Header-menu > .Header-menuItem {
+    background-color: #fafafa;
+    border: 0;
+    margin: 8px 0 0;
+    padding: 8px;
   }
 
   .Header-menuItem:last-item {
