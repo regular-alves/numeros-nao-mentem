@@ -9,6 +9,7 @@ import FoodVsSalary from '../../Dtos/FoodVsSalary';
 import Deflorestation from '../../Dtos/DeflorestationTotal';
 import Presidents from '../../Dtos/Presidents';
 import FoodBasket from '../../Dtos/FoodBasket';
+import Selic from '../../Dtos/Selic';
 import Salary from '../../Dtos/Salary';
 import { getAvg, getDateInterval, slashedMonthYear } from '../../utils';
 import Footer from '../Footer';
@@ -24,10 +25,12 @@ function Compare() {
   const foodVsSalary = new FoodVsSalary();
   const foodBasket = new FoodBasket();
   const salary = new Salary();
+  const selic = new Selic();
   const deflorestation = new Deflorestation();
   const foodInsecurity = new FoodInsecurity();
 
   const minDates = [
+    selic.getMinDataDate(),
     salary.getMinDataDate(),
     presidents.getMinDataDate(),
     foodBasket.getMinDataDate(),
@@ -35,6 +38,7 @@ function Compare() {
   ];
 
   const maxDates = [
+    selic.getMaxDataDate(),
     salary.getMaxDataDate(),
     presidents.getMaxDataDate(),
     foodBasket.getMaxDataDate(),
@@ -88,6 +92,7 @@ function Compare() {
   let minDeflorestationAxis = [];
   let minInsecurityAxis = [];
   let minFoodAxis = [];
+  let minSelicAxis = [];
 
   const presidentList = [...selected].map((ps) => {
     const foodVsSalarySeries = foodVsSalary
@@ -102,9 +107,14 @@ function Compare() {
       .getPeriodSeries(ps.start, ps.end)
       .filter((fiv) => !!fiv);
 
+    const selicSeries = selic
+      .getPeriodSeries(ps.start, ps.end)
+      .filter((fiv) => !!fiv);
+
     minDeflorestationAxis.push(...deflorestationSeries);
     minInsecurityAxis.push(...foodInsecuritySeries);
     minFoodAxis.push(...foodVsSalarySeries);
+    minSelicAxis.push(...selicSeries);
 
     return {
       ...ps,
@@ -139,12 +149,20 @@ function Compare() {
           foodInsecuritySeries[0],
         average: getAvg(foodInsecuritySeries),
       },
+      selic: {
+        series: selicSeries,
+        start: selicSeries[0],
+        end: selicSeries[selicSeries.length - 1],
+        variation: selicSeries[selicSeries.length - 1] - selicSeries[0],
+        average: getAvg(selicSeries),
+      },
     };
   });
 
   minDeflorestationAxis = minDeflorestationAxis.sort((a, b) => b - a).shift();
   minInsecurityAxis = minInsecurityAxis.sort((a, b) => b - a).shift();
   minFoodAxis = minFoodAxis.sort((a, b) => b - a).shift();
+  minSelicAxis = minSelicAxis.sort((a, b) => b - a).shift();
 
   return (
     <>
@@ -530,6 +548,105 @@ function Compare() {
           <Col>
             <Sources sources={[...deflorestation.getSources()]} />
           </Col>
+        </Row>
+
+        <Row>
+          <Col>
+            <hr />
+          </Col>
+        </Row>
+
+        <Row>
+          <Col>
+            <h3>Economia</h3>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col>
+            <h4>Selic</h4>
+            <p>
+              A Selic é a taxa básica de juros da economia. É o principal
+              instrumento de política monetária utilizado pelo Banco Central
+              para controlar a inflação. Ela influencia todas as taxas de juros
+              do país, como as taxas de juros dos empréstimos, dos
+              financiamentos e das aplicações financeiras.
+            </p>
+            <Link to="/selic">
+              <Button variant="light">Ver relatório completo</Button>
+            </Link>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col md={3}>&nbsp;</Col>
+          {presidentList.length > 0 &&
+            presidentList.map((p) => (
+              <Col md={3} className="mb-3">
+                <Row className="d-sm-grid d-md-none">
+                  <Col>
+                    <h4>{p.name}</h4>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <Chart
+                      options={{
+                        yAxis: {
+                          minRange: minSelicAxis,
+                          min: 0,
+                          title: {
+                            text: 'Selic (% a.a.)',
+                          },
+                        },
+                        xAxis: {
+                          categories: getDateInterval(p.start, p.end).map((d) =>
+                            slashedMonthYear(d),
+                          ),
+                        },
+                        series: [
+                          {
+                            name: 'Selic (%)',
+                            data: p.selic.series,
+                          },
+                        ],
+                        chart: {
+                          height: '300vw',
+                        },
+                      }}
+                    />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <p>
+                      No mandato de <b>{p.knownAs}</b>: <br />A taxa selic média
+                      foi de{' '}
+                      <b>
+                        {p.selic.average.toFixed(2)}
+                        <small>%</small>
+                      </b>
+                      .<br />
+                      Se compararmos o começo e o final do mandato, a selic
+                      <b>
+                        {!p.selic.variation && ' se manteve igual'}
+                        {p.selic.variation !== 0 && p.selic.variation > 0
+                          ? ' aumentou '
+                          : ' diminuiu '}
+                        {p.selic.variation !== 0 && (
+                          <>
+                            {' '}
+                            {Math.abs(p.selic.variation).toFixed(2)}
+                            <small>%</small>
+                          </>
+                        )}
+                      </b>
+                      .
+                    </p>
+                  </Col>
+                </Row>
+              </Col>
+            ))}
         </Row>
       </Container>
       <Footer />

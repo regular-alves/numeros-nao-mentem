@@ -41,6 +41,14 @@ function Footer() {
                 </ul>
               </Col>
               <Col md={3} className="mb-sm-3">
+                <h4>Economia</h4>
+                <ul className="Sitemap">
+                  <li className="Sitemap-item">
+                    <Link to="/selic">Selic</Link>
+                  </li>
+                </ul>
+              </Col>
+              <Col md={3} className="mb-sm-3">
                 <h4>Presidentes</h4>
                 <ul className="Sitemap">
                   {list.map((president) => (

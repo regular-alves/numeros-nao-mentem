@@ -5,9 +5,9 @@ import { useParams } from 'react-router-dom';
 import Header from '../Header';
 import Footer from '../Footer';
 
-import image from '../../assets/images/rainforest.jpg';
+import image from '../../assets/images/money.jpg';
 import IntervalPicker from '../../Components/IntervalPicker';
-import DeflorestationTotal from '../../Dtos/DeflorestationTotal';
+import Dto from '../../Dtos/Selic';
 import Presidents from '../../Dtos/Presidents';
 import {
   getDateInterval,
@@ -20,8 +20,8 @@ import {
 import Chart from '../../Components/Chart';
 import Sources from '../../Components/Sources';
 
-function Deflorestation() {
-  const deflorestation = new DeflorestationTotal();
+function Selic() {
+  const selic = new Dto();
   const presidents = new Presidents();
   let { to: toDate, from: fromDate } = useParams();
   [toDate, fromDate] = handleDateParams([toDate, fromDate]);
@@ -48,12 +48,12 @@ function Deflorestation() {
   const startDate = getMaxDate([
     fromDate,
     presidents.getMinDataDate(),
-    deflorestation.getMinDataDate(),
+    selic.getMinDataDate(),
   ]);
   const endDate = getMinDate([
     toDate,
     presidents.getMaxDataDate(),
-    deflorestation.getMaxDataDate(),
+    selic.getMaxDataDate(),
   ]);
 
   const [to, setTo] = useState(endDate.toISOString());
@@ -81,46 +81,29 @@ function Deflorestation() {
   return (
     <>
       <Helmet>
-        <title>Desmatamento - Amazônia | Números não mentem</title>
+        <title>Selic | Números não mentem</title>
       </Helmet>
       <Header />
       <Container className="Content-wrapper">
         <Row>
           <Col>
-            <h1>Desmatamento</h1>
+            <h1>Selic</h1>
           </Col>
         </Row>
         <Row>
           <Col md={6} sm={{ order: 2 }}>
             <p>
-              A taxa de desmatamento é realizada pelo PRODES (Monitoramento do
-              Desmatamento da Floresta Amazônica Brasileira por Satélite)
-              através de satélites por corte raso na Amazônia Legal e produz,
-              desde 1988, as taxas anuais de desmatamento na região.
+              SELIC é a sigla para Sistema Especial de Liquidação e de Custódia.
+              Este sistema é uma infraestrutura do mercado financeiro
+              administrada pelo Banco Central e nele são transacionados títulos
+              públicos federais.
             </p>
             <p>
-              Segundo o próprio PRODES, as estimativas do PRODES são
-              consideradas confiáveis pelos cientistas nacionais e
-              internacionais (
-              <a
-                href={
-                  'http://www.obt.inpe.br/' +
-                  'OBT/assuntos/programas/amazonia/prodes/pdfs/kintish_2007.pdf'
-                }
-                alt="Kintish"
-                title="Kintish"
-                nofollow
-              >
-                Kintish, 2007
-              </a>
-              ). Esse sistema tem demonstrado ser de grande importância para
-              ações e planejamento de políticas públicas da Amazônia. Resultados
-              recentes, a partir de análises realizadas com especialistas
-              independentes, indicam nível de precisão próximo a 95%.
-            </p>
-            <p>
-              A PRODES apresenta os dados consolidados anualmente no primeiro
-              semestre do ano seguinte.
+              A Selic é a taxa básica de juros da economia. É o principal
+              instrumento de política monetária utilizado pelo Banco Central
+              para controlar a inflação. Ela influencia todas as taxas de juros
+              do país, como as taxas de juros dos empréstimos, dos
+              financiamentos e das aplicações financeiras.
             </p>
           </Col>
           <Col lg={{ order: 2 }} md={6} sm={{ order: 1 }}>
@@ -133,15 +116,12 @@ function Deflorestation() {
               />
               <Figure.Caption>
                 <a
-                  href={
-                    'https://www.pexels.com/' +
-                    'pt-br/foto/floresta-tropical-cercada-por-nevoeiro-975771/'
-                  }
-                  alt="David Riaño Cortés"
-                  title="David Riaño Cortés"
+                  href="https://unsplash.com/@photoripey"
+                  alt="Ibrahim Rifath"
+                  title="Ibrahim Rifath"
                   nofollow="true"
                 >
-                  Foto de David Riaño Cortés
+                  Foto de Ibrahim Rifath
                 </a>
               </Figure.Caption>
             </Figure>
@@ -163,7 +143,7 @@ function Deflorestation() {
 
         <Row>
           <Col>
-            <h2>Desmatamento (km²)</h2>
+            <h2>Evolução</h2>
             <Chart
               options={{
                 xAxis: {
@@ -172,23 +152,20 @@ function Deflorestation() {
                 },
                 yAxis: {
                   title: {
-                    text: 'Desmatamento (km²)',
+                    text: 'SELIC (% a.a.)',
                   },
                 },
                 series: [
                   {
-                    name: 'Desmatamento',
-                    data: deflorestation.getPeriodSeries(from, to),
+                    name: 'taxa SELIC ao ano',
+                    data: selic.getPeriodSeries(from, to),
                   },
                 ],
               }}
             />
 
             <Sources
-              sources={[
-                ...deflorestation.getSources(),
-                ...presidents.getSources(),
-              ]}
+              sources={[...selic.getSources(), ...presidents.getSources()]}
             />
           </Col>
         </Row>
@@ -199,4 +176,4 @@ function Deflorestation() {
   );
 }
 
-export default Deflorestation;
+export default Selic;

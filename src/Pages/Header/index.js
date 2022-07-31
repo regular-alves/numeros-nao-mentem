@@ -71,6 +71,14 @@ function Header(props) {
                 <Link to="/desmatamento">Desmatamento</Link>
               </li>
               <li className="Header-menuItem Header-hasSubmenu">
+                <b>Economia</b>
+                <ul className="Header-menu">
+                  <li className="Header-menuItem">
+                    <Link to="/selic">SELIC</Link>
+                  </li>
+                </ul>
+              </li>
+              <li className="Header-menuItem Header-hasSubmenu">
                 <b>Presidentes</b>
                 <ul className="Header-menu">
                   {list.map((president) => (

@@ -12,11 +12,15 @@ import Chart from '../../Components/Chart';
 import FoodVsSalary from '../../Dtos/FoodVsSalary';
 import Sources from '../../Components/Sources';
 import DeflorestationTotal from '../../Dtos/DeflorestationTotal';
+import FoodInsecurity from '../../Dtos/FoodInsecurity';
+import Selic from '../../Dtos/Selic';
 
 function President() {
   const presidentDto = new Dto();
   const foodVsSalary = new FoodVsSalary();
   const deflorestation = new DeflorestationTotal();
+  const foodInsecurity = new FoodInsecurity();
+  const selic = new Selic();
 
   const { presidentSlug } = useParams();
   const president = presidentDto.getBySlug(presidentSlug);
@@ -40,6 +44,12 @@ function President() {
   const deflorestationPastAverage = getAvg(
     deflorestation.getPeriodValues(past, new Date()),
   );
+
+  const foodInsecurityPastAverage = getAvg(
+    foodInsecurity.getPeriodValues(past, new Date()),
+  );
+
+  const selicPastAverage = getAvg(selic.getPeriodValues(past, new Date()));
 
   return (
     <>
@@ -69,9 +79,16 @@ function President() {
                   </p>
                 </Col>
               </Row>
+
               <Row>
                 <Col>
-                  <h2>% de cesta básica sobre salário mínimo</h2>
+                  <h2>Alimentação</h2>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <h3>% de cesta básica sobre salário mínimo</h3>
                   <p>
                     A cesta básica de alimentos deve conter itens básicos para o
                     sustento de uma família.
@@ -122,9 +139,71 @@ function President() {
                   <Sources sources={[...foodVsSalary.getSources()]} />
                 </Col>
               </Row>
+
               <Row>
                 <Col>
-                  <h2>Desmatamento - Floresta amazônica</h2>
+                  <h3>Insegurança alimentar</h3>
+                  <p>
+                    A insegurança alimentar é definida quando um indivíduo não
+                    possui acesso a alimentos suficientes para satisfazer as
+                    suas necessidades, conforme a definição da Organização das
+                    Nações Unidas para Alimentação e Agricultura (FAO).
+                  </p>
+                  <Chart
+                    options={{
+                      xAxis: {
+                        categories,
+                      },
+                      yAxis: {
+                        minRange: Math.round(foodInsecurityPastAverage),
+                        title: {
+                          text: 'Total da população (%)',
+                        },
+                        plotLines: [
+                          {
+                            label: {
+                              text:
+                                `Média de ${past.getFullYear()} a ` +
+                                `${new Date().getFullYear()}`,
+                              align: 'bottom',
+                            },
+                            color: 'red',
+                            dashStyle: 'dash',
+                            value: foodInsecurityPastAverage,
+                            width: 2,
+                          },
+                        ],
+                      },
+                      series: [
+                        {
+                          name: 'Insegurança (%)',
+                          data: foodInsecurity.getPeriodSeries(
+                            president.start,
+                            president.end,
+                          ),
+                        },
+                      ],
+                    }}
+                  />
+                  <Sources sources={[...foodInsecurity.getSources()]} />
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <hr />
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <h2>Meio Ambiente</h2>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <h3>Desmatamento - Floresta amazônica</h3>
                   <p>
                     A taxa de desmatamento é realizada pelo PRODES
                     (Monitoramento do Desmatamento da Floresta Amazônica
@@ -169,6 +248,69 @@ function President() {
                     }}
                   />
                   <Sources sources={[...deflorestation.getSources()]} />
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <hr />
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <h2>Economia</h2>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <h2>Selic</h2>
+                  <p>
+                    A Selic é a taxa básica de juros da economia. É o principal
+                    instrumento de política monetária utilizado pelo Banco
+                    Central para controlar a inflação. Ela influencia todas as
+                    taxas de juros do país, como as taxas de juros dos
+                    empréstimos, dos financiamentos e das aplicações
+                    financeiras.
+                  </p>
+                  <Chart
+                    options={{
+                      xAxis: {
+                        categories,
+                      },
+                      yAxis: {
+                        minRange: Math.round(selicPastAverage),
+                        title: {
+                          text: 'SELIC (% a.a.)',
+                        },
+                        plotLines: [
+                          {
+                            label: {
+                              text:
+                                `Média de ${past.getFullYear()} a ` +
+                                `${new Date().getFullYear()}`,
+                              align: 'bottom',
+                            },
+                            color: 'red',
+                            dashStyle: 'dash',
+                            value: selicPastAverage,
+                            width: 2,
+                          },
+                        ],
+                      },
+                      series: [
+                        {
+                          name: 'taxa SELIC ao ano',
+                          data: selic.getPeriodSeries(
+                            president.start,
+                            president.end,
+                          ),
+                        },
+                      ],
+                    }}
+                  />
+                  <Sources sources={[...selic.getSources()]} />
                 </Col>
               </Row>
             </Col>

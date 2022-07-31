@@ -8,6 +8,7 @@ import Deflorestation from './Pages/Deflorestation';
 import NotFound from './Pages/NotFound';
 import Compare from './Pages/Compare';
 import FoodInsecurity from './Pages/FoodInsecurity';
+import Selic from './Pages/Selic';
 
 function AppRoutes() {
   return (
@@ -35,6 +36,11 @@ function AppRoutes() {
           path="/inseguranca-alimentar/:from/:to"
           element={<FoodInsecurity />}
         />
+
+        <Route path="/selic/" element={<Selic />} />
+        <Route path="/selic/:slug1" element={<Selic />} />
+        <Route path="/selic/:slug1/:slug2" element={<Selic />} />
+        <Route path="/selic/:slug1/:slug2/:slug3" element={<Selic />} />
 
         <Route path="/presidentes/:presidentSlug" element={<President />} />
         <Route path="/" element={<Home />} />

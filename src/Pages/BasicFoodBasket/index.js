@@ -7,7 +7,6 @@ import {
   slashedMonthYear,
   getMinDate,
   getMaxDate,
-  getAvg,
   handleDateParams,
   isValidDate,
 } from '../../utils';
@@ -23,7 +22,6 @@ import FoodVsSalary from '../../Dtos/FoodVsSalary';
 import Header from '../Header';
 import Footer from '../Footer';
 import Sources from '../../Components/Sources';
-import Card from '../../Components/Card';
 
 function BasicFoodBasket() {
   const salary = new Salary();
@@ -86,19 +84,6 @@ function BasicFoodBasket() {
 
   const categories = getDateInterval(from, to).map((d) => slashedMonthYear(d));
   const plotBands = presidents.toPlotBands(from, to);
-
-  const average = presidents
-    .getPeriod(from, to)
-    .map((p) => ({
-      ...p,
-      average: getAvg(
-        foodVsSalary.getPeriodValues(
-          p.start < new Date(from) ? new Date(from) : p.start,
-          p.end > to ? to : p.end,
-        ),
-      ),
-    }))
-    .sort((a, b) => a.average - b.average);
 
   return (
     <>
@@ -249,38 +234,6 @@ function BasicFoodBasket() {
               ]}
             />
           </Col>
-        </Row>
-
-        <Row>
-          <Col>
-            <h2>Ranking dos mandatos</h2>
-            <p>
-              Baseado nos valores anteriores, temos a média dos valores do
-              mandato do candidato no período pesquisado, ranqueados do melhor
-              para o pior.
-            </p>
-          </Col>
-        </Row>
-
-        <Row>
-          {average.map((p) => (
-            <Col md={3} sm={6}>
-              <Card
-                president={p}
-                value={
-                  <>
-                    {p.average.toFixed(2)}
-                    <small>%</small>
-                  </>
-                }
-                date={{
-                  start: slashedMonthYear(p.start),
-                  end: slashedMonthYear(p.end),
-                }}
-                values
-              />
-            </Col>
-          ))}
         </Row>
       </Container>
       <Footer />
