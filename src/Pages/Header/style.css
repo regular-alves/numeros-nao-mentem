@@ -178,6 +178,11 @@
     padding: 8px;
   }
 
+  .Header.Header--isTransparent .Menu > .Header-menu > .Header-menuItem {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+  }
+
   .Header-menuItem:last-item {
     border-bottom: none !important;
   }
