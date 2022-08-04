@@ -86,7 +86,7 @@ function President() {
                 </Col>
               </Row>
 
-              <Row>
+              <Row id="cesta-basica">
                 <Col>
                   <h3>% de cesta básica sobre salário mínimo</h3>
                   <p>
@@ -140,7 +140,7 @@ function President() {
                 </Col>
               </Row>
 
-              <Row>
+              <Row id="inseguranca-alimentar">
                 <Col>
                   <h3>Insegurança alimentar</h3>
                   <p>
@@ -201,7 +201,7 @@ function President() {
                 </Col>
               </Row>
 
-              <Row>
+              <Row id="desmatamento">
                 <Col>
                   <h3>Desmatamento - Floresta amazônica</h3>
                   <p>
@@ -263,7 +263,7 @@ function President() {
                 </Col>
               </Row>
 
-              <Row>
+              <Row id="selic">
                 <Col>
                   <h2>Selic</h2>
                   <p>
