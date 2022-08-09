@@ -74,7 +74,10 @@ function Header(props) {
                 <b>Economia</b>
                 <ul className="Header-menu">
                   <li className="Header-menuItem">
-                    <Link to="/selic">SELIC</Link>
+                    <Link to="/selic">Selic</Link>
+                  </li>
+                  <li className="Header-menuItem">
+                    <Link to="/desemprego">Desemprego</Link>
                   </li>
                 </ul>
               </li>

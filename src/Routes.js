@@ -9,6 +9,7 @@ import NotFound from './Pages/NotFound';
 import Compare from './Pages/Compare';
 import FoodInsecurity from './Pages/FoodInsecurity';
 import Selic from './Pages/Selic';
+import Unemployed from './Pages/Unemployed';
 
 function AppRoutes() {
   return (
@@ -41,6 +42,14 @@ function AppRoutes() {
         <Route path="/selic/:slug1" element={<Selic />} />
         <Route path="/selic/:slug1/:slug2" element={<Selic />} />
         <Route path="/selic/:slug1/:slug2/:slug3" element={<Selic />} />
+
+        <Route path="/desemprego/" element={<Unemployed />} />
+        <Route path="/desemprego/:slug1" element={<Unemployed />} />
+        <Route path="/desemprego/:slug1/:slug2" element={<Unemployed />} />
+        <Route
+          path="/desemprego/:slug1/:slug2/:slug3"
+          element={<Unemployed />}
+        />
 
         <Route path="/presidentes/:presidentSlug" element={<President />} />
         <Route path="/" element={<Home />} />

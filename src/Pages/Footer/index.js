@@ -46,6 +46,9 @@ function Footer() {
                   <li className="Sitemap-item">
                     <Link to="/selic">Selic</Link>
                   </li>
+                  <li className="Sitemap-item">
+                    <Link to="/desemprego">Desemprego</Link>
+                  </li>
                 </ul>
               </Col>
               <Col md={3} className="mb-sm-3">
