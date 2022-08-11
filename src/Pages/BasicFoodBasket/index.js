@@ -67,7 +67,7 @@ function BasicFoodBasket() {
   const [from, setFrom] = useState(startDate.toISOString());
 
   useEffect(() => {
-    let path = window.location.pathname.replace(/\/([\d-]+)/g, '');
+    let path = window.location.hash.replace(/\/([\d-]+)/g, '');
 
     if (path.substring(path.length - 1) === '/') {
       path = path.substring(0, path.length - 1);

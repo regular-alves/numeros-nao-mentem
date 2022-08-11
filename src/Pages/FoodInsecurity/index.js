@@ -62,7 +62,7 @@ export default function FoodInsecurity() {
   const plotBands = presidents.toPlotBands(from, to);
 
   useEffect(() => {
-    let path = window.location.pathname.replace(/\/([\d-]+)/g, '');
+    let path = window.location.hash.replace(/\/([\d-]+)/g, '');
 
     if (path.substring(path.length - 1) === '/') {
       path = path.substring(0, path.length - 1);

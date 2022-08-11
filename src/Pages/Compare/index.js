@@ -69,7 +69,7 @@ function Compare() {
     window.history.replaceState(
       null,
       null,
-      `${path}/${selected.map((p) => p.slug).join('/')}`,
+      `#${path}/${selected.map((p) => p.slug).join('/')}`,
     );
   }, [selected, location]);
 

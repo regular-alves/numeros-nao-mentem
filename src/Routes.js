@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 
 import Home from './Pages/Home';
 import BasicFoodBasket from './Pages/BasicFoodBasket';
@@ -13,7 +13,7 @@ import Unemployed from './Pages/Unemployed';
 
 function AppRoutes() {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/cesta-basica" element={<BasicFoodBasket />} />
         <Route path="/cesta-basica/:from" element={<BasicFoodBasket />} />
@@ -55,7 +55,7 @@ function AppRoutes() {
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
