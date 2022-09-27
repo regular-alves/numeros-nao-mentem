@@ -34835,6 +34835,210 @@
       "state": "BA",
       "date": "2022-06-01 00:00:00-03:00",
       "value": 580.82
-    }
+    },
+    {
+      "city": "Brasília",
+      "state": "DF",
+      "date": "2022-07-01 00:00:00-03:00",
+      "value": 703.93
+    },
+    {
+      "city": "Campo Grande",
+      "state": "MS",
+      "date": "2022-07-01 00:00:00-03:00",
+      "value": 707
+    },
+    {
+      "city": "Goiânia",
+      "state": "GO",
+      "date": "2022-07-01 00:00:00-03:00",
+      "value": 672.91
+    },
+    {
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "date": "2022-07-01 00:00:00-03:00",
+      "value": 652.07
+    },
+    {
+      "city": "Rio de Janeiro",
+      "state": "RJ",
+      "date": "2022-07-01 00:00:00-03:00",
+      "value": 723.75
+    },
+    {
+      "city": "São Paulo",
+      "state": "SP",
+      "date": "2022-07-01 00:00:00-03:00",
+      "value": 760.45
+    },
+    {
+      "city": "Vitória",
+      "state": "ES",
+      "date": "2022-07-01 00:00:00-03:00",
+      "value": 700.75
+    },
+    {
+      "city": "Curitiba",
+      "state": "PR",
+      "date": "2022-07-01 00:00:00-03:00",
+      "value": 688.78
+    },
+    {
+      "city": "Florianópolis",
+      "state": "SC",
+      "date": "2022-07-01 00:00:00-03:00",
+      "value": 753.73
+    },
+    {
+      "city": "Porto Alegre",
+      "state": "RS",
+      "date": "2022-07-01 00:00:00-03:00",
+      "value": 752.84
+    },
+    {
+      "city": "Belém",
+      "state": "PA",
+      "date": "2022-07-01 00:00:00-03:00",
+      "value": 633.14
+    },
+    {
+      "city": "Aracaju",
+      "state": "SE",
+      "date": "2022-07-01 00:00:00-03:00",
+      "value": 542.5
+    },
+    {
+      "city": "Fortaleza",
+      "state": "CE",
+      "date": "2022-07-01 00:00:00-03:00",
+      "value": 641.46
+    },
+    {
+      "city": "João Pessoa",
+      "state": "PB",
+      "date": "2022-07-01 00:00:00-03:00",
+      "value": 572.63
+    },
+    {
+      "city": "Natal",
+      "state": "RN",
+      "date": "2022-07-01 00:00:00-03:00",
+      "value": 587.58
+    },
+    {
+      "city": "Recife",
+      "state": "PE",
+      "date": "2022-07-01 00:00:00-03:00",
+      "value": 616.63
+    },
+    {
+      "city": "Salvador",
+      "state": "BA",
+      "date": "2022-07-01 00:00:00-03:00",
+      "value": 586.54
+    },
+    {
+      "city": "Brasília",
+      "state": "DF",
+      "date": "2022-08-01 00:00:00-03:00",
+      "value": 689.31
+    },
+    {
+      "city": "Campo Grande",
+      "state": "MS",
+      "date": "2022-08-01 00:00:00-03:00",
+      "value": 698.31
+    },
+    {
+      "city": "Goiânia",
+      "state": "GO",
+      "date": "2022-08-01 00:00:00-03:00",
+      "value": 660.83
+    },
+    {
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "date": "2022-08-01 00:00:00-03:00",
+      "value": 638.19
+    },
+    {
+      "city": "Rio de Janeiro",
+      "state": "RJ",
+      "date": "2022-08-01 00:00:00-03:00",
+      "value": 717.82
+    },
+    {
+      "city": "São Paulo",
+      "state": "SP",
+      "date": "2022-08-01 00:00:00-03:00",
+      "value": 749.78
+    },
+    {
+      "city": "Vitória",
+      "state": "ES",
+      "date": "2022-08-01 00:00:00-03:00",
+      "value": 697.39
+    },
+    {
+      "city": "Curitiba",
+      "state": "PR",
+      "date": "2022-08-01 00:00:00-03:00",
+      "value": 685.69
+    },
+    {
+      "city": "Florianópolis",
+      "state": "SC",
+      "date": "2022-08-01 00:00:00-03:00",
+      "value": 746.21
+    },
+    {
+      "city": "Porto Alegre",
+      "state": "RS",
+      "date": "2022-08-01 00:00:00-03:00",
+      "value": 748.06
+    },
+    {
+      "city": "Belém",
+      "state": "PA",
+      "date": "2022-08-01 00:00:00-03:00",
+      "value": 634.85
+    },
+    {
+      "city": "Aracaju",
+      "state": "SE",
+      "date": "2022-08-01 00:00:00-03:00",
+      "value": 539.57
+    },
+    {
+      "city": "Fortaleza",
+      "state": "CE",
+      "date": "2022-08-01 00:00:00-03:00",
+      "value": 626.98
+    },
+    {
+      "city": "João Pessoa",
+      "state": "PB",
+      "date": "2022-08-01 00:00:00-03:00",
+      "value": 568.21
+    },
+    {
+      "city": "Natal",
+      "state": "RN",
+      "date": "2022-08-01 00:00:00-03:00",
+      "value": 580.74
+    },
+    {
+      "city": "Recife",
+      "state": "PE",
+      "date": "2022-08-01 00:00:00-03:00",
+      "value": 598.14
+    },
+    {
+      "city": "Salvador",
+      "state": "BA",
+      "date": "2022-08-01 00:00:00-03:00",
+      "value": 576.93
+    },
   ]
 }
