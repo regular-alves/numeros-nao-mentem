@@ -1,7 +1,7 @@
-import dataSet from './DataSets/deplorestation.json';
+import dataSet from '../DataSets/deforestation.json';
 import { getAvg, handleDateParams } from '../utils';
 
-class DeflorestationTotal {
+class DeforestationTotal {
   dataSet = [];
 
   rawData = [];
@@ -77,4 +77,4 @@ class DeflorestationTotal {
   }
 }
 
-export default DeflorestationTotal;
+export default DeforestationTotal;

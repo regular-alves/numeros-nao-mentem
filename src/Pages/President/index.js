@@ -11,7 +11,7 @@ import { getAvg, getDateInterval, slashedMonthYear } from '../../utils';
 import Chart from '../../Components/Chart';
 import FoodVsSalary from '../../Dtos/FoodVsSalary';
 import Sources from '../../Components/Sources';
-import DeflorestationTotal from '../../Dtos/DeflorestationTotal';
+import DeflorestationTotal from '../../Dtos/DeforestationTotal';
 import FoodInsecurity from '../../Dtos/FoodInsecurity';
 import Selic from '../../Dtos/Selic';
 

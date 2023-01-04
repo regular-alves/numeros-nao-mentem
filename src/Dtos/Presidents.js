@@ -1,4 +1,4 @@
-import dataSet from './DataSets/presidents.json';
+import dataSet from '../DataSets/presidents.json';
 import {
   getDateInterval,
   handleDateParams,

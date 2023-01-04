@@ -4,7 +4,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
 import BasicFoodBasket from './Pages/BasicFoodBasket';
 import President from './Pages/President';
-import Deflorestation from './Pages/Deflorestation';
+import Deforestation from './Pages/Deforestation';
 import NotFound from './Pages/NotFound';
 import Compare from './Pages/Compare';
 import FoodInsecurity from './Pages/FoodInsecurity';
@@ -19,9 +19,9 @@ function AppRoutes() {
         <Route path="/cesta-basica/:from" element={<BasicFoodBasket />} />
         <Route path="/cesta-basica/:from/:to" element={<BasicFoodBasket />} />
 
-        <Route path="/desmatamento" element={<Deflorestation />} />
-        <Route path="/desmatamento/:from" element={<Deflorestation />} />
-        <Route path="/desmatamento/:from/:to" element={<Deflorestation />} />
+        <Route path="/desmatamento" element={<Deforestation />} />
+        <Route path="/desmatamento/:from" element={<Deforestation />} />
+        <Route path="/desmatamento/:from/:to" element={<Deforestation />} />
 
         <Route path="/comparacao/" element={<Compare />} />
         <Route path="/comparacao/:slug1" element={<Compare />} />

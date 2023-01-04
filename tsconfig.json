@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "resolveJsonModule": true,
+        "allowSyntheticDefaultImports": true,
+        "target": "ES5",
+    },
+    "include": [
+        "**/*.ts",
+        "**/*.json"
+    ]
+}

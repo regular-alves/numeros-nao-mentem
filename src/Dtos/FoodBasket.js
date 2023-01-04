@@ -1,4 +1,4 @@
-import dataSet from './DataSets/basic-basket-average.json';
+import dataSet from '../DataSets/basic-basket-average.json';
 import { getMinDate, getMaxDate, handleDateParams } from '../utils';
 
 class FoodBasket {

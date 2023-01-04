@@ -14,7 +14,20 @@
     ],
     "prettier/prettier": "error",
     "max-len": ["error", 80],
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "no-unused-vars": "off",
+    "no-underscore-dangle": "off",
+    "import/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          "js": "never",
+          "jsx": "never",
+          "ts": "never",
+          "tsx": "never"
+        }
+    ],
+    "no-undef": "off"
   },
   "env": {
     "browser": true

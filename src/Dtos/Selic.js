@@ -1,4 +1,4 @@
-import dataSet from './DataSets/selic.json';
+import dataSet from '../DataSets/selic.json';
 import { getAvg, getMaxDate, getMinDate, handleDateParams } from '../utils';
 
 class Selic {

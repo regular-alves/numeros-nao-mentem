@@ -1,4 +1,4 @@
-import dataSet from './DataSets/minimun-salary.json';
+import dataSet from '../DataSets/minimun-salary.json';
 import { getAvg, getMaxDate, getMinDate, handleDateParams } from '../utils';
 
 class Salary {

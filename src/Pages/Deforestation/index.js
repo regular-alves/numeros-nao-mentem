@@ -5,29 +5,27 @@ import { useParams } from 'react-router-dom';
 import Header from '../Header';
 import Footer from '../Footer';
 
+import DeforestationTotal from '../../Models/DeforestationTotal';
+import Presidents from '../../Models/Presidents';
 import image from '../../assets/images/rainforest.jpg';
-import IntervalPicker from '../../Components/IntervalPicker';
-import DeflorestationTotal from '../../Dtos/DeflorestationTotal';
-import Presidents from '../../Dtos/Presidents';
 import {
   getDateInterval,
-  getMaxDate,
-  getMinDate,
+  slashedMonthYear,
   handleDateParams,
   isValidDate,
-  slashedMonthYear,
 } from '../../utils';
+
+import IntervalPicker from '../../Components/IntervalPicker';
 import Chart from '../../Components/Chart';
 import Sources from '../../Components/Sources';
 
-function Deflorestation() {
-  const deflorestation = new DeflorestationTotal();
+function Deforestation() {
+  const deforestation = new DeforestationTotal();
   const presidents = new Presidents();
-  let { to: toDate, from: fromDate } = useParams();
-  [toDate, fromDate] = handleDateParams([toDate, fromDate]);
+  let { endDate, startDate } = useParams();
 
-  if (!isValidDate(toDate)) {
-    toDate = new Date(
+  if (!isValidDate(endDate)) {
+    endDate = new Date(
       new Date().getFullYear(),
       new Date().getMonth(),
       30,
@@ -37,46 +35,26 @@ function Deflorestation() {
     );
   }
 
-  if (!isValidDate(fromDate)) {
-    fromDate = new Date(
+  if (!isValidDate(startDate)) {
+    startDate = new Date(
       new Date().getFullYear() - 16,
       new Date().getMonth(),
       1,
     );
   }
 
-  const startDate = getMaxDate([
-    fromDate,
-    presidents.getMinDataDate(),
-    deflorestation.getMinDataDate(),
-  ]);
-  const endDate = getMinDate([
-    toDate,
-    presidents.getMaxDataDate(),
-    deflorestation.getMaxDataDate(),
-  ]);
+  [startDate, endDate] = handleDateParams([startDate, endDate]);
 
   const [to, setTo] = useState(endDate.toISOString());
   const [from, setFrom] = useState(startDate.toISOString());
 
-  useEffect(() => {
-    let path = window.location.hash.replace(/\/([\d-]+)/g, '');
+  const values = deforestation.getPeriod(new Date(from), new Date(to));
+  const minDate = [deforestation.oldest, presidents.oldest].sort().shift();
+  const maxDate = [deforestation.mostRecent, presidents.mostRecent]
+    .sort()
+    .pop();
 
-    if (path.substring(path.length - 1) === '/') {
-      path = path.substring(0, path.length - 1);
-    }
-
-    window.history.replaceState(
-      null,
-      null,
-      `${path}/${from.toString().substring(0, 10)}/${to
-        .toString()
-        .substring(0, 10)}`,
-    );
-  }, [from, to]);
-
-  const categories = getDateInterval(from, to).map((d) => slashedMonthYear(d));
-  const plotBands = presidents.toPlotBands(from, to);
+  console.log(presidents.getPlotBandsd(new Date(from), new Date(to)));
 
   return (
     <>
@@ -151,10 +129,10 @@ function Deflorestation() {
         <Row>
           <Col lg={{ order: 1 }} md={{ span: 6, offset: 6 }}>
             <IntervalPicker
-              to={new Date(to)}
-              from={new Date(from)}
-              min={startDate}
-              max={endDate}
+              to={to}
+              from={from}
+              min={minDate}
+              max={maxDate}
               setTo={(f) => setTo(f)}
               setFrom={(f) => setFrom(f)}
             />
@@ -167,8 +145,10 @@ function Deflorestation() {
             <Chart
               options={{
                 xAxis: {
-                  categories,
-                  plotBands,
+                  categories: values.map((item) =>
+                    slashedMonthYear(item.start),
+                  ),
+                  // plotBands,
                 },
                 yAxis: {
                   title: {
@@ -178,17 +158,14 @@ function Deflorestation() {
                 series: [
                   {
                     name: 'Desmatamento',
-                    data: deflorestation.getPeriodSeries(from, to),
+                    data: values.map((item) => item.value),
                   },
                 ],
               }}
             />
 
             <Sources
-              sources={[
-                ...deflorestation.getSources(),
-                ...presidents.getSources(),
-              ]}
+              sources={[...deforestation.sources, ...presidents.sources]}
             />
           </Col>
         </Row>
@@ -199,4 +176,4 @@ function Deflorestation() {
   );
 }
 
-export default Deflorestation;
+export default Deforestation;

@@ -11,64 +11,64 @@
       "knownAs": "Sarney",
       "slug": "jose-sarney",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Foto_Oficial_Sarney_EBC.jpg/220px-Foto_Oficial_Sarney_EBC.jpg",
-      "start": "1985-03-15 00:00:00-03:00",
-      "end": "1990-03-15 00:00:00-03:00"
+      "start": "1985-03-15",
+      "end": "1990-03-15"
     },
     {
       "name": "Fernando Collor",
       "knownAs": "Collor",
       "slug": "fernando-collor",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Fernando_Collor_1992_B%26W.jpg/220px-Fernando_Collor_1992_B%26W.jpg",
-      "start": "1990-03-15 00:00:00-03:00",
-      "end": "1992-03-29 00:00:00-03:00"
+      "start": "1990-03-15",
+      "end": "1992-03-29"
     },
     {
       "name": "Itamar Franco",
       "knownAs": "Itamar",
       "slug": "itamar-franco",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Itamar_Augusto_Cautiero_Franco.gif/220px-Itamar_Augusto_Cautiero_Franco.gif",
-      "start": "1992-12-29 00:00:00-03:00",
-      "end": "1995-01-01 00:00:00-03:00"
+      "start": "1992-12-29",
+      "end": "1995-01-01"
     },
     {
       "name": "Fernando Henrique Cardoso",
       "knownAs": "FHC",
       "slug": "fernando-henrique-cardoso",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Fernando_Henrique_Cardoso_%281999%29.jpg/220px-Fernando_Henrique_Cardoso_%281999%29.jpg",
-      "start": "1995-01-01 00:00:00-03:00",
-      "end": "2002-12-31 22:59:59-03:00"
+      "start": "1995-01-01",
+      "end": "2002-12-31"
     },
     {
       "name": "Luiz Inácio Lula da Silva",
       "knownAs": "Lula",
       "slug": "luiz-inacio-lula-da-silva",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Lula_-_foto_oficial_-_05_jan_2007.jpg/220px-Lula_-_foto_oficial_-_05_jan_2007.jpg",
-      "start": "2003-01-01 00:00:00-03:00",
-      "end": "2010-12-31 22:59:59-03:00"
+      "start": "2003-01-01",
+      "end": "2010-12-31"
     },
     {
       "name": "Dilma Rousseff",
       "knownAs": "Dilma",
       "slug": "dilma-rousseff",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Dilma_Rousseff_-_foto_oficial_2011-01-09.jpg/220px-Dilma_Rousseff_-_foto_oficial_2011-01-09.jpg",
-      "start": "2011-01-01 00:00:00-03:00",
-      "end": "2016-07-30 22:59:59-03:00"
+      "start": "2011-01-01",
+      "end": "2016-07-30"
     },
     {
       "name": "Michel Temer",
       "knownAs": "Temer",
       "slug": "michel-temer",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Michel_Temer_%28foto_oficial%29.jpg/200px-Michel_Temer_%28foto_oficial%29.jpg",
-      "start": "2016-07-31 00:00:00-03:00",
-      "end": "2018-12-31 22:59:59-03:00"
+      "start": "2016-07-31",
+      "end": "2018-12-31"
     },
     {
       "name": "Jair Bolsonaro",
       "knownAs": "Bolsonaro",
       "slug": "jair-bolsonaro",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Presidente_Jair_M_Bolsonaro_%28cropped%29.jpg/200px-Presidente_Jair_M_Bolsonaro_%28cropped%29.jpg",
-      "start": "2019-01-01 00:00:00-03:00",
-      "end": "2022-12-31 22:59:59-03:00"
+      "start": "2019-01-01",
+      "end": "2022-12-31"
     }
   ]
 }

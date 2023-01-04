@@ -1,4 +1,4 @@
-import dataSet from './DataSets/unemployed.json';
+import dataSet from '../DataSets/unemployed.json';
 import { getAvg, getMaxDate, getMinDate, handleDateParams } from '../utils';
 
 class Unemployed {

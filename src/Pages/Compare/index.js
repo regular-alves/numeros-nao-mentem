@@ -6,7 +6,7 @@ import Chart from '../../Components/Chart';
 import Select from '../../Components/Select';
 import Sources from '../../Components/Sources';
 import FoodVsSalary from '../../Dtos/FoodVsSalary';
-import Deflorestation from '../../Dtos/DeflorestationTotal';
+import Deflorestation from '../../Dtos/DeforestationTotal';
 import Presidents from '../../Dtos/Presidents';
 import FoodBasket from '../../Dtos/FoodBasket';
 import Selic from '../../Dtos/Selic';

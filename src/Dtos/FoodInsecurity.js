@@ -1,4 +1,4 @@
-import dataSet from './DataSets/food-insecurity.json';
+import dataSet from '../DataSets/food-insecurity.json';
 import { getAvg, getMaxDate, getMinDate, handleDateParams } from '../utils';
 
 class FoodInsecurity {
