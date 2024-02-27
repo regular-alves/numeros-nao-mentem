@@ -1,7 +1,7 @@
-import { Box, Container } from "@mui/material";
+import { Box, Container, Link, SxProps } from "@mui/material";
 import Grid from '@mui/material/Unstable_Grid2'; 
 import Image from "next/image";
-import Link from "next/link";
+import Menu from "@naoMentem/molecules/Menu";
 
 import style from './style.module.css';
 
@@ -13,7 +13,7 @@ export default function Header() {
                     <Grid xs={4}>
                         <Link href="/">
                             <Image
-                                src="./logo.svg"
+                                src="/logo.svg"
                                 alt="Números Não Mentem"
                                 width={470}
                                 height={80}
@@ -22,13 +22,7 @@ export default function Header() {
                         </Link>
                     </Grid>
                     <Grid xs={8}>
-                        <Box sx={{ display: "flex", flexDirection: "row", justifyContent: "flex-end" }}>
-                            <Link href="/food">Alimentação</Link>
-                            <Link href="/deforestation">Desmatamento</Link>
-                            <Link href="/economy">Economia</Link>
-                            <Link href="/compare-presidents">Comparar Presidentes</Link>
-                            <Link href="/compare-presidents">Contato</Link>
-                        </Box>
+                        <Menu />
                     </Grid>
                 </Grid>
             </Container>
