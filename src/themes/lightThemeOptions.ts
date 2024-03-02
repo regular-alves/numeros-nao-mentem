@@ -1,6 +1,10 @@
-import { ThemeOptions } from '@mui/material/styles';
+import { PaletteColorOptions, ThemeOptions } from '@mui/material/styles';
 
-const lightThemeOptions: ThemeOptions = {
+type NaoMentemThemeOptions = ThemeOptions & {
+  basketFood?: PaletteColorOptions;
+}
+
+const lightThemeOptions: NaoMentemThemeOptions = {
   palette: {
     mode: 'light',
   },
