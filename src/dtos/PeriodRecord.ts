@@ -1,3 +1,5 @@
+import Record from "./Record";
+
 export type PeriodRegisterProps = {
   start: string,
   end?: string,

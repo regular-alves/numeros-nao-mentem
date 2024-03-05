@@ -1,8 +1,8 @@
-import { PeriodRecord } from "@naoMentem/factories/PeriodRecords";
-import Records from "@naoMentem/iterable/Records";
-import DateToString from "@naoMentem/utils/DateToString";
+import Records from "./Records";
+import PeriodRecord from "../dtos/PeriodRecord";
+import DateToString from "../utils/DateToString";
 
-export class PeriodRecords extends Records<PeriodRecord> {
+export default class PeriodRecords extends Records<PeriodRecord> {
     toSeries(intervalInSec: number = this.monthInSeconds): number[] {
         const recordSet: number[] = []
         

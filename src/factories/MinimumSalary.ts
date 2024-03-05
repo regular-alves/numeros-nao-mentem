@@ -1,5 +1,5 @@
-import PeriodRecords from "@naoMentem/factories/PeriodRecords";
-import dataSet from '@naoMentem/datasets/minimun-salary.json';
+import PeriodRecords from "./PeriodRecords";
+import dataSet from '../datasets/minimun-salary.json';
 
 export default class MinimumSalary extends PeriodRecords {
     constructor() {

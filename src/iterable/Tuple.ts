@@ -1,4 +1,4 @@
-import TupleIterator from "@naoMentem/iterators/Tuple";
+import TupleIterator from "../iterators/Tuple";
 
 export default class Tuple<T> implements Iterable<T> {
   public readonly length: number;

@@ -1,6 +1,6 @@
-import Record from "@naoMentem/dtos/Record";
-import { Source } from "@naoMentem/factories/Sources";
-import { Sources as IterableSource } from "@naoMentem/iterable/Sources";
+import Record from "../dtos/Record";
+import { Source } from "../factories/Sources";
+import { Sources as IterableSource } from "../iterable/Sources";
 
 export default abstract class Collection<T extends Record> {
     protected sources: IterableSource;

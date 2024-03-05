@@ -1,7 +1,7 @@
-import { PeriodRecords as IterablePeriodRecords } from "@naoMentem/iterable/PeriodRecords";
-import Collection, { Record } from "@naoMentem/factories/Collection";
-import { Source } from "@naoMentem/factories/Sources";
-import PeriodRecord, { PeriodRegisterProps } from "@naoMentem/dtos/PeriodRecord";
+import Collection from "./Collection";
+import { Source } from "./Sources";
+import PeriodRecord, { PeriodRegisterProps } from "../dtos/PeriodRecord";
+import IterablePeriodRecords from "../iterable/PeriodRecords";
 
 export default class PeriodRecords extends Collection<PeriodRecord> {
     constructor(sources: Source[], records: PeriodRegisterProps[]) {
@@ -16,8 +16,6 @@ export default class PeriodRecords extends Collection<PeriodRecord> {
                 )
             ))
             .sort((recA, recB) => recA.start.getTime() - recB.start.getTime());
-
-        console.log(this.records);
     }
 
     private filterRecord(record: PeriodRecord, start: Date, end: Date): boolean {

@@ -1,4 +1,4 @@
-import { Source } from "@naoMentem/factories/Sources";
-import TupleIterable from "@naoMentem/iterable/Tuple";
+import TupleIterable from "./Tuple";
+import { Source } from "../factories/Sources";
 
 export class Sources extends TupleIterable<Source> {}
