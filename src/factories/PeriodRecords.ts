@@ -16,6 +16,10 @@ export default class PeriodRecords extends Collection<PeriodRecord> {
                 )
             ))
             .sort((recA, recB) => recA.start.getTime() - recB.start.getTime());
+
+        if (this.records.filter((rec) => !rec.end).length > 1) {
+            throw new RangeError('Your dataset must not have more than one non-ended record')
+        }
     }
 
     private filterRecord(record: PeriodRecord, start: Date, end: Date): boolean {
