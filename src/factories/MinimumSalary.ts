@@ -1,5 +1,5 @@
 import PeriodRecords from "./PeriodRecords";
-import dataSet from '../datasets/minimun-salary.json';
+import dataSet from '../datasets/minimum-salary.json';
 
 export default class MinimumSalary extends PeriodRecords {
     constructor() {
