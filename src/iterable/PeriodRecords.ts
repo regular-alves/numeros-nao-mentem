@@ -3,7 +3,7 @@ import PeriodRecord from "../dtos/PeriodRecord";
 import DateToString from "../utils/DateToString";
 
 export default class PeriodRecords extends Records<PeriodRecord> {
-    toSeries(intervalInSec: number = this.monthInSeconds): number[] {
+    toSeries(): number[] {
         const recordSet: number[] = []
         
         this.values.forEach(record => {
@@ -12,17 +12,16 @@ export default class PeriodRecords extends Records<PeriodRecord> {
             
             while (end && current < end) {
                 recordSet.push(record.value);
-                current.setTime(current.getTime() + (intervalInSec * 1000));
+                current.setMonth(current.getMonth() + 1);
+                current.setDate(1);
             }
         });
 
         return recordSet;
     }
 
-    toCategories(intervalInSec: number = this.monthInSeconds): string[] {
+    toCategories(): string[] {
         const recordSet: string[] = [];
-
-        console.log(this.values);
         
         this.values.forEach(record => {
             const current = new Date(record.start.getTime());
@@ -30,7 +29,8 @@ export default class PeriodRecords extends Records<PeriodRecord> {
             
             while (end && current < end) {
                 recordSet.push(DateToString(current));
-                current.setTime(current.getTime() + (intervalInSec * 1000));
+                current.setMonth(current.getMonth() + 1);
+                current.setDate(1);
             }
         });
 
