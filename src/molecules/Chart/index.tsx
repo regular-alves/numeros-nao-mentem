@@ -74,7 +74,7 @@ const ChartOptions = {
   title: { text: null },
   tooltip: {
     shared: true,
-    // valuePrefix: 'R$'
+    valuePrefix: 'R$'
   },
 };
 
@@ -83,7 +83,7 @@ const Chart = ({ options }: ChartProps) => {
   return (
     <HighchartsReact
       highcharts={Highcharts}
-      options={lodash.merge(ChartOptions, options)}
+      options={lodash.merge(options, ChartOptions)}
     />
   );
 }
