@@ -1,9 +1,11 @@
-import { Container, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import Grid from '@mui/material/Unstable_Grid2'; 
 import EssencialFoodBasketAvg from "@naoMentem/factories/EssencialFoodBasketAvg";
 import MinimumSalary from "@naoMentem/factories/MinimumSalary";
+import Presidents from "@naoMentem/factories/Presidents";
 import useDatesFromPath from "@naoMentem/hooks/useDatesFromPath";
 import Chart from "@naoMentem/molecules/Chart";
+import Sources from "@naoMentem/molecules/Sources";
 import DateToString from "@naoMentem/utils/DateToString";
 
 export default function FoodBasket() {
@@ -11,15 +13,15 @@ export default function FoodBasket() {
 
     const minimumSalary = new MinimumSalary();
     const essencialFoodBasketAvg = new EssencialFoodBasketAvg();
+    const presidents = new Presidents();
 
-    const minimumSalaryRecords = minimumSalary.get(from, to);
-    const foodBasketRecords = essencialFoodBasketAvg.get(from, to);
+    const minimumSalaryRecords = minimumSalary.getRecords().get(from, to);
+    const foodBasketRecords = essencialFoodBasketAvg.getRecords().get(from, to);
+    const presidentsRecords = presidents.getRecords().get(from, to);
 
     const minimumSalaryColor = '#CC3F0C';
     const foodBasketColor = '#33673B';
     const percentColor = '#2176AE';
-
-    const foodBasketSeries = [...foodBasketRecords.toSeries()];
 
     return (
         <Container maxWidth="lg">
@@ -35,32 +37,42 @@ export default function FoodBasket() {
 
             <Typography component="h3" variant="h3">Salário Mínimo vs. Cesta básica</Typography>
 
-            <Chart
-                key={`${DateToString(from)}-${DateToString(to)}`}
-                options={{
-                    title: 'valor vs valor',
-                    series: [
-                        {
-                            name: 'Salário mínimo',
-                            data: minimumSalaryRecords.toSeries(),
-                            color: minimumSalaryColor,
+            <Box mb={2}>
+                <Chart
+                    key={`${DateToString(from)}-${DateToString(to)}`}
+                    options={{
+                        title: 'valor vs valor',
+                        series: [
+                            {
+                                name: 'Salário mínimo',
+                                data: minimumSalaryRecords.toSeries(),
+                                color: minimumSalaryColor,
+                            },
+                            {
+                                name: 'Cesta Básica',
+                                data: foodBasketRecords.toSeries(),
+                                color: foodBasketColor,
+                            },
+                        ],
+                        xAxis: {
+                            categories: minimumSalaryRecords.toCategories(),
+                            plotBands: presidentsRecords.toPlotBands()
                         },
-                        {
-                            name: 'Cesta Básica',
-                            data: foodBasketRecords.toSeries(),
-                            color: foodBasketColor,
+                        yAxis: {
+                            title: {
+                                text: 'Valor (R$)',
+                            },
                         },
-                    ],
-                    xAxis: {
-                        categories: minimumSalaryRecords.toCategories(),
-                    },
-                    yAxis: {
-                        title: {
-                            text: 'Valor (R$)',
-                        },
-                    },
-                }}
-            />
+                    }}
+                />
+
+                <Sources
+                    list={[
+                        ...minimumSalary.getSources(),
+                        ...essencialFoodBasketAvg.getSources(),
+                    ]}
+                />
+            </Box>
             
             <Typography component="h3" variant="h3">Percentual Salário Mínimo/Cesta básica</Typography>
             
@@ -92,16 +104,22 @@ export default function FoodBasket() {
                         {
                             name: 'Porcentagem (%)',
                             data: minimumSalaryRecords.toSeries()
-                                .map((salary, key) =>
-                                    foodBasketSeries[key]
-                                    ? ((foodBasketSeries[key] / salary) * 100)
-                                    : 0
-                                ),
+                                .map((salary, key) => {
+                                    let foodBasketVal = 0;
+
+                                    try {
+                                        const record = foodBasketRecords.index(key);
+                                        foodBasketVal = record.value;
+                                    } catch(err) {}
+
+                                    return foodBasketVal ? ((foodBasketVal / salary) * 100) : 0;
+                                }),
                             color: percentColor
                         },
                     ],
                     xAxis: {
                         categories: minimumSalaryRecords.toCategories(),
+                        plotBands: presidentsRecords.toPlotBands()
                     },
                     yAxis: {
                         title: {
