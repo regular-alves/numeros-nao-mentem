@@ -1,13 +1,13 @@
-import Record from "../dtos/Record";
-import { Source } from "../factories/Sources";
-import { Sources as IterableSource } from "../iterable/Sources";
 
-export default abstract class Collection<T extends Record> {
-    protected sources: IterableSource;
-    protected records: T[];
+import Source from "@naoMentem/dtos/Source";
 
-    constructor(sources: Source[]) {
-        this.sources = new IterableSource(sources);
-        this.records = [];
+export default abstract class Collection<T> {
+    constructor(protected sources: Source[], protected records: T[]) {
     }
+
+    getSources(): Source[] {
+        return this.sources;
+    }
+
+    abstract getRecords(): any;
 }
