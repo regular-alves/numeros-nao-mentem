@@ -1,6 +1,6 @@
 import Collection from "./Collection";
 import PeriodRecord, { PeriodRegisterProps } from "../dtos/PeriodRecord";
-import { Source } from "../dtos/Source";
+import Source from "../dtos/Source";
 import Iterable from "../iterable/PeriodRecords";
 
 export default class PeriodRecords extends Collection<PeriodRecord> {
