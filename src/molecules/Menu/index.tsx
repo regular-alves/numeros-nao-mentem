@@ -3,8 +3,10 @@ import { useEffect, useRef, useState } from "react";
 
 const menuItemSx: SxProps = {
   minWidth: 100,
-  padding: '0 10px',
+  py: 1,
+  px: 2,
   textDecoration: 'none',
+  color: 'text.primary'
 }
 
 const menuListSx: SxProps = {
@@ -48,7 +50,7 @@ const Menu = () => {
   
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "row", justifyContent: "flex-end" }}>
+    <Box sx={{ display: "flex", flexDirection: "row", justifyContent: "flex-end", alignItems: "center" }}>
       <MenuList
         item={<Link sx={menuItemSx} href="/reports/food">Alimentação</Link>}
         list={(

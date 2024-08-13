@@ -1,4 +1,4 @@
-import { Box, Container, Link, SxProps } from "@mui/material";
+import { Container, Link } from "@mui/material";
 import Grid from '@mui/material/Unstable_Grid2'; 
 import Image from "next/image";
 import Menu from "@naoMentem/molecules/Menu";
@@ -9,7 +9,7 @@ export default function Header() {
     return (
         <header>
             <Container maxWidth="lg">
-                <Grid container spacing={2} alignItems="center">
+                <Grid container spacing={2} py={3} alignItems="center" justifyContent="space-between">
                     <Grid xs={4}>
                         <Link href="/">
                             <Image
@@ -21,7 +21,7 @@ export default function Header() {
                             />
                         </Link>
                     </Grid>
-                    <Grid xs={8}>
+                    <Grid>
                         <Menu />
                     </Grid>
                 </Grid>
