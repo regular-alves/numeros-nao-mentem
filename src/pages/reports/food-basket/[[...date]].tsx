@@ -1,10 +1,12 @@
 import { Box, Container, Typography } from "@mui/material";
 import Grid from '@mui/material/Unstable_Grid2'; 
+import EssencialFoodBasket from "@naoMentem/factories/EssencialFoodBasket";
 import EssencialFoodBasketAvg from "@naoMentem/factories/EssencialFoodBasketAvg";
 import MinimumSalary from "@naoMentem/factories/MinimumSalary";
 import Presidents from "@naoMentem/factories/Presidents";
 import useDatesFromPath from "@naoMentem/hooks/useDatesFromPath";
 import Chart from "@naoMentem/molecules/Chart";
+import ChartSliderWithMap from "@naoMentem/molecules/ChartSliderWithMap";
 import Sources from "@naoMentem/molecules/Sources";
 import DateToString from "@naoMentem/utils/DateToString";
 
@@ -129,6 +131,34 @@ export default function FoodBasket() {
                     tooltip: {
                         valuePrefix: false
                     },
+                }}
+            />
+
+            <Typography component="h3" variant="h3">Cesta Básica por Estado</Typography>
+
+            <ChartSliderWithMap
+                from={from}
+                to={to}
+                collection={new EssencialFoodBasket()}
+                options={{
+                    series: [{
+                        name: 'Valor da cesta básica',
+                        accessibility: {
+                            point: {
+                                valueDescriptionFormat: '{xDescription}, R${point.value}'
+                            }
+                        },
+                        data: [],
+                        joinBy: ['postal-code', 'code'],
+                        dataLabels: {
+                            enabled: true,
+                            color: '#FFFFFF',
+                            format: '{point.code}'
+                        },
+                        tooltip: {
+                            pointFormat: '{point.code}: R${point.value}'
+                        }
+                    }]                    
                 }}
             />
         </Container>
