@@ -1,0 +1,73 @@
+{
+  "sources": [
+    {
+      "name": "Wikipedia",
+      "url": "https://pt.wikipedia.org/wiki/Lista_de_presidentes_do_Brasil"
+    }
+  ],
+  "data": [
+    {
+      "name": "José Sarney",
+      "knownAs": "Sarney",
+      "slug": "jose-sarney",
+      "start": "1985-03-15 00:00:00-03:00",
+      "end": "1990-03-15 00:00:00-03:00"
+    },
+    {
+      "name": "Fernando Collor",
+      "knownAs": "Collor",
+      "slug": "fernando-collor",
+      "start": "1990-03-15 00:00:00-03:00",
+      "end": "1992-03-29 00:00:00-03:00"
+    },
+    {
+      "name": "Itamar Franco",
+      "knownAs": "Itamar",
+      "slug": "itamar-franco",
+      "start": "1992-12-29 00:00:00-03:00",
+      "end": "1995-01-01 00:00:00-03:00"
+    },
+    {
+      "name": "Fernando Henrique Cardoso",
+      "knownAs": "FHC",
+      "slug": "fernando-henrique-cardoso",
+      "start": "1995-01-01 00:00:00-03:00",
+      "end": "2002-12-31 22:59:59-03:00"
+    },
+    {
+      "name": "Luiz Inácio Lula da Silva",
+      "knownAs": "Lula",
+      "slug": "luiz-inacio-lula-da-silva",
+      "start": "2003-01-01 00:00:00-03:00",
+      "end": "2010-12-31 22:59:59-03:00"
+    },
+    {
+      "name": "Dilma Rousseff",
+      "knownAs": "Dilma",
+      "slug": "dilma-rousseff",
+      "start": "2011-01-01 00:00:00-03:00",
+      "end": "2016-07-30 22:59:59-03:00"
+    },
+    {
+      "name": "Michel Temer",
+      "knownAs": "Temer",
+      "slug": "michel-temer",
+      "start": "2016-07-31 00:00:00-03:00",
+      "end": "2018-12-31 22:59:59-03:00"
+    },
+    {
+      "name": "Jair Bolsonaro",
+      "knownAs": "Bolsonaro",
+      "slug": "jair-bolsonaro",
+      "start": "2019-01-01 00:00:00-03:00",
+      "end": "2022-12-31 22:59:59-03:00"
+    },
+    {
+      "name": "Luiz Inácio Lula da Silva",
+      "knownAs": "Lula",
+      "slug": "luiz-inacio-lula-da-silva",
+      "start": "2023-01-01 00:00:00-03:00",
+      "end": "2026-12-31 22:59:59-03:00"
+    }
+  ]
+}
