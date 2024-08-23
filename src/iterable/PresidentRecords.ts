@@ -97,8 +97,8 @@ export default class PresidentRecords extends Tuple<PresidentRecord> {
 			const end_time = Math.min((record.end?.getTime() || Number.MAX_SAFE_INTEGER), this.max);
 			const current = new Date(start_time);
 			const end = new Date(end_time);
-			
-			while (end && current <= end) {
+
+			while (current <= end) {
 				const last = resultSet.length ? (resultSet.length - 1) : 0;
 
 				if (record.slug === resultSet[last]?.slug) {
